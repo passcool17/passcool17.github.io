@@ -1,7 +1,24 @@
 {
  "version": 1,
- "mis_a_jour": "2026-11-16",
+ "mis_a_jour": "2026-11-17",
  "projets": [
+  {
+   "id": "defuse-mallette",
+   "nom": "Défuse la mallette",
+   "url": "https://passcool17.github.io/defuse-mallette/",
+   "depot": "https://github.com/passcool17/defuse-mallette",
+   "type": "jeu",
+   "tags": [
+    "3D"
+   ],
+   "prototype": false,
+   "description": "Une mallette orange piégée en 3D, cinq modules : un désamorceur la manipule, un expert lit le manuel.",
+   "capture": "shots/defuse-mallette.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-17",
+   "categorie": "jeux-apps",
+   "version": "0.1.1"
+  },
   {
    "id": "test-qi",
    "nom": "Test QI · L’observatoire de l’esprit",
