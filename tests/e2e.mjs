@@ -61,6 +61,21 @@ for (let k = 0; k < 4; k++) await p.click('#pl-next');
 assert.equal(await p.textContent('#pl-titre'), 'Placebo Mon Ami');
 if (!L.pistes[4].audio) { assert.equal(await p.getAttribute('#pl-play', 'aria-disabled'), 'true'); assert.equal(await p.isVisible('#pl-err a'), true); assert.equal(await p.getAttribute('#pl-err a', 'href'), L.pistes[4].url); ok('Placebo Mon Ami : pas d’audio public, lien vers Suno'); }
 await p.click('#pl-next'); assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre); ok('boucle 5 → 1');
+// 1.2.1 — hors ligne : « Lire » échoue proprement (bouton revient à Lire + message), puis en ligne ça rejoue
+await p.click('#pl-next'); await p.click('#pl-next'); assert.equal(await p.textContent('#pl-titre'), L.pistes[2].titre);
+await ctx.setOffline(true);
+await p.click('#pl-play');
+await p.waitForFunction(() => !document.querySelector('#pl-err').hidden, null, { timeout: 20000 });
+await p.waitForTimeout(500);
+assert.ok(!(await p.$eval('#lecteur', (e) => e.classList.contains('joue'))), 'classe joue retirée');
+assert.match(await p.getAttribute('#pl-play', 'aria-label'), /^Lire/);
+assert.equal(await p.$eval('#pl-play .i-play', (s) => getComputedStyle(s).display !== 'none'), true);
+assert.match(await p.textContent('#pl-err'), /connexion/); ok('hors ligne : bouton revient à « Lire » + message');
+await ctx.setOffline(false);
+await p.click('#pl-play');
+await p.waitForFunction(() => document.querySelector('#lecteur').classList.contains('joue') && document.querySelector('#pl-t').textContent !== '0:00', null, { timeout: 20000 });
+assert.equal(await p.isVisible('#pl-err'), false); ok('de retour en ligne : le même toucher relance la chanson');
+await p.click('#pl-play'); await p.waitForTimeout(300); assert.ok(!(await p.$eval('#lecteur', (e) => e.classList.contains('joue'))));
 for (const x of L.pistes.filter((t) => t.audio)) { const r = await ctx.request.get(x.audio, { headers: { Range: 'bytes=0-15' } }); assert.ok([200, 206].includes(r.status()), x.audio); }
 ok(`${L.pistes.filter((t) => t.audio).length} fichiers audio répondent`);
 

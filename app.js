@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.2.0';
+export const VERSION = '1.2.1';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },
@@ -201,7 +201,8 @@ export const minutes = (s) => { s = Math.max(0, Math.floor(s || 0)); return `${M
 function initLecteur(lecteur) {
   const pistes = lecteur.pistes, n = pistes.length;
   const boite = $('#lecteur'), play = $('#pl-play'), seek = $('#pl-seek'), err = $('#pl-err');
-  let i = 0, audio = null, attente = 0, glisse = false;
+  // enLecture suit les événements de l’élément audio (play/playing/pause/error), jamais le toucher
+  let i = 0, audio = null, attente = 0, glisse = false, enLecture = false;
   const p = () => pistes[i];
   const duree = () => (audio && Number.isFinite(audio.duration) && audio.duration) || p().duree;
   const temps = () => (audio && audio.src === p().audio ? audio.currentTime : attente);
@@ -213,7 +214,7 @@ function initLecteur(lecteur) {
     $('#pl-t').textContent = minutes(t); $('#pl-d').textContent = minutes(d);
     seek.setAttribute('aria-valuetext', `${minutes(t)} sur ${minutes(d)}`);
   };
-  const joue = () => !!audio && !audio.paused;
+  const joue = () => enLecture;
   const majBouton = () => {
     boite.classList.toggle('joue', joue());
     play.setAttribute('aria-label', p().audio ? `${joue() ? 'Pause' : 'Lire'} « ${p().titre} »` : `« ${p().titre} » : pas d’audio public ici`);
@@ -241,16 +242,13 @@ function initLecteur(lecteur) {
       audio.preload = 'none';
       audio.addEventListener('timeupdate', majTemps);
       audio.addEventListener('loadedmetadata', majTemps);
-      audio.addEventListener('play', majBouton);
-      audio.addEventListener('pause', majBouton);
+      const etat = (v) => () => { enLecture = v; if (!v) boite.classList.remove('charge'); majBouton(); };
+      audio.addEventListener('play', () => { enLecture = true; boite.classList.add('charge'); majBouton(); });
+      audio.addEventListener('playing', () => { enLecture = true; boite.classList.remove('charge'); err.hidden = !!p().audio; majBouton(); });
+      for (const ev of ['pause', 'ended', 'emptied']) audio.addEventListener(ev, etat(false));
       audio.addEventListener('waiting', () => boite.classList.add('charge'));
-      audio.addEventListener('playing', () => boite.classList.remove('charge'));
       audio.addEventListener('ended', () => { if (i < n - 1 && pistes[i + 1].audio) aller(i + 1, true); else aller(i < n - 1 ? i + 1 : 0, false); });
-      audio.addEventListener('error', () => {
-        boite.classList.remove('charge'); majBouton();
-        err.replaceChildren(document.createTextNode('Cette chanson ne se lance pas ici. '), el('a', { href: p().url, rel: 'noopener', text: 'L’écouter sur Suno' }));
-        err.hidden = false;
-      });
+      audio.addEventListener('error', () => { if (audio.getAttribute('src')) echec(); });
       if ('mediaSession' in navigator) {
         const ms = navigator.mediaSession;
         ms.setActionHandler('play', () => lire());
@@ -267,7 +265,26 @@ function initLecteur(lecteur) {
       majSession();
     }
   };
-  const lire = () => { if (!p().audio) { err.hidden = false; return; } charger(); boite.classList.add('charge'); audio.play().catch(() => { boite.classList.remove('charge'); majBouton(); }); };
+  // Échec (hors ligne, fichier retiré par Suno…) : on revient à « Lire », on vide la source
+  // pour que le prochain toucher recharge proprement, et on garde la position.
+  const echec = () => {
+    if (!audio) return;
+    if (audio.getAttribute('src')) {
+      const t = audio.currentTime || 0;
+      audio.pause(); audio.removeAttribute('src'); audio.load();
+      attente = t;
+    }
+    enLecture = false; boite.classList.remove('charge');
+    majTemps(); majBouton();
+    err.replaceChildren(document.createTextNode(navigator.onLine === false ? 'Pas de connexion : la chanson ne peut pas se lancer. Réessaie une fois en ligne, ou ' : 'Cette chanson ne se lance pas ici. Réessaie, ou '),
+      el('a', { href: p().url, rel: 'noopener', text: 'écoute-la sur Suno' }), document.createTextNode('.'));
+    err.hidden = false;
+  };
+  const lire = () => {
+    if (!p().audio) { err.hidden = false; return; }
+    err.hidden = true; charger();
+    audio.play().catch((e) => { if (e && e.name === 'AbortError') { enLecture = !audio.paused; majBouton(); } else echec(); });
+  };
   const aller = (j, continuer) => {
     i = (j + n) % n; attente = 0;
     if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); }

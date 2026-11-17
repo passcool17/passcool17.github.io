@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.2.0** (16 nov. 2026 : lecteur du top 5 Suno en haut de la page). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.2.1** (16 nov. 2026 : lecteur, retour propre à « Lire » quand une chanson ne peut pas se lancer). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,10 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.2.1
+
+- Lecteur : l’état Lire / Pause suit les événements de l’audio (`play`, `playing`, `pause`, `ended`, `emptied`, `error`), plus le toucher. Si une chanson ne peut pas se lancer (hors ligne, fichier retiré par Suno), le bouton revient à « Lire », la source est vidée et un message propose de réessayer ou d’écouter sur Suno ; le toucher suivant recharge proprement (bogue QA 1.2.0). L’e2e coupe le réseau, touche Lire, vérifie le retour à « Lire » et le message, puis rejoue une fois en ligne.
 
 ## Changements 1.2.0
 
