@@ -28,6 +28,34 @@ assert.equal(await vis(), jeuxApps.length); ok(`${jeuxApps.length} cartes jeux e
 assert.equal(await p.$$eval('#grille .tag.proto', (t) => t.length), jeuxApps.filter((x) => x.prototype).length); ok('prototypes marqués');
 await p.screenshot({ path: `${SHOTS}/1-accueil.png` });
 
+// 1.1.0 — rendu différé : Grok et Suno vides au chargement
+assert.equal(await p.$$eval('#liste-grok li, #top li', (l) => l.length), 0); ok('Grok et Suno pas encore dessinés au chargement');
+// 1.1.0 — héros
+assert.equal(await p.$$eval('.eyebrow, .kicker', (e) => e.length), 0); ok('plus d’étiquette au-dessus du titre ni de sections numérotées');
+const urlsProjets = new Set(data.projets.map((x) => x.url));
+const heros = await p.$$eval('.shelf a', (a) => a.map((x) => [x.getAttribute('href'), x.getAttribute('aria-label'), x.getBoundingClientRect().height]));
+assert.equal(heros.length, 3); for (const [h, l, ht] of heros) { assert.ok(urlsProjets.has(h), h); assert.ok(l && ht >= 44); } ok('3 captures du héros = liens vers leur jeu');
+// 1.1.0 — a11y
+assert.equal(await p.getAttribute('.brand', 'aria-label'), null);
+assert.equal(await p.getByRole('link', { name: /^PassCool\b.*retour en haut$/ }).count(), 1); ok('nom du logo commence par le texte visible');
+const pad = await p.$eval('#grille .tag', (t) => parseFloat(getComputedStyle(t).paddingTop));
+assert.ok(pad >= 6 && pad <= 8); ok(`étiquettes : ${pad}px de marge`);
+// 1.1.0 — filtres sur 2 lignes, tous visibles à 412
+const chips = await p.$$eval('#chips .chip', (c) => c.map((x) => { const r = x.getBoundingClientRect(); return [Math.round(r.left), Math.round(r.right), Math.round(r.top)]; }));
+assert.ok(chips.every(([l, r]) => l >= 0 && r <= 412)); assert.equal(new Set(chips.map((c) => c[2])).size, 2); ok(`${chips.length} filtres visibles sur 2 lignes`);
+// 1.1.0 — bouton Installer caché sans invite, visible avec, caché après installation
+assert.equal(await p.isVisible('#installer'), false);
+await p.evaluate(() => { const e = new Event('beforeinstallprompt', { cancelable: true }); e.prompt = () => {}; e.userChoice = Promise.resolve({ outcome: 'dismissed' }); dispatchEvent(e); });
+assert.equal(await p.isVisible('#installer'), true);
+await p.evaluate(() => dispatchEvent(new Event('appinstalled'))); assert.equal(await p.isVisible('#installer'), false); ok('bouton Installer : caché / visible avec invite / caché après installation');
+// 1.1.0 — barre compacte au défilement
+await p.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 1200, behavior: 'instant' })); await p.waitForTimeout(400);
+assert.ok(await p.$eval('#outils', (o) => o.classList.contains('compact'))); assert.equal(await p.isVisible('#chips'), false); assert.equal(await p.textContent('#actif'), 'Tout');
+const hBarre = await p.$eval('#outils', (o) => o.getBoundingClientRect().height); assert.ok(hBarre < 80, hBarre); ok(`barre compacte au défilement (${Math.round(hBarre)}px)`);
+await p.click('#actif'); await p.waitForTimeout(900);
+assert.ok(!(await p.$eval('#outils', (o) => o.classList.contains('compact')))); assert.equal(await p.isVisible('#chips'), true); ok('bouton du filtre actif rouvre les filtres');
+await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+
 await p.click('.chip[data-filtre="3D"]');
 assert.equal(await vis(), jeuxApps.filter((x) => x.tags.includes('3D')).length); ok('filtre 3D');
 await shot(p, '#jeux', '2-filtre-3d.png');
@@ -44,9 +72,14 @@ assert.equal(await p.$$eval('#grille-esp32 .card.bientot a', (c) => c.length), 0
 assert.equal(await p.$$eval('#materiel li', (c) => c.length), data.esp32.materiel.carte.length + data.esp32.materiel.kit.length); ok('section ESP32 (live, bientôt sans lien, matériel)');
 await shot(p, '#esp32', '3-esp32.png');
 
-assert.equal(await p.$$eval('#liste-grok li', (l) => l.length), 66); ok('66 apps Grok');
-assert.deepEqual(await p.$$eval('#liste-grok a', (a) => a.map((x) => x.getAttribute('href'))), data.grok.apps.map((a) => a.url)); ok('liens Grok identiques à apps.json');
 await shot(p, '#grok', '4-grok.png');
+const seuls = data.grok.apps.filter((a) => !/\.github\.io$/.test(a.hote)), doubles = data.grok.apps.filter((a) => /\.github\.io$/.test(a.hote));
+assert.equal(seuls.length, 34); assert.equal(doubles.length, 32);
+assert.deepEqual(await p.$$eval('#liste-grok a', (a) => a.map((x) => x.getAttribute('href'))), seuls.map((a) => a.url)); ok('34 apps seulement sur Grok en premier, liens exacts');
+assert.deepEqual(await p.$$eval('#liste-grok-dups a', (a) => a.map((x) => x.getAttribute('href'))), doubles.map((a) => a.url));
+assert.equal(await p.$eval('#doublons', (d) => d.open), false); assert.equal(await p.textContent('#nb-dups'), '(32)'); assert.equal(await p.isVisible('#liste-grok-dups'), false); ok('32 doublons repliés, compte affiché');
+await p.fill('#qg', 'baass'); assert.equal(await p.$eval('#doublons', (d) => d.open), true); assert.match(await p.textContent('#count-grok'), /^\d+ sur 66/); ok('recherche Grok ouvre les doublons quand eux seuls correspondent');
+await p.fill('#qg', ''); await p.$eval('#doublons', (d) => { d.open = false; });
 
 const attendu = { '@passcool17': 10, '@coolcamille7': 8 };
 const vraiTop = ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami', 'Globalism Must Fall', 'Broken Collectors of the Outer Seal', 'Quantum Fracture', 'Through the Veil of Planes', 'Harvard’s Secret Terminal V2'];
@@ -79,7 +112,23 @@ await ctx.setOffline(true);
 await p.reload({ waitUntil: 'load' }); await p.waitForSelector('#grille .card');
 assert.equal(await vis(), jeuxApps.length);
 assert.ok(await p.$eval('#grille .card img', (i) => i.complete)); ok('rechargement hors ligne (cartes et captures)');
+await p.evaluate(() => document.querySelector('#grok').scrollIntoView()); await p.waitForTimeout(500);
+assert.equal(await p.$$eval('#liste-grok li, #liste-grok-dups li', (l) => l.length), 66); ok('Grok se dessine hors ligne');
 await ctx.setOffline(false);
+
+// 1.1.0 — paysage : barre de recherche pas collante
+const pl = await b.newPage({ viewport: { width: 915, height: 412 }, isMobile: true, hasTouch: true });
+await pl.goto(base + '/', { waitUntil: 'load' });
+assert.equal(await pl.$eval('#outils', (o) => getComputedStyle(o).position), 'static');
+await pl.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 600, behavior: 'instant' })); await pl.waitForTimeout(300);
+assert.ok(await pl.$eval('#outils', (o) => o.getBoundingClientRect().bottom < 0)); ok('paysage 915x412 : barre de recherche pas collante'); await pl.close();
+
+// 1.1.0 — manifeste : raccourcis et captures
+const man = await (await ctx.request.get(base + '/manifest.webmanifest')).json();
+assert.deepEqual(man.shortcuts.map((x) => x.url), ['/#jeux', '/#esp32', '/#musique']);
+assert.ok(man.screenshots.some((x) => x.form_factor === 'wide') && man.screenshots.some((x) => x.form_factor === 'narrow'));
+for (const sc of man.screenshots) { const r = await ctx.request.get(base + sc.src); assert.equal(r.status(), 200, sc.src); }
+ok(`manifeste : ${man.shortcuts.length} raccourcis, ${man.screenshots.length} captures (200)`);
 
 if (live) {
   for (const [path, re] of [['/test-qi/', /QI/i], ['/la-tribu/', /tribu/i], ['/wifi-radar/', /radar/i], ['/dossier-baass/', /baass/i]]) {
@@ -87,7 +136,7 @@ if (live) {
     assert.equal(r.status(), 200); assert.match(await p.title(), re);
     ok(`${path} charge encore avec le SW du portail installé (« ${await p.title()} »)`);
   }
-  const r404 = await ctx.request.get(base + '/nexistepas-' + Date.now() + '/'); assert.ok([404, 503].includes(r404.status())); assert.ok(!(await r404.text()).includes('Le portail de PassCool')); ok(`adresse inconnue : page d’erreur de GitHub (${r404.status()}), pas le portail`);
+  const r404 = await ctx.request.get(base + '/nexistepas-' + Date.now() + '/'); assert.ok([404, 503].includes(r404.status())); assert.ok(!(await r404.text()).includes('Salut, c’est PassCool')); ok(`adresse inconnue : page d’erreur de GitHub (${r404.status()}), pas le portail`);
 }
 const vraies = errs.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e));
 assert.deepEqual(vraies, []); ok('console propre');

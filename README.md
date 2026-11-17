@@ -6,25 +6,25 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.0.2** (16 nov. 2026 : vrai top 10 Suno pour @passcool17). HTML, CSS et JavaScript simples, aucune étape de build. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.1.0** (16 nov. 2026 : améliorations 1 à 7 de l’audit, voir plus bas). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
 1. **Jeux et apps (GitHub)** : une carte par dépôt publié, avec une vraie capture, une courte description, des étiquettes (2D, 3D, App, Éducatif), la mention « Prototype » au besoin et un gros bouton « Jouer » (jeux) ou « Ouvrir » (apps). Filtres et recherche (gardés dans l’adresse : `?filtre=3D&q=baass`).
 2. **ESP32** : les montages en ligne (« En ligne ») et à venir (« Bientôt », sans lien ni capture), plus la liste « Mon matériel ».
-3. **Apps Grok** : les 66 apps de l’ancien site, noms et liens copiés tels quels le 16 nov. 2026, avec une recherche.
+3. **Apps Grok** : les 66 apps de l’ancien site, noms et liens copiés tels quels le 16 nov. 2026, avec une recherche. Les 34 apps qui vivent seulement sur Grok viennent d’abord ; les 32 qui pointent vers une page `*.github.io` (déjà en cartes) sont repliées dans « Aussi dans mes jeux et apps ». Le tri se fait sur `hote` : rien à ajouter dans `apps.json`.
 4. **Musique Suno** : deux comptes (@passcool17 et @coolcamille7), chacun avec ses chiffres datés, ses chansons les plus écoutées (10 pour @passcool17, 8 pour @coolcamille7) et un lien vers le profil.
 
 ## Fichiers
 
 | Fichier | Rôle |
 |---|---|
-| `index.html`, `styles.css`, `app.js` | La page. `app.js` lit `apps.json` et dessine tout. |
+| `index.html`, `app.js` | La page (CSS en ligne dans `index.html`). `app.js` lit `apps.json` et dessine tout ; Grok et Suno se dessinent seulement quand on s’en approche. |
 | `apps.json` | **Toutes les données** (cartes, ESP32, Grok, Suno). |
 | `shots/` | Captures des cartes (WebP). |
 | `img/` | Avatars et pochettes Suno. |
 | `sw.js` | Service worker (hors ligne). |
-| `manifest.webmanifest`, `icons/` | Installation. |
+| `manifest.webmanifest`, `icons/`, `screens/` | Installation : raccourcis (Jeux, ESP32, Musique) et vraies captures du portail (`node tests/manifest-shots.mjs` les refait). Le bouton « Installer l’app » n’apparaît que si Chrome propose l’installation. |
 | `tests/` | Tests Playwright et outils de capture. |
 
 ## Ajouter une app ou un jeu (pour les bots, à chaque sortie)
@@ -73,7 +73,17 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 
 ## Tests
 
-`node tests/e2e.mjs [URL]` à 412×915 : nombre de cartes, 10 chansons pour @passcool17 et 8 pour @coolcamille7 (liens 200),, prototypes, filtres, recherche, état vide, section ESP32, 66 apps Grok aux liens exacts, deux comptes Suno, chaque bouton répond 200, SW installé, rechargement hors ligne, console propre ; en ligne, `/test-qi/`, `/la-tribu/`, `/wifi-radar/` et `/dossier-baass/` chargent encore avec le SW du portail installé. Captures dans `/workspace/apps/portail-shots/`.
+`node tests/e2e.mjs [URL]` à 412×915 : nombre de cartes, 10 chansons pour @passcool17 et 8 pour @coolcamille7 (liens 200),, prototypes, filtres, recherche, état vide, section ESP32, 66 apps Grok aux liens exacts, deux comptes Suno, chaque bouton répond 200, SW installé, rechargement hors ligne, console propre ; en ligne, `/test-qi/`, `/la-tribu/`, `/wifi-radar/` et `/dossier-baass/` chargent encore avec le SW du portail installé. Captures dans `/workspace/apps/portail-shots/`. Depuis 1.1.0 aussi : Grok/Suno vides avant défilement, héros (pas d’étiquette, 3 captures = liens vers leur jeu), nom du logo, marge des étiquettes, 6 filtres visibles sur 2 lignes à 412, bouton Installer (caché / visible / caché), barre compacte au défilement et bouton du filtre actif, 34 + 32 Grok repliés, Grok hors ligne, barre pas collante en paysage 915×412, raccourcis et captures du manifeste. `node tests/apres.mjs [URL] [préfixe]` fait les captures de comparaison.
+
+## Changements 1.1.0
+
+1. Grok : 34 apps seulement sur Grok d’abord, 32 doublons repliés (compte affiché).
+2. Barre de recherche : compacte quand on défile dans les cartes (le bouton orange montre le filtre actif et ramène aux filtres) ; pas collante en paysage.
+3. Filtres : passent à la ligne, tous visibles à 412 px.
+4. Chargement : Grok et Suno dessinés à l’approche, CSS en ligne, plus de `text-wrap: balance` sur les titres des cartes.
+5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
+6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
+7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
 
 ## Limites connues
 

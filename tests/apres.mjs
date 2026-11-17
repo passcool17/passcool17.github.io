@@ -1,0 +1,35 @@
+// Captures « après » (et captures du manifeste avec --manifeste). Usage : node tests/apres.mjs [base] [dossier]
+import { chromium } from 'playwright-core';
+import { startServer } from './server.mjs';
+const arg = process.argv[2];
+const { server, base } = arg && arg.startsWith('http') ? { server: null, base: arg.replace(/\/$/, '') } : await startServer();
+const out = process.argv[3] || '/tmp/apres';
+const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome' });
+const errs = [];
+const page = async (w, h, dsf = 2) => {
+  const p = await b.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: dsf, isMobile: w < 900 || h < 500, hasTouch: true, serviceWorkers: 'block' });
+  p.on('console', (m) => m.type() === 'error' && errs.push(m.text())); p.on('pageerror', (e) => errs.push(e.message));
+  await p.goto(base + '/', { waitUntil: 'networkidle' }); await p.waitForTimeout(1200);
+  return p;
+};
+let p = await page(412, 915);
+await p.screenshot({ path: `${out}-412-accueil.png` });
+await p.evaluate(() => scrollTo({ top: document.querySelector('#jeux').getBoundingClientRect().top + scrollY - 64, behavior: 'instant' })); await p.waitForTimeout(500);
+await p.screenshot({ path: `${out}-412-filtres.png` });
+await p.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 900, behavior: 'instant' })); await p.waitForTimeout(600);
+await p.screenshot({ path: `${out}-412-barre-collante.png` });
+await p.evaluate(() => scrollTo({ top: document.querySelector('#grok').getBoundingClientRect().top + scrollY - 64, behavior: 'instant' })); await p.waitForTimeout(800);
+await p.screenshot({ path: `${out}-412-grok.png` });
+await p.evaluate(() => { const d = document.querySelector('#doublons'); d.open = true; scrollTo({ top: d.getBoundingClientRect().top + scrollY - 80, behavior: 'instant' }); }); await p.waitForTimeout(500);
+await p.screenshot({ path: `${out}-412-grok-doublons.png` });
+await p.close();
+p = await page(915, 412);
+await p.screenshot({ path: `${out}-915-accueil.png` });
+await p.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 500, behavior: 'instant' })); await p.waitForTimeout(500);
+await p.screenshot({ path: `${out}-915-defilement.png` });
+await p.close();
+p = await page(1280, 800, 1);
+await p.screenshot({ path: `${out}-1280-accueil.png` });
+await p.close();
+console.log('errors', errs);
+await b.close(); server?.close();

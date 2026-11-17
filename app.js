@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.0.2';
+export const VERSION = '1.1.0';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },
@@ -77,6 +77,7 @@ function initProjets(projets) {
     let n = 0;
     for (const p of projets) { const ok = correspond(p, filtre, q.value.trim()); cartes.get(p.id).hidden = !ok; if (ok) n++; }
     for (const b of boutons) b.setAttribute('aria-pressed', String(b.dataset.filtre === filtre));
+    $('#actif').textContent = FILTRES.find((f) => f.id === filtre).label;
     const protos = projets.filter((p) => p.prototype && !cartes.get(p.id).hidden).length;
     count.textContent = n ? `${n} ${n > 1 ? 'résultats' : 'résultat'}${protos ? ` · dont ${protos} prototype${protos > 1 ? 's' : ''}` : ''}` : '';
     vide.hidden = n > 0;
@@ -86,29 +87,69 @@ function initProjets(projets) {
     history.replaceState(null, '', u);
   }
   q.addEventListener('input', maj);
+  // Barre compacte quand on défile dans la grille ; « actif » remonte aux filtres
+  const outils = $('#outils');
+  const sentinelle = $('#sentinelle');
+  let attente = false, ecart = 0, retour = false;
+  // On compense le défilement de la hauteur gagnée, pour que les cartes ne sautent pas
+  const compacter = () => {
+    attente = false;
+    if (retour) return;
+    const haut = sentinelle.getBoundingClientRect().top, colle = getComputedStyle(outils).position === 'sticky';
+    const estCompact = outils.classList.contains('compact');
+    if (!estCompact && colle && haut < 72) {
+      const h = outils.offsetHeight; outils.classList.add('compact'); ecart = h - outils.offsetHeight;
+    } else if (estCompact && (!colle || haut > 72 + ecart)) {
+      // Chrome compense déjà en rétrécissant (ancrage du défilement), pas en regrandissant
+      const y = scrollY; outils.classList.remove('compact');
+      if (colle && scrollY === y) scrollBy({ top: ecart, behavior: 'instant' });
+      ecart = 0;
+    }
+  };
+  addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(compacter); } }, { passive: true });
+  addEventListener('resize', compacter);
+  $('#actif').addEventListener('click', (ev) => {
+    ev.preventDefault();
+    outils.classList.remove('compact'); ecart = 0; retour = true;
+    const fini = () => { retour = false; compacter(); };
+    addEventListener('scrollend', fini, { once: true }); setTimeout(() => retour && fini(), 1200);
+    $('#jeux').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    setTimeout(() => $('#chips .chip[aria-pressed="true"]')?.focus({ preventScroll: true }), 400);
+  });
   $('#reset').addEventListener('click', () => { filtre = 'tout'; q.value = ''; maj(); q.focus(); });
   maj();
 }
 
+// Doublon = app Grok qui pointe vers une page GitHub déjà en carte plus haut
+export const estDoublon = (a) => /\.github\.io$/.test(a.hote);
+
 function initGrok(grok) {
-  const liste = $('#liste-grok'), q = $('#qg'), count = $('#count-grok');
+  const q = $('#qg'), count = $('#count-grok'), details = $('#doublons');
   const d = new Date(grok.date + 'T12:00:00');
   $('#grok-sub').textContent = `La liste publique de mon ancien site, copiée le ${d.toLocaleDateString('fr-CA', { day: 'numeric', month: 'short', year: 'numeric' })}.`;
-  $('#nb-grok').textContent = grok.apps.length;
-  const items = grok.apps.map((a, i) => {
+  const ligne = (a, i) => {
     const li = el('li', {}, el('a', { href: a.url, rel: 'noopener' },
       el('span', { class: 'i', text: String(i + 1).padStart(2, '0') }),
       el('span', {}, el('span', { class: 'gn', text: a.nom }), el('span', { class: 'gh', text: a.hote }), a.description ? el('span', { class: 'gd', text: a.description }) : null),
       svgIcon('M7 17 17 7M9 7h8v8')));
     li.dataset.hay = norm(`${a.nom} ${a.hote} ${a.description}`);
     return li;
-  });
-  liste.replaceChildren(...items);
+  };
+  const seuls = grok.apps.filter((a) => !estDoublon(a)).map(ligne);
+  const doubles = grok.apps.filter(estDoublon).map(ligne);
+  $('#liste-grok').replaceChildren(...seuls);
+  $('#liste-grok-dups').replaceChildren(...doubles);
+  $('#nb-dups').textContent = `(${doubles.length})`;
   const maj = () => {
     const m = norm(q.value.trim()).split(/\s+/).filter(Boolean);
-    let n = 0;
-    for (const li of items) { const ok = m.every((x) => li.dataset.hay.includes(x)); li.hidden = !ok; if (ok) n++; }
-    count.textContent = `${n} app${n > 1 ? 's' : ''}${m.length ? ` sur ${items.length}` : ''}`;
+    const filtrer = (items) => items.reduce((n, li) => { const ok = m.every((x) => li.dataset.hay.includes(x)); li.hidden = !ok; return n + ok; }, 0);
+    const n1 = filtrer(seuls), n2 = filtrer(doubles);
+    $('#nb-dups').textContent = m.length ? `(${n2} sur ${doubles.length})` : `(${doubles.length})`;
+    details.hidden = m.length > 0 && n2 === 0;
+    if (m.length && n2 && !n1) details.open = true;
+    count.textContent = m.length
+      ? `${n1 + n2} sur ${grok.apps.length} apps`
+      : `${seuls.length} apps seulement sur Grok · ${doubles.length} aussi plus haut`;
   };
   q.addEventListener('input', maj);
   maj();
@@ -153,13 +194,46 @@ function initEsp32(projets, esp) {
     el('div', { class: 'gear-cols' }, bloc('Sur la carte', esp.materiel.carte), bloc('Dans le kit', esp.materiel.kit)));
 }
 
+// Dessine une section seulement quand on s'en approche (moins de travail au chargement)
+function quandProche(sel, f) {
+  const cible = $(sel);
+  let fait = false;
+  const go = () => { if (!fait) { fait = true; f(); } };
+  if (location.hash === sel || !('IntersectionObserver' in window)) return go();
+  const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); go(); } }, { rootMargin: '800px 0px' });
+  io.observe(cible);
+  for (const a of document.querySelectorAll(`a[href="${sel}"]`)) a.addEventListener('click', go);
+}
+
+function initInstallation() {
+  const b = $('#installer');
+  let invite = null;
+  const installee = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); if (installee()) return; invite = e; b.hidden = false; });
+  addEventListener('appinstalled', () => { invite = null; b.hidden = true; });
+  b.addEventListener('click', async () => {
+    if (!invite) return;
+    b.hidden = true;
+    invite.prompt();
+    await invite.userChoice.catch(() => null);
+    invite = null;
+  });
+}
+
 async function demarrer() {
   $('#version').textContent = `Version ${VERSION}.`;
+  initInstallation();
   try {
     const r = await fetch('/apps.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error(r.status);
     const data = await r.json();
-    initProjets(data.projets.filter((p) => p.categorie !== 'esp32')); initEsp32(data.projets, data.esp32); $('#nb-projets').textContent = data.projets.filter((p) => p.url).length; initGrok(data.grok); initSuno(data.suno);
+    initProjets(data.projets.filter((p) => p.categorie !== 'esp32'));
+    initEsp32(data.projets, data.esp32);
+    $('#nb-projets').textContent = data.projets.filter((p) => p.url).length;
+    $('#nb-grok').textContent = data.grok.apps.length;
+    $('#nb-chansons').textContent = data.suno.comptes.reduce((n, c) => n + c.chansons, 0);
+    quandProche('#grok', () => initGrok(data.grok));
+    quandProche('#musique', () => initSuno(data.suno));
   } catch (e) {
     $('#grille').replaceChildren(el('p', { class: 'loading', text: 'Impossible de charger la liste. Vérifie ta connexion puis recharge la page.' }));
   }
