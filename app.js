@@ -359,6 +359,7 @@ async function allerA(id, doux) {
   const cible = document.getElementById(id);
   if (!cible) return;
   const jeton = ++navEnCours;
+  document.documentElement.classList.add('ancre'); // toutes les cartes en page : vraies hauteurs
   for (const z of paresseuses) if (z.el === cible || (z.el.compareDocumentPosition(cible) & Node.DOCUMENT_POSITION_FOLLOWING)) z.go();
   const jeux = $('#jeux');
   if (pilote) {
