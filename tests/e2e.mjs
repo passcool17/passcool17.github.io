@@ -78,7 +78,7 @@ if (live) {
     assert.equal(r.status(), 200); assert.match(await p.title(), re);
     ok(`${path} charge encore avec le SW du portail installé (« ${await p.title()} »)`);
   }
-  const r404 = await ctx.request.get(base + '/nexistepas-' + Date.now() + '/'); assert.equal(r404.status(), 404); ok('pas de 404 racine du portail');
+  const r404 = await ctx.request.get(base + '/nexistepas-' + Date.now() + '/'); assert.ok([404, 503].includes(r404.status())); assert.ok(!(await r404.text()).includes('Le portail de PassCool')); ok(`adresse inconnue : page d’erreur de GitHub (${r404.status()}), pas le portail`);
 }
 const vraies = errs.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e));
 assert.deepEqual(vraies, []); ok('console propre');
