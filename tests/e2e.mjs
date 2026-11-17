@@ -162,6 +162,8 @@ await p.fill('#qg', ''); await p.$eval('#doublons', (d) => { d.open = false; });
 
 const attendu = { '@passcool17': 10, '@coolcamille7': 8 };
 const vraiTop = ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami', 'Globalism Must Fall', 'Broken Collectors of the Outer Seal', 'Quantum Fracture', 'Through the Veil of Planes', 'Harvard’s Secret Terminal V2'];
+// Suno se dessine quand on approche de #musique (le rendu de Grok peut l’éloigner pendant le défilement précédent)
+await p.evaluate(() => document.querySelector('#musique').scrollIntoView({ behavior: 'instant' })); await p.waitForSelector('.seg .chip');
 for (const [i, c] of data.suno.comptes.entries()) {
   assert.equal(c.top.length, attendu[c.pseudo]);
   if (c.pseudo === '@passcool17') assert.deepEqual(c.top.map((t) => t.titre), vraiTop);
