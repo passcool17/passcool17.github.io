@@ -190,6 +190,8 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 .artist .nom{color:var(--text);font-size:.95rem}
 .frame.soon{aspect-ratio:4/3}
 
+/* 1.1 : les cartes hors écran ne sont pas mises en page avant d’en approcher */
+.grid>.card:nth-child(n+5){content-visibility:auto;contain-intrinsic-size:auto 500px}
 /* 1.1 : héros */
 .hello{margin:0 0 12px;color:var(--orange);font-weight:600;font-size:1rem}
 .install{display:inline-flex;align-items:center;gap:8px;min-height:48px;margin-top:16px;padding:0 18px;border-radius:999px;border:1px solid var(--orange);background:transparent;color:var(--text);font:600 .95rem/1 var(--body);cursor:pointer}
