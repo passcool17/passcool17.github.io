@@ -6,14 +6,14 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.0.0** (16 nov. 2026). HTML, CSS et JavaScript simples, aucune étape de build. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.0.1** (16 nov. 2026 : top 10 Suno pour @passcool17). HTML, CSS et JavaScript simples, aucune étape de build. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
 1. **Jeux et apps (GitHub)** : une carte par dépôt publié, avec une vraie capture, une courte description, des étiquettes (2D, 3D, App, Éducatif), la mention « Prototype » au besoin et un gros bouton « Jouer » (jeux) ou « Ouvrir » (apps). Filtres et recherche (gardés dans l’adresse : `?filtre=3D&q=baass`).
 2. **ESP32** : les montages en ligne (« En ligne ») et à venir (« Bientôt », sans lien ni capture), plus la liste « Mon matériel ».
 3. **Apps Grok** : les 66 apps de l’ancien site, noms et liens copiés tels quels le 16 nov. 2026, avec une recherche.
-4. **Musique Suno** : deux comptes (@passcool17 et @coolcamille7), chacun avec ses chiffres datés, ses 8 chansons les plus écoutées et un lien vers le profil.
+4. **Musique Suno** : deux comptes (@passcool17 et @coolcamille7), chacun avec ses chiffres datés, ses chansons les plus écoutées (10 pour @passcool17, 8 pour @coolcamille7) et un lien vers le profil.
 
 ## Fichiers
 
@@ -64,7 +64,7 @@ Apps Grok : `grok.apps` (`nom`, `hote`, `description`, `url`). Suno : `suno.comp
 
 - Dépôts : `gh api /users/passcool17/repos` + `/repos/passcool17/<dépôt>/pages`, chaque adresse vérifiée (200). Plus `pascalcoulombe-tech/pat-escape` (autre compte de Pascal, publié).
 - Apps Grok : page de l’ancien site rendue avec Playwright (66 liens).
-- Suno @passcool17 : 26 k écoutes, 715 chansons et top 8 repris de l’ancien site (715 confirmé par l’API publique de Suno).
+- Suno @passcool17 : 26 k écoutes et 715 chansons repris de l’ancien site (715 confirmé par l’API publique de Suno). Top 10 (demande de Pascal) : les 8 de l’ancien site + « Still Yours » et « Placebo Mon Ami », triés par écoutes ; toutes les écoutes lues sur l’API publique de Suno le 16 nov. 2026 (les 8 anciennes sont identiques à l’ancien site).
 - Suno @coolcamille7 : API publique du profil (73 chansons, 4 768 écoutes au total, affiché 4,8 k), top 8 trié par écoutes.
 
 ## Service worker : ne casse pas les autres sites
@@ -73,12 +73,12 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 
 ## Tests
 
-`node tests/e2e.mjs [URL]` à 412×915 : nombre de cartes, prototypes, filtres, recherche, état vide, section ESP32, 66 apps Grok aux liens exacts, deux comptes Suno, chaque bouton répond 200, SW installé, rechargement hors ligne, console propre ; en ligne, `/test-qi/`, `/la-tribu/`, `/wifi-radar/` et `/dossier-baass/` chargent encore avec le SW du portail installé. Captures dans `/workspace/apps/portail-shots/`.
+`node tests/e2e.mjs [URL]` à 412×915 : nombre de cartes, 10 chansons pour @passcool17 et 8 pour @coolcamille7 (liens 200),, prototypes, filtres, recherche, état vide, section ESP32, 66 apps Grok aux liens exacts, deux comptes Suno, chaque bouton répond 200, SW installé, rechargement hors ligne, console propre ; en ligne, `/test-qi/`, `/la-tribu/`, `/wifi-radar/` et `/dossier-baass/` chargent encore avec le SW du portail installé. Captures dans `/workspace/apps/portail-shots/`.
 
 ## Limites connues
 
 - Les chiffres Suno et la liste Grok sont une photo du 16 nov. 2026 ; ils ne se mettent pas à jour seuls.
-- Le top 8 de @passcool17 suit l’ancien site ; l’API Suno montre aujourd’hui aussi « Still Yours » (1 694) et « Placebo Mon Ami » (628), absents de l’ancien top.
+- Le top 10 de @passcool17 est la liste choisie par Pascal, pas le vrai classement complet : sur Suno, « Quantum Fracture » (401), « Through the Veil of Planes » (282) et « Harvard’s Secret Terminal V2 » (266) dépassent les trois dernières.
 - Les captures montrent l’écran d’accueil de chaque jeu, pas la partie en cours.
 
 ## Prochaines étapes

@@ -48,13 +48,19 @@ assert.equal(await p.$$eval('#liste-grok li', (l) => l.length), 66); ok('66 apps
 assert.deepEqual(await p.$$eval('#liste-grok a', (a) => a.map((x) => x.getAttribute('href'))), data.grok.apps.map((a) => a.url)); ok('liens Grok identiques à apps.json');
 await shot(p, '#grok', '4-grok.png');
 
+const attendu = { '@passcool17': 10, '@coolcamille7': 8 };
 for (const [i, c] of data.suno.comptes.entries()) {
+  assert.equal(c.top.length, attendu[c.pseudo]);
   await p.click(`.seg .chip >> nth=${i}`);
   assert.equal(await p.$$eval('#top li', (l) => l.length), c.top.length);
   assert.deepEqual(await p.$$eval('#top a', (a) => a.map((x) => x.getAttribute('href'))), c.top.map((t) => t.url));
   assert.equal(await p.getAttribute('#profil-suno', 'href'), c.profil);
   ok(`Suno ${c.pseudo} : ${c.top.length} chansons, liens exacts`);
   await shot(p, '#musique', `5-musique-${i + 1}.png`);
+  if (c.pseudo === '@passcool17') { await p.evaluate(() => window.scrollTo({ top: document.querySelector('#musique').offsetTop - 64, behavior: 'instant' })); await p.waitForTimeout(800); await p.locator('#musique').screenshot({ path: `${SHOTS}/6-musique-top10.png` }); }
+  const sunoBad = [];
+  await Promise.all([...c.top.map((t) => t.url), c.profil].map(async (h) => { const r = await ctx.request.get(h, { timeout: 30000 }).catch(() => null); if (!r || r.status() !== 200) sunoBad.push(h); }));
+  assert.deepEqual(sunoBad, []); ok(`Suno ${c.pseudo} : ${c.top.length + 1} liens répondent 200`);
 }
 
 const hrefs = await p.$$eval('#grille a.btn, #grille-esp32 a.btn', (a) => [...new Set(a.map((x) => x.href))]);
