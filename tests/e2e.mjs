@@ -52,8 +52,20 @@ await p.evaluate(() => dispatchEvent(new Event('appinstalled'))); assert.equal(a
 await p.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 1200, behavior: 'instant' })); await p.waitForTimeout(400);
 assert.ok(await p.$eval('#outils', (o) => o.classList.contains('compact'))); assert.equal(await p.isVisible('#chips'), false); assert.equal(await p.textContent('#actif'), 'Tout');
 const hBarre = await p.$eval('#outils', (o) => o.getBoundingClientRect().height); assert.ok(hBarre < 80, hBarre); ok(`barre compacte au défilement (${Math.round(hBarre)}px)`);
+// 1.1.1 — cibles tactiles de la barre compacte ≥ 44×44, même avec une étiquette courte (« 3D »)
+await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await p.waitForTimeout(300);
+await p.click('.chip[data-filtre="3D"]');
+await p.evaluate(() => scrollTo({ top: document.querySelector('#grille').getBoundingClientRect().top + scrollY + 600, behavior: 'instant' })); await p.waitForTimeout(400);
+assert.ok(await p.$eval('#outils', (o) => o.classList.contains('compact'))); assert.equal(await p.textContent('#actif'), '3D');
+const pil = await p.$eval('#actif', (b) => { const r = b.getBoundingClientRect(); return [r.width, r.height]; });
+assert.ok(pil[0] >= 44 && pil[1] >= 44, `#actif ${pil}`);
+const cibles = await p.$$eval('#outils a, #outils button, #outils input', (els) => els.filter((e) => e.offsetParent && getComputedStyle(e).visibility !== 'hidden').map((e) => { const r = e.getBoundingClientRect(); return [e.id || e.className, Math.round(r.width * 10) / 10, Math.round(r.height * 10) / 10]; }));
+assert.ok(cibles.length >= 2 && cibles.every(([, w, h]) => w >= 44 && h >= 44), JSON.stringify(cibles));
+const hBarre3D = await p.$eval('#outils', (o) => o.getBoundingClientRect().height); assert.ok(hBarre3D < 80, hBarre3D);
+ok(`barre compacte « 3D » : pastille ${pil.map((x) => x.toFixed(1)).join('×')}, ${cibles.length} cibles ≥ 44, barre ${Math.round(hBarre3D)}px`);
 await p.click('#actif'); await p.waitForTimeout(900);
 assert.ok(!(await p.$eval('#outils', (o) => o.classList.contains('compact')))); assert.equal(await p.isVisible('#chips'), true); ok('bouton du filtre actif rouvre les filtres');
+await p.click('.chip[data-filtre="tout"]');
 await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
 
 await p.click('.chip[data-filtre="3D"]');

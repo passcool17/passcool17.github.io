@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.1.0** (16 nov. 2026 : améliorations 1 à 7 de l’audit, voir plus bas). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.1.1** (16 nov. 2026 : pastille du filtre actif à 44×44 minimum ; 1.1.0 = améliorations 1 à 7 de l’audit, voir plus bas). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,10 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.1.1
+
+- Barre compacte : la pastille du filtre actif (`#actif`) fait au moins 44×44 px, même pour « 3D » (bogue QA). L’e2e vérifie que chaque cible visible de la barre compacte fait ≥ 44×44.
 
 ## Limites connues
 
