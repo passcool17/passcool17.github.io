@@ -192,6 +192,11 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 
 /* 1.1 : les cartes hors écran ne sont pas mises en page avant d’en approcher */
 .grid>.card:nth-child(n+5){content-visibility:auto;contain-intrinsic-size:auto 500px}
+/* 1.3 : section Prototypes + menu à 5 liens */
+.protos .head .sub{max-width:40ch}
+.vide-protos{margin:12px 0 0;color:var(--muted)}
+.count a{color:var(--orange-hi)}
+@media (max-width:560px){.brand{font-size:0;gap:0;min-width:44px;justify-content:center}.brand .mark{font-size:1.05rem}.top nav a{padding:0 7px}}
 /* 1.2 : lecteur du top 5 Suno */
 .player{margin:20px 0 0;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
 .pl-row{display:flex;align-items:center;gap:14px;min-width:0}
@@ -254,7 +259,7 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 <header class="top">
   <a class="brand" href="#haut"><span class="mark" aria-hidden="true">P</span>PassCool<span class="sr"> – retour en haut</span></a>
   <nav aria-label="Sections">
-    <a href="#jeux">Jeux</a><a href="#esp32">ESP32</a><a href="#grok">Grok</a><a href="#musique">Musique</a>
+    <a href="#jeux">Jeux</a><a href="#prototypes">Prototypes</a><a href="#esp32">ESP32</a><a href="#grok">Grok</a><a href="#musique">Musique</a>
   </nav>
 </header>
 
@@ -321,6 +326,16 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
       <p>Rien ne correspond à ta recherche.</p>
       <button type="button" class="btn ghost" id="reset">Tout afficher</button>
     </div>
+  </section>
+
+  <section id="prototypes" class="block protos" aria-labelledby="t-protos">
+    <div class="head">
+      <h2 id="t-protos">Prototypes</h2>
+      <p class="sub">Des jeux pas encore finis : des essais jouables, avec des bouts qui manquent.</p>
+    </div>
+    <p class="count" id="count-protos" role="status" aria-live="polite"></p>
+    <div class="grid" id="grille-protos"></div>
+    <p class="vide-protos" id="vide-protos" hidden>Aucun prototype ne correspond à ta recherche.</p>
   </section>
 
   <section id="esp32" class="block" aria-labelledby="t-esp32">

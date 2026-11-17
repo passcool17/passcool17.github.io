@@ -10,7 +10,9 @@ if (!base) ({ server, base } = await startServer());
 base = base.replace(/\/$/, '');
 const live = base.startsWith('https://');
 const data = JSON.parse(fs.readFileSync(`${root}/apps.json`, 'utf8'));
-const jeuxApps = data.projets.filter((p) => p.categorie !== 'esp32');
+const jeuxApps = data.projets.filter((p) => p.categorie === 'jeux-apps');
+const protosData = data.projets.filter((p) => p.categorie === 'prototypes');
+const PROTOS = ['desamorce', 'babel-rpg', 'desamorcage-diagnostic', 'foreuse-boreale', 'abime-apocalypse', 'cite-stellaire', 'vita', 'pendragon-aventure', 'pat-escape'];
 const esp = data.projets.filter((p) => p.categorie === 'esp32');
 const ok = (m) => console.log('OK  ' + m);
 const shot = async (p, sel, name) => { await p.evaluate((s) => document.querySelector(s).scrollIntoView(), sel); await p.waitForTimeout(900); await p.screenshot({ path: `${SHOTS}/${name}` }); };
@@ -27,10 +29,28 @@ await p.waitForSelector('#grille .card');
 const vis = () => p.$$eval('#grille .card', (c) => c.filter((x) => getComputedStyle(x).display !== 'none').length);
 assert.equal(await vis(), jeuxApps.length); ok(`${jeuxApps.length} cartes jeux et apps`);
 assert.equal(await p.$$eval('#grille .tag.proto', (t) => t.length), jeuxApps.filter((x) => x.prototype).length); ok('prototypes marqués');
+
 await p.screenshot({ path: `${SHOTS}/1-accueil.png` });
 
 // 1.1.0 — rendu différé : Grok et Suno vides au chargement
 assert.equal(await p.$$eval('#liste-grok li, #top li', (l) => l.length), 0); ok('Grok et Suno pas encore dessinés au chargement');
+
+// 1.3.0 — section Prototypes juste après Jeux, exactement les 9 jeux choisis par Pascal
+assert.deepEqual(protosData.map((x) => x.id).sort(), [...PROTOS].sort()); assert.ok(protosData.every((x) => x.prototype === true));
+assert.equal(await p.$eval('#jeux', (s) => s.nextElementSibling.id), 'prototypes'); ok('section Prototypes juste après Jeux');
+assert.match(await p.textContent('#prototypes .sub'), /pas encore finis/);
+assert.deepEqual((await p.$$eval('#grille-protos .card', (c) => c.map((x) => x.dataset.id))).sort(), [...PROTOS].sort()); ok('9 cartes dans Prototypes');
+const idsPrincipaux = await p.$$eval('#grille .card', (c) => c.map((x) => x.dataset.id));
+assert.ok(PROTOS.every((id) => !idsPrincipaux.includes(id))); ok('aucun des 9 dans la grille Jeux et apps');
+assert.equal(await p.textContent('#count-protos'), '9 prototypes');
+assert.deepEqual(await p.$$eval('.top nav a', (a) => a.map((x) => x.textContent)), ['Jeux', 'Prototypes', 'ESP32', 'Grok', 'Musique']);
+const navR = await p.$$eval('.top nav a, .brand', (a) => a.map((x) => { const r = x.getBoundingClientRect(); return [r.left, r.right, r.width, r.height]; }));
+assert.ok(navR.every(([l, r, w, h]) => l >= 0 && r <= 412 && w >= 44 && h >= 44), JSON.stringify(navR)); ok('menu : 5 liens visibles à 412, cibles ≥ 44');
+await p.click('.top nav a[href="#prototypes"]'); await p.waitForTimeout(900);
+const tp = await p.$eval('#t-protos', (h) => h.getBoundingClientRect().top); assert.ok(tp >= 0 && tp < 300, tp); ok('lien Prototypes du menu mène à la section');
+await p.fill('#q', 'merlin'); assert.equal(await vis(), 0); assert.equal(await p.$$eval('#grille-protos .card', (c) => c.filter((x) => getComputedStyle(x).display !== 'none').length), 1);
+assert.equal(await p.isVisible('#vide'), false); assert.match(await p.textContent('#count'), /1 dans Prototypes/); ok('la recherche trouve aussi les prototypes');
+await p.fill('#q', ''); await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
 // 1.1.0 — héros
 assert.equal(await p.$$eval('.eyebrow, .kicker', (e) => e.length), 0); ok('plus d’étiquette au-dessus du titre ni de sections numérotées');
 const urlsProjets = new Set(data.projets.map((x) => x.url));
@@ -168,8 +188,8 @@ await ctx.setOffline(true);
 await p.reload({ waitUntil: 'load' }); await p.waitForSelector('#grille .card');
 assert.equal(await vis(), jeuxApps.length);
 assert.ok(await p.$eval('#grille .card img', (i) => i.complete)); ok('rechargement hors ligne (cartes et captures)');
-await p.evaluate(() => document.querySelector('#grok').scrollIntoView()); await p.waitForTimeout(500);
-assert.equal(await p.$$eval('#liste-grok li, #liste-grok-dups li', (l) => l.length), 66); ok('Grok se dessine hors ligne');
+await p.evaluate(() => document.querySelector('#grok').scrollIntoView({ behavior: 'instant' }));
+await p.waitForFunction(() => document.querySelectorAll('#liste-grok li, #liste-grok-dups li').length === 66, null, { timeout: 8000 }); ok('Grok se dessine hors ligne');
 await ctx.setOffline(false);
 
 // 1.1.0 — paysage : barre de recherche pas collante

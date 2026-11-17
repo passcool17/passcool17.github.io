@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.2.1';
+export const VERSION = '1.3.0';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },
@@ -56,14 +56,18 @@ function carte(p) {
     el('div', { class: 'body' }, tags, el('h3', { text: p.nom }), el('p', { text: p.description }), btn, ...extras));
 }
 
+// projets = cartes « jeux-apps » (grille principale) + « prototypes » (section Prototypes).
+// La recherche et les filtres s’appliquent aux deux grilles.
 function initProjets(projets) {
   const grille = $('#grille'), chips = $('#chips'), q = $('#q'), count = $('#count'), vide = $('#vide');
   const params = new URLSearchParams(location.search);
   let filtre = FILTRES.some((f) => f.id === params.get('filtre')) ? params.get('filtre') : 'tout';
   q.value = params.get('q') || '';
   const cartes = new Map(projets.map((p) => [p.id, carte(p)]));
-  grille.replaceChildren(...cartes.values());
-  $('#nb-projets').textContent = projets.length;
+  const estProto = (p) => p.categorie === 'prototypes';
+  const principaux = projets.filter((p) => !estProto(p)), protos = projets.filter(estProto);
+  grille.replaceChildren(...principaux.map((p) => cartes.get(p.id)));
+  $('#grille-protos').replaceChildren(...protos.map((p) => cartes.get(p.id)));
 
   const boutons = FILTRES.map((f) => {
     const n = projets.filter((p) => correspond(p, f.id, '')).length;
@@ -74,13 +78,18 @@ function initProjets(projets) {
   chips.replaceChildren(...boutons);
 
   function maj() {
-    let n = 0;
-    for (const p of projets) { const ok = correspond(p, filtre, q.value.trim()); cartes.get(p.id).hidden = !ok; if (ok) n++; }
+    const vus = (liste) => liste.reduce((n, p) => { const ok = correspond(p, filtre, q.value.trim()); cartes.get(p.id).hidden = !ok; return n + ok; }, 0);
+    const n = vus(principaux), np = vus(protos);
     for (const b of boutons) b.setAttribute('aria-pressed', String(b.dataset.filtre === filtre));
     $('#actif').textContent = FILTRES.find((f) => f.id === filtre).label;
-    const protos = projets.filter((p) => p.prototype && !cartes.get(p.id).hidden).length;
-    count.textContent = n ? `${n} ${n > 1 ? 'résultats' : 'résultat'}${protos ? ` · dont ${protos} prototype${protos > 1 ? 's' : ''}` : ''}` : '';
-    vide.hidden = n > 0;
+    const marques = principaux.filter((p) => p.prototype && !cartes.get(p.id).hidden).length;
+    const filtreActif = filtre !== 'tout' || q.value.trim();
+    count.replaceChildren();
+    if (n) count.append(`${n} ${n > 1 ? 'résultats' : 'résultat'}${marques ? ` · dont ${marques} prototype${marques > 1 ? 's' : ''}` : ''}`);
+    if (np && filtreActif) count.append(n ? ' · ' : '', el('a', { href: '#prototypes', text: `${np} dans Prototypes` }));
+    vide.hidden = n + np > 0;
+    $('#count-protos').textContent = filtreActif ? `${np} sur ${protos.length} prototypes` : `${protos.length} prototypes`;
+    $('#vide-protos').hidden = np > 0;
     const u = new URL(location.href);
     filtre === 'tout' ? u.searchParams.delete('filtre') : u.searchParams.set('filtre', filtre);
     q.value.trim() ? u.searchParams.set('q', q.value.trim()) : u.searchParams.delete('q');

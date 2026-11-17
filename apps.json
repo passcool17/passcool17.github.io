@@ -203,12 +203,12 @@
    "tags": [
     "2D"
    ],
-   "prototype": false,
+   "prototype": true,
    "description": "Bombe fictive à quatre faces, cinq minutes : les indices sont cachés sur les autres faces.",
    "capture": "shots/desamorce.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "logic-lab-camille",
@@ -446,12 +446,12 @@
    "tags": [
     "2D"
    ],
-   "prototype": false,
+   "prototype": true,
    "description": "RPG tactique sombre à la Darkest Dungeon : quatre héros, trois donjons, combats au tour par tour.",
    "capture": "shots/abime-apocalypse.webp",
    "format": "paysage",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "babel-rpg",
@@ -462,12 +462,12 @@
    "tags": [
     "3D"
    ],
-   "prototype": false,
+   "prototype": true,
    "description": "RPG 2.5D façon Final Fantasy classique, en français québécois : le village de départ.",
    "capture": "shots/babel-rpg.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "cite-stellaire",
@@ -478,12 +478,12 @@
    "tags": [
     "2D"
    ],
-   "prototype": false,
+   "prototype": true,
    "description": "RPG façon Final Fantasy à Eridu, mythologie mésopotamienne, combat ATB. Se joue en paysage.",
    "capture": "shots/cite-stellaire.webp",
    "format": "paysage",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "pendragon-aventure",
@@ -499,7 +499,7 @@
    "capture": "shots/pendragon-aventure.webp",
    "format": "paysage",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "desamorcage-diagnostic",
@@ -515,7 +515,7 @@
    "capture": "shots/desamorcage-diagnostic.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "foreuse-boreale",
@@ -531,7 +531,7 @@
    "capture": "shots/foreuse-boreale.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "scythe-automa",
@@ -559,12 +559,12 @@
     "app",
     "éducatif"
    ],
-   "prototype": false,
+   "prototype": true,
    "description": "Jeu de la vie de Conway, mode tournesol (angle d’or) et triangle de Pascal. Au doigt.",
    "capture": "shots/vita.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "pat-escape",
@@ -580,7 +580,7 @@
    "capture": "shots/pat-escape.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
+   "categorie": "prototypes"
   },
   {
    "id": "ruview",

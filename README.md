@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.2.1** (16 nov. 2026 : lecteur, retour propre à « Lire » quand une chanson ne peut pas se lancer). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.0** (17 nov. 2026 : section Prototypes). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,13 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.0
+
+- Nouvelle section **Prototypes** juste après « Jeux et apps », lien « Prototypes » dans le menu. Elle regroupe les 9 jeux que Pascal a choisis (17 nov. 2026) : `desamorce`, `babel-rpg`, `desamorcage-diagnostic`, `foreuse-boreale`, `abime-apocalypse`, `cite-stellaire`, `vita`, `pendragon-aventure`, `pat-escape`.
+- Données : ces 9 entrées ont `"categorie": "prototypes"` et `"prototype": true`. Pour en ajouter une : même format qu’une carte, avec `"categorie": "prototypes"`. `"prototype": true` seul (sans cette catégorie) garde la carte dans la grille principale avec l’étiquette Prototype (cas de `coffret-futuriste`).
+- La recherche et les filtres s’appliquent aux deux grilles ; la ligne de compte indique « N dans Prototypes » (lien) quand des prototypes correspondent.
+- Sur téléphone (≤ 560 px), le logo garde seulement la pastille « P » pour que les 5 liens du menu tiennent sur une ligne (nom accessible inchangé).
 
 ## Changements 1.2.1
 
