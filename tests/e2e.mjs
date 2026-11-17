@@ -60,7 +60,7 @@ for (const [i, c] of data.suno.comptes.entries()) {
   assert.equal(await p.getAttribute('#profil-suno', 'href'), c.profil);
   ok(`Suno ${c.pseudo} : ${c.top.length} chansons, liens exacts`);
   await shot(p, '#musique', `5-musique-${i + 1}.png`);
-  if (c.pseudo === '@passcool17') { await p.evaluate(() => window.scrollTo({ top: document.querySelector('#musique').offsetTop - 64, behavior: 'instant' })); await p.waitForTimeout(800); await p.locator('#musique').screenshot({ path: `${SHOTS}/7-musique-vrai-top10.png` }); }
+  if (c.pseudo === '@passcool17') { await p.evaluate(() => window.scrollTo({ top: document.querySelector('#musique').offsetTop - 64, behavior: 'instant' })); await p.waitForTimeout(800); { await p.evaluate(() => { for (const i of document.querySelectorAll('#musique img')) i.loading = 'eager'; window.scrollTo(0, 0); }); await p.addStyleTag({ content: '.top{position:static}' }); await p.waitForTimeout(1200); const r = await p.evaluate(() => { const e = document.querySelector('#musique').getBoundingClientRect(); return { x: 0, y: e.top + scrollY, width: 412, height: e.height }; }); await p.screenshot({ path: `${SHOTS}/7-musique-vrai-top10.png`, fullPage: true, clip: r }); } }
   const sunoBad = [];
   await Promise.all([...c.top.map((t) => t.url), c.profil].map(async (h) => { const r = await ctx.request.get(h, { timeout: 30000 }).catch(() => null); if (!r || r.status() !== 200) sunoBad.push(h); }));
   assert.deepEqual(sunoBad, []); ok(`Suno ${c.pseudo} : ${c.top.length + 1} liens répondent 200`);
