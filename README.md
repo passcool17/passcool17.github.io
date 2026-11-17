@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.3.0** (17 nov. 2026 : section Prototypes). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.1** (17 nov. 2026 : les liens du menu arrivent pile sous le bandeau). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,15 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.1
+
+- **Liens du menu et ancres** : le titre de la section finit juste sous le bandeau collant (44 px sous lui), même après la fin du défilement, à 412×915, 915×412 et 1280×800. Avant, « Prototypes » finissait 458 px trop haut.
+  - Cause : les cartes hors écran étaient en `content-visibility:auto` avec une hauteur estimée de 500 px. Elles mesuraient en vrai environ 400 px de moins, donc la page raccourcissait pendant le trajet. En plus, la barre de recherche collante passait de 207 à 59 px en route, et `scroll-padding-top` (64 px) était plus petit que le bandeau (65 px).
+  - Correctif : `content-visibility` retiré (cartes et liste Grok). La hauteur réelle du bandeau est suivie par un `ResizeObserver` (variable CSS `--haut`). Un clic sur une ancre dessine d’abord les sections paresseuses au-dessus de la cible, met la barre de recherche dans son état d’arrivée, défile, puis corrige une fois le défilement fini (`scrollend`). Saut direct si « réduire les animations » est activé. Le titre reçoit le focus.
+  - Même chose pour une adresse chargée avec une ancre (`/#prototypes`) et pour `hashchange`.
+- **Lien « N dans Prototypes »** : cible de 44 px de haut (avant 19 px), sans changer la hauteur de la ligne de compte.
+- **Tests** : `tests/ancres.mjs`, appelé par `tests/e2e.mjs`, attend l’arrêt réel du défilement. Il vérifie les 5 liens du menu, le lien du compte et 5 adresses avec ancre, aux 3 tailles d’écran.
 
 ## Changements 1.3.0
 

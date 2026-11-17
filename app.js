@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.3.0';
+export const VERSION = '1.3.1';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },
@@ -114,6 +114,17 @@ function initProjets(projets) {
       if (colle && scrollY === y) scrollBy({ top: ecart, behavior: 'instant' });
       ecart = 0;
     }
+  };
+  // Pour la navigation par ancre : geler la barre pendant le trajet, et la mettre d’avance
+  // dans l’état qu’elle aura à l’arrivée (sinon la page change de hauteur en route).
+  pilote = {
+    geler(v) { retour = v; if (!v) compacter(); },
+    fixer(c) {
+      const est = outils.classList.contains('compact');
+      if (c && !est) { const h = outils.offsetHeight; outils.classList.add('compact'); ecart = h - outils.offsetHeight; }
+      else if (!c && est) { outils.classList.remove('compact'); ecart = 0; }
+    },
+    colle: () => getComputedStyle(outils).position === 'sticky',
   };
   addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(compacter); } }, { passive: true });
   addEventListener('resize', compacter);
@@ -314,11 +325,81 @@ function initLecteur(lecteur) {
   afficher(false);
 }
 
+let pilote = null;
+const paresseuses = [];
+
+// Hauteur réelle du bandeau collant, pour scroll-padding-top (CSS --haut) et pour viser les titres
+const entete = () => $('.top').getBoundingClientRect().height;
+function suivreEntete() {
+  const maj = () => document.documentElement.style.setProperty('--haut', `${Math.ceil(entete())}px`);
+  maj();
+  if ('ResizeObserver' in window) new ResizeObserver(maj).observe($('.top'));
+}
+
+// Attend la fin du défilement : scrollend, ou position stable 150 ms, au plus 3 s
+const finDefilement = () => new Promise((ok) => {
+  let y = scrollY, stable = performance.now(), fini = false;
+  const fin = () => { if (!fini) { fini = true; removeEventListener('scrollend', fin); ok(); } };
+  addEventListener('scrollend', fin, { once: true });
+  const debut = performance.now();
+  const tic = () => {
+    if (fini) return;
+    const t = performance.now();
+    if (scrollY !== y) { y = scrollY; stable = t; }
+    if (t - stable > 150 || t - debut > 3000) return fin();
+    requestAnimationFrame(tic);
+  };
+  requestAnimationFrame(tic);
+});
+
+// Navigation vers une section : on dessine d’abord ce qui changerait la hauteur au-dessus,
+// on fixe la barre de recherche dans son état d’arrivée, on défile, puis on corrige une fois arrivé.
+let navEnCours = 0;
+async function allerA(id, doux) {
+  const cible = document.getElementById(id);
+  if (!cible) return;
+  const jeton = ++navEnCours;
+  for (const z of paresseuses) if (z.el === cible || (z.el.compareDocumentPosition(cible) & Node.DOCUMENT_POSITION_FOLLOWING)) z.go();
+  const jeux = $('#jeux');
+  if (pilote) {
+    pilote.geler(true);
+    const apres = cible !== jeux && !!(jeux.compareDocumentPosition(cible) & Node.DOCUMENT_POSITION_FOLLOWING) && !jeux.contains(cible);
+    pilote.fixer(pilote.colle() && apres);
+  }
+  const viser = () => cible.getBoundingClientRect().top + scrollY - entete();
+  scrollTo({ top: viser(), behavior: doux ? 'smooth' : 'instant' });
+  await finDefilement();
+  for (let k = 0; k < 3 && jeton === navEnCours; k++) {
+    const d = cible.getBoundingClientRect().top - entete();
+    if (Math.abs(d) <= 2) break;
+    scrollTo({ top: scrollY + d, behavior: 'instant' });
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  }
+  if (jeton !== navEnCours) return;
+  if (pilote) pilote.geler(false);
+  const titre = cible.matches('h1, h2') ? cible : cible.querySelector('h1, h2');
+  if (titre) { if (!titre.hasAttribute('tabindex')) titre.setAttribute('tabindex', '-1'); titre.focus({ preventScroll: true }); }
+}
+
+function initNavigation() {
+  suivreEntete();
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const id = decodeURIComponent(a.getAttribute('href').slice(1));
+    if (!id || !document.getElementById(id)) return;
+    e.preventDefault();
+    if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+    allerA(id, !matchMedia('(prefers-reduced-motion: reduce)').matches);
+  });
+}
+
 // Dessine une section seulement quand on s'en approche (moins de travail au chargement)
 function quandProche(sel, f) {
   const cible = $(sel);
   let fait = false;
   const go = () => { if (!fait) { fait = true; f(); } };
+  paresseuses.push({ el: cible, go });
   if (location.hash === sel || !('IntersectionObserver' in window)) return go();
   const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); go(); } }, { rootMargin: '800px 0px' });
   io.observe(cible);
@@ -343,6 +424,7 @@ function initInstallation() {
 async function demarrer() {
   $('#version').textContent = `Version ${VERSION}.`;
   initInstallation();
+  initNavigation();
   try {
     const r = await fetch('/apps.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error(r.status);
@@ -355,6 +437,9 @@ async function demarrer() {
     $('#nb-chansons').textContent = data.suno.comptes.reduce((n, c) => n + c.chansons, 0);
     quandProche('#grok', () => initGrok(data.grok));
     quandProche('#musique', () => initSuno(data.suno));
+    // Adresse avec ancre (/#prototypes) : on vise le titre une fois les cartes en place
+    if (location.hash.length > 1) requestAnimationFrame(() => allerA(decodeURIComponent(location.hash.slice(1)), false));
+    addEventListener('hashchange', () => allerA(decodeURIComponent(location.hash.slice(1)), false));
   } catch (e) {
     $('#grille').replaceChildren(el('p', { class: 'loading', text: 'Impossible de charger la liste. Vérifie ta connexion puis recharge la page.' }));
   }

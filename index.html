@@ -25,7 +25,7 @@
   color-scheme:dark
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:var(--haut,65px);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--text);font:400 1rem/1.5 var(--body);
   padding-bottom:env(safe-area-inset-bottom)}
 img{display:block;max-width:100%}
@@ -115,7 +115,7 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 
 /* Grok */
 .grok{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line)}
-.grok li{border-bottom:1px solid var(--line);content-visibility:auto;contain-intrinsic-size:auto 84px}
+.grok li{border-bottom:1px solid var(--line)}
 .grok a{display:grid;grid-template-columns:2.2rem 1fr 20px;gap:4px 10px;align-items:start;padding:14px 2px;text-decoration:none;min-height:56px}
 .grok a:hover .gn{color:var(--orange-hi)}
 .grok .i{font:600 .85rem/1.6 var(--body);color:var(--muted);font-variant-numeric:tabular-nums}
@@ -190,12 +190,10 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 .artist .nom{color:var(--text);font-size:.95rem}
 .frame.soon{aspect-ratio:4/3}
 
-/* 1.1 : les cartes hors écran ne sont pas mises en page avant d’en approcher */
-.grid>.card:nth-child(n+5){content-visibility:auto;contain-intrinsic-size:auto 500px}
 /* 1.3 : section Prototypes + menu à 5 liens */
 .protos .head .sub{max-width:40ch}
 .vide-protos{margin:12px 0 0;color:var(--muted)}
-.count a{color:var(--orange-hi)}
+.count a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:0 4px;margin:-12px 0;color:var(--orange-hi);font-weight:600}
 @media (max-width:560px){.brand{font-size:0;gap:0;min-width:44px;justify-content:center}.brand .mark{font-size:1.05rem}.top nav a{padding:0 7px}}
 /* 1.2 : lecteur du top 5 Suno */
 .player{margin:20px 0 0;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}

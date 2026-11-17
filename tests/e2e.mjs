@@ -3,6 +3,7 @@ import { chromium } from 'playwright-core';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { startServer, root } from './server.mjs';
+import { attendreArret, titreSousEntete, verifierAncres } from './ancres.mjs';
 const SHOTS = '/workspace/apps/portail-shots';
 fs.mkdirSync(SHOTS, { recursive: true });
 let base = process.argv[2], server;
@@ -46,8 +47,8 @@ assert.equal(await p.textContent('#count-protos'), '9 prototypes');
 assert.deepEqual(await p.$$eval('.top nav a', (a) => a.map((x) => x.textContent)), ['Jeux', 'Prototypes', 'ESP32', 'Grok', 'Musique']);
 const navR = await p.$$eval('.top nav a, .brand', (a) => a.map((x) => { const r = x.getBoundingClientRect(); return [r.left, r.right, r.width, r.height]; }));
 assert.ok(navR.every(([l, r, w, h]) => l >= 0 && r <= 412 && w >= 44 && h >= 44), JSON.stringify(navR)); ok('menu : 5 liens visibles à 412, cibles ≥ 44');
-await p.click('.top nav a[href="#prototypes"]'); await p.waitForTimeout(900);
-const tp = await p.$eval('#t-protos', (h) => h.getBoundingClientRect().top); assert.ok(tp >= 0 && tp < 300, tp); ok('lien Prototypes du menu mène à la section');
+await p.click('.top nav a[href="#prototypes"]'); await attendreArret(p);
+const tp = await titreSousEntete(p, 'prototypes'); assert.ok(tp.ecart >= 0 && tp.ecart <= 80, JSON.stringify(tp)); ok(`lien Prototypes du menu : titre à ${tp.ecart}px sous le bandeau, défilement terminé`);
 await p.fill('#q', 'merlin'); assert.equal(await vis(), 0); assert.equal(await p.$$eval('#grille-protos .card', (c) => c.filter((x) => getComputedStyle(x).display !== 'none').length), 1);
 assert.equal(await p.isVisible('#vide'), false); assert.match(await p.textContent('#count'), /1 dans Prototypes/); ok('la recherche trouve aussi les prototypes');
 await p.fill('#q', ''); await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
@@ -214,6 +215,7 @@ if (live) {
   }
   const r404 = await ctx.request.get(base + '/nexistepas-' + Date.now() + '/'); assert.ok([404, 503].includes(r404.status())); assert.ok(!(await r404.text()).includes('Salut, c’est PassCool')); ok(`adresse inconnue : page d’erreur de GitHub (${r404.status()}), pas le portail`);
 }
+await verifierAncres(b, base, ok);
 const vraies = errs.filter((e) => !/ERR_INTERNET_DISCONNECTED|net::ERR_FAILED/.test(e));
 assert.deepEqual(vraies, []); ok('console propre');
 await b.close(); server?.close();
