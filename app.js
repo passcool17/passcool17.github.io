@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.1.1';
+export const VERSION = '1.2.0';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },
@@ -194,6 +194,100 @@ function initEsp32(projets, esp) {
     el('div', { class: 'gear-cols' }, bloc('Sur la carte', esp.materiel.carte), bloc('Dans le kit', esp.materiel.kit)));
 }
 
+// Lecteur du top 5 Suno. Aucun octet audio avant le premier toucher : l’élément <audio>
+// est créé au premier « Lire », sans préchargement. Pas de lecture automatique.
+export const minutes = (s) => { s = Math.max(0, Math.floor(s || 0)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+
+function initLecteur(lecteur) {
+  const pistes = lecteur.pistes, n = pistes.length;
+  const boite = $('#lecteur'), play = $('#pl-play'), seek = $('#pl-seek'), err = $('#pl-err');
+  let i = 0, audio = null, attente = 0, glisse = false;
+  const p = () => pistes[i];
+  const duree = () => (audio && Number.isFinite(audio.duration) && audio.duration) || p().duree;
+  const temps = () => (audio && audio.src === p().audio ? audio.currentTime : attente);
+  const majTemps = () => {
+    const t = temps(), d = duree();
+    if (!glisse) seek.value = String(Math.floor(t));
+    seek.max = String(Math.ceil(d));
+    seek.style.setProperty('--p', `${d ? (Math.min(t, d) / d) * 100 : 0}%`);
+    $('#pl-t').textContent = minutes(t); $('#pl-d').textContent = minutes(d);
+    seek.setAttribute('aria-valuetext', `${minutes(t)} sur ${minutes(d)}`);
+  };
+  const joue = () => !!audio && !audio.paused;
+  const majBouton = () => {
+    boite.classList.toggle('joue', joue());
+    play.setAttribute('aria-label', p().audio ? `${joue() ? 'Pause' : 'Lire'} « ${p().titre} »` : `« ${p().titre} » : pas d’audio public ici`);
+    play.setAttribute('aria-disabled', String(!p().audio));
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = joue() ? 'playing' : 'paused';
+  };
+  const majSession = () => {
+    if (!('mediaSession' in navigator)) return;
+    navigator.mediaSession.metadata = new MediaMetadata({ title: p().titre, artist: 'PassCool', album: 'Top 5 Suno',
+      artwork: [{ src: new URL('/' + p().pochette, location.href).href, sizes: '160x160', type: 'image/webp' }] });
+  };
+  const afficher = (annoncer) => {
+    $('#pl-titre').textContent = p().titre;
+    $('#pl-n').textContent = `${i + 1} sur ${n}`;
+    $('#pl-cover').src = '/' + p().pochette;
+    err.hidden = !!p().audio;
+    seek.disabled = !p().audio;
+    if (!p().audio) err.replaceChildren(document.createTextNode('Suno ne rend pas cette chanson publique en dehors de son site. '), el('a', { href: p().url, rel: 'noopener', text: 'L’écouter sur Suno' }));
+    if (annoncer) $('#pl-live').textContent = `Chanson ${i + 1} sur ${n} : ${p().titre}`;
+    majTemps(); majBouton();
+  };
+  const charger = () => {
+    if (!audio) {
+      audio = new Audio();
+      audio.preload = 'none';
+      audio.addEventListener('timeupdate', majTemps);
+      audio.addEventListener('loadedmetadata', majTemps);
+      audio.addEventListener('play', majBouton);
+      audio.addEventListener('pause', majBouton);
+      audio.addEventListener('waiting', () => boite.classList.add('charge'));
+      audio.addEventListener('playing', () => boite.classList.remove('charge'));
+      audio.addEventListener('ended', () => { if (i < n - 1 && pistes[i + 1].audio) aller(i + 1, true); else aller(i < n - 1 ? i + 1 : 0, false); });
+      audio.addEventListener('error', () => {
+        boite.classList.remove('charge'); majBouton();
+        err.replaceChildren(document.createTextNode('Cette chanson ne se lance pas ici. '), el('a', { href: p().url, rel: 'noopener', text: 'L’écouter sur Suno' }));
+        err.hidden = false;
+      });
+      if ('mediaSession' in navigator) {
+        const ms = navigator.mediaSession;
+        ms.setActionHandler('play', () => lire());
+        ms.setActionHandler('pause', () => audio.pause());
+        ms.setActionHandler('previoustrack', () => precedente());
+        ms.setActionHandler('nexttrack', () => aller((i + 1) % n, joue()));
+        try { ms.setActionHandler('seekto', (e) => { audio.currentTime = e.seekTime; majTemps(); }); } catch {}
+      }
+    }
+    if (audio.src !== p().audio) {
+      audio.src = p().audio;
+      if (attente) { const t = attente; audio.addEventListener('loadedmetadata', () => { audio.currentTime = t; }, { once: true }); }
+      attente = 0;
+      majSession();
+    }
+  };
+  const lire = () => { if (!p().audio) { err.hidden = false; return; } charger(); boite.classList.add('charge'); audio.play().catch(() => { boite.classList.remove('charge'); majBouton(); }); };
+  const aller = (j, continuer) => {
+    i = (j + n) % n; attente = 0;
+    if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); }
+    boite.classList.remove('charge');
+    afficher(true);
+    if (continuer) lire();
+  };
+  const precedente = () => { if (temps() > 3) { if (audio && audio.src) { audio.currentTime = 0; } else attente = 0; majTemps(); } else aller(i - 1, joue()); };
+  play.addEventListener('click', () => (joue() ? audio.pause() : lire()));
+  $('#pl-prev').addEventListener('click', precedente);
+  $('#pl-next').addEventListener('click', () => aller(i + 1, joue()));
+  seek.addEventListener('input', () => { glisse = true; const t = Number(seek.value); $('#pl-t').textContent = minutes(t); seek.style.setProperty('--p', `${(t / duree()) * 100}%`); });
+  seek.addEventListener('change', () => {
+    glisse = false; const t = Number(seek.value);
+    if (audio && audio.src === p().audio) audio.currentTime = t; else attente = t;
+    majTemps();
+  });
+  afficher(false);
+}
+
 // Dessine une section seulement quand on s'en approche (moins de travail au chargement)
 function quandProche(sel, f) {
   const cible = $(sel);
@@ -228,6 +322,7 @@ async function demarrer() {
     if (!r.ok) throw new Error(r.status);
     const data = await r.json();
     initProjets(data.projets.filter((p) => p.categorie !== 'esp32'));
+    if (data.suno.lecteur) initLecteur(data.suno.lecteur);
     initEsp32(data.projets, data.esp32);
     $('#nb-projets').textContent = data.projets.filter((p) => p.url).length;
     $('#nb-grok').textContent = data.grok.apps.length;

@@ -1169,7 +1169,49 @@
      }
     ]
    }
-  ]
+  ],
+  "lecteur": {
+   "compte": "@passcool17",
+   "date": "2026-11-16",
+   "source": "Fichiers publics de Suno (cdn1.suno.ai/<id>.mp4, ceux que joue le partage Suno ; CORS *). audio_url est « forbidden » et les m4a de media_urls sont brouillés. Placebo Mon Ami n’a pas de fichier public (HTTP 403 le 16 nov. 2026) : lien vers Suno.",
+   "pistes": [
+    {
+     "titre": "The Real Code Was Never a Bloodline",
+     "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
+     "pochette": "img/suno-139daaf6.webp",
+     "audio": "https://cdn1.suno.ai/139daaf6-10a0-4a86-8062-1422aea9e7c8.mp4",
+     "duree": 373.36
+    },
+    {
+     "titre": "Still Yours",
+     "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
+     "pochette": "img/suno-641d0a77.webp",
+     "audio": "https://cdn1.suno.ai/641d0a77-d3f9-4fa0-a64e-cf995cc5e548.mp4",
+     "duree": 193.32
+    },
+    {
+     "titre": "Nested Heaven",
+     "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
+     "pochette": "img/suno-90736340.webp",
+     "audio": "https://cdn1.suno.ai/90736340-2a4b-47cc-9201-9c15dae6102a.mp4",
+     "duree": 322.6
+    },
+    {
+     "titre": "Black Triangle (Men in Black Style 4)",
+     "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
+     "pochette": "img/suno-dd6e697e.webp",
+     "audio": "https://cdn1.suno.ai/dd6e697e-94a9-4b47-b4e8-870827e831fc.mp4",
+     "duree": 214.56
+    },
+    {
+     "titre": "Placebo Mon Ami",
+     "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
+     "pochette": "img/suno-23047490.webp",
+     "audio": null,
+     "duree": 237.72
+    }
+   ]
+  }
  },
  "esp32": {
   "materiel": {

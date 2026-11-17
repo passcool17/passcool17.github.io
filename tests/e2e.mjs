@@ -19,6 +19,7 @@ const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome' });
 const ctx = await b.newContext({ viewport: { width: 412, height: 915 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 ctx.setDefaultTimeout(20000);
 const p = await ctx.newPage();
+const media = []; p.on('request', (r) => { if (/suno\.ai\/.*\.(mp4|mp3)|cloudfront\.net\/.*\.m4a/.test(r.url())) media.push(r.url()); });
 const errs = []; p.on('console', (m) => m.type() === 'error' && errs.push(m.text())); p.on('pageerror', (e) => errs.push(e.message));
 
 await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -35,6 +36,34 @@ assert.equal(await p.$$eval('.eyebrow, .kicker', (e) => e.length), 0); ok('plus 
 const urlsProjets = new Set(data.projets.map((x) => x.url));
 const heros = await p.$$eval('.shelf a', (a) => a.map((x) => [x.getAttribute('href'), x.getAttribute('aria-label'), x.getBoundingClientRect().height]));
 assert.equal(heros.length, 3); for (const [h, l, ht] of heros) { assert.ok(urlsProjets.has(h), h); assert.ok(l && ht >= 44); } ok('3 captures du héros = liens vers leur jeu');
+// 1.2.0 — lecteur du top 5 Suno en haut
+const L = data.suno.lecteur;
+assert.equal(L.pistes.length, 5);
+assert.deepEqual(L.pistes.map((x) => x.titre), ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami']);
+const lect = await p.$eval('#lecteur', (e) => { const r = e.getBoundingClientRect(); return [r.top, r.bottom]; });
+assert.ok(lect[1] <= 915, 'lecteur visible sans défiler'); ok(`lecteur visible en haut (bas à ${Math.round(lect[1])}px)`);
+assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre);
+await p.waitForTimeout(1500);
+assert.equal(media.length, 0, 'aucun audio avant le toucher'); assert.equal(await p.$$eval('audio', (a) => a.length), 0);
+assert.ok(!(await p.$eval('#lecteur', (e) => e.classList.contains('joue')))); ok('pas de lecture automatique, 0 octet audio avant le toucher');
+const cibl = await p.$$eval('#pl-prev, #pl-play, #pl-next, #pl-seek', (els) => els.map((e) => { const r = e.getBoundingClientRect(); return [e.id, r.width, r.height]; }));
+assert.ok(cibl.every(([id, w, h]) => h >= 44 && w >= 44), JSON.stringify(cibl)); ok('cibles du lecteur ≥ 44×44');
+for (const id of ['#pl-prev', '#pl-play', '#pl-next', '#pl-seek']) assert.ok((await p.getAttribute(id, 'aria-label'))?.length > 3, id);
+await p.click('#pl-play');
+await p.waitForFunction(() => document.querySelector('#pl-t').textContent !== '0:00', null, { timeout: 20000 });
+assert.ok(await p.$eval('#lecteur', (e) => e.classList.contains('joue'))); assert.ok(media.length > 0 && media[0] === L.pistes[0].audio);
+assert.match(await p.getAttribute('#pl-play', 'aria-label'), /^Pause/); ok(`lecture : le temps avance (${await p.textContent('#pl-t')}), source ${media[0]}`);
+await p.click('#pl-next');
+assert.equal(await p.textContent('#pl-titre'), L.pistes[1].titre); assert.equal(await p.textContent('#pl-live'), `Chanson 2 sur 5 : ${L.pistes[1].titre}`);
+await p.click('#pl-prev'); assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre); ok('suivante / précédente changent le titre (annoncé en aria-live)');
+await p.click('#pl-play'); await p.waitForTimeout(300); assert.ok(!(await p.$eval('#lecteur', (e) => e.classList.contains('joue')))); ok('pause');
+for (let k = 0; k < 4; k++) await p.click('#pl-next');
+assert.equal(await p.textContent('#pl-titre'), 'Placebo Mon Ami');
+if (!L.pistes[4].audio) { assert.equal(await p.getAttribute('#pl-play', 'aria-disabled'), 'true'); assert.equal(await p.isVisible('#pl-err a'), true); assert.equal(await p.getAttribute('#pl-err a', 'href'), L.pistes[4].url); ok('Placebo Mon Ami : pas d’audio public, lien vers Suno'); }
+await p.click('#pl-next'); assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre); ok('boucle 5 → 1');
+for (const x of L.pistes.filter((t) => t.audio)) { const r = await ctx.request.get(x.audio, { headers: { Range: 'bytes=0-15' } }); assert.ok([200, 206].includes(r.status()), x.audio); }
+ok(`${L.pistes.filter((t) => t.audio).length} fichiers audio répondent`);
+
 // 1.1.0 — a11y
 assert.equal(await p.getAttribute('.brand', 'aria-label'), null);
 assert.equal(await p.getByRole('link', { name: /^PassCool\b.*retour en haut$/ }).count(), 1); ok('nom du logo commence par le texte visible');

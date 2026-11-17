@@ -192,6 +192,37 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 
 /* 1.1 : les cartes hors écran ne sont pas mises en page avant d’en approcher */
 .grid>.card:nth-child(n+5){content-visibility:auto;contain-intrinsic-size:auto 500px}
+/* 1.2 : lecteur du top 5 Suno */
+.player{margin:20px 0 0;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.pl-row{display:flex;align-items:center;gap:14px;min-width:0}
+.pl-cover{width:64px;height:64px;flex:none;border-radius:10px;object-fit:cover;background:var(--panel-2)}
+.pl-info{min-width:0;flex:1}
+.pl-kick{margin:0 0 4px;color:var(--orange);font-size:.85rem;font-weight:600}
+.pl-title{margin:0;font:400 1.15rem/1.2 var(--display);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.4em}
+.pl-bas{display:flex;align-items:center;gap:12px;margin-top:12px}
+.pl-ctrl{display:flex;align-items:center;gap:4px;flex:none}
+.pl-btn{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:transparent;color:var(--text);cursor:pointer}
+.pl-btn:hover{background:var(--panel-2)}
+.pl-btn svg{width:22px;height:22px;fill:currentColor;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.pl-play{width:52px;height:52px;background:var(--orange);color:var(--on-orange)}
+.pl-play:hover{background:var(--orange-hi)}
+.pl-play[aria-disabled="true"]{background:var(--panel-2);color:var(--muted)}
+#pl-seek:disabled{opacity:.4;cursor:default}
+.pl-play svg{width:24px;height:24px}
+.pl-play .i-pause,.player.joue .pl-play .i-play{display:none}
+.player.joue .pl-play .i-pause{display:block}
+.player.charge .pl-play{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.6}}
+.pl-prog{flex:1;min-width:0;display:flex;align-items:center;gap:8px}
+.pl-time{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:3.4ch;text-align:center}
+#pl-seek{--p:0%;flex:1;min-width:0;height:44px;margin:0;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+#pl-seek::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(to right,var(--orange) var(--p),var(--line) var(--p))}
+#pl-seek::-moz-range-track{height:4px;border-radius:4px;background:linear-gradient(to right,var(--orange) var(--p),var(--line) var(--p))}
+#pl-seek::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:var(--text);border:0}
+#pl-seek::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--text);border:0}
+.pl-err{margin:10px 0 0;color:var(--muted);font-size:.9rem}
+.pl-err a{color:var(--orange-hi)}
+@media (prefers-reduced-motion:reduce){.player.charge .pl-play{animation:none}}
 /* 1.1 : héros */
 .hello{margin:0 0 12px;color:var(--orange);font-weight:600;font-size:1rem}
 .install{display:inline-flex;align-items:center;gap:8px;min-height:48px;margin-top:16px;padding:0 18px;border-radius:999px;border:1px solid var(--orange);background:transparent;color:var(--text);font:600 .95rem/1 var(--body);cursor:pointer}
@@ -232,6 +263,30 @@ h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
     <p class="hello" data-enter>Salut, c’est PassCool.</p>
     <h1 id="titre" data-enter>Mes jeux, mes apps<span class="dot">,</span> ma musique<span class="dot">.</span></h1>
     <p class="lede" data-enter>Je fais des jeux, des apps, des montages ESP32 et de la musique. Tout ce que j’ai publié est ici.</p>
+    <section class="player" id="lecteur" aria-labelledby="t-lecteur" data-enter>
+      <h2 id="t-lecteur" class="sr">Écouter mon top 5 Suno</h2>
+      <div class="pl-row">
+        <img class="pl-cover" id="pl-cover" src="/img/suno-139daaf6.webp" width="64" height="64" alt="" decoding="async">
+        <div class="pl-info">
+          <p class="pl-kick">Mon top 5 Suno · <span id="pl-n">1 sur 5</span></p>
+          <p class="pl-title" id="pl-titre">The Real Code Was Never a Bloodline</p>
+        </div>
+      </div>
+      <div class="pl-bas">
+        <div class="pl-ctrl">
+          <button type="button" class="pl-btn" id="pl-prev" aria-label="Chanson précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M19 5 9 12l10 7z"/></svg></button>
+          <button type="button" class="pl-btn pl-play" id="pl-play" aria-label="Lire « The Real Code Was Never a Bloodline »"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+          <button type="button" class="pl-btn" id="pl-next" aria-label="Chanson suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M5 5l10 7-10 7z"/></svg></button>
+        </div>
+        <div class="pl-prog">
+          <span class="pl-time" id="pl-t">0:00</span>
+          <input type="range" id="pl-seek" min="0" max="373" step="1" value="0" aria-label="Position dans la chanson" aria-valuetext="0:00 sur 6:13">
+          <span class="pl-time" id="pl-d">6:13</span>
+        </div>
+      </div>
+      <p class="pl-err" id="pl-err" hidden></p>
+      <p class="sr" id="pl-live" aria-live="polite"></p>
+    </section>
     <ul class="stats" data-enter aria-label="En chiffres">
       <li><a href="#jeux"><strong id="nb-projets">35</strong><span>projets publiés</span></a></li>
       <li><a href="#grok"><strong id="nb-grok">66</strong><span>apps Grok</span></a></li>
