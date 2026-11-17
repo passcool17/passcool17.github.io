@@ -114,19 +114,34 @@ function initGrok(grok) {
   maj();
 }
 
-function initSuno(s) {
-  const d = new Date(s.date + 'T12:00:00').toLocaleDateString('fr-CA', { day: 'numeric', month: 'short', year: 'numeric' });
-  const eq = el('span', { class: 'eq', 'aria-hidden': 'true' }, el('i'), el('i'), el('i'), el('i'));
-  $('#artiste').replaceChildren(
-    el('img', { src: s.avatar, alt: '', width: 72, height: 72, loading: 'lazy' }),
-    el('div', {}, el('div', { class: 'who' }, document.createTextNode(s.pseudo), eq),
-      el('div', { class: 'meta', text: `${s.ecoutes} écoutes · ${s.chansons} chansons` }),
-      el('span', { class: 'date', text: `au ${d}` })));
-  $('#top').replaceChildren(...s.top.map((t) => el('li', {}, el('a', { href: t.url, rel: 'noopener', 'aria-label': `${t.titre}, ${t.ecoutes} écoutes, écouter sur Suno` },
-    el('span', { class: 'r', text: String(t.rang) }),
-    el('img', { src: t.pochette, alt: '', width: 56, height: 56, loading: 'lazy' }),
-    el('span', { class: 't' }, document.createTextNode(t.titre), el('span', { class: 'p', text: `${t.ecoutes} écoutes` }))))));
-  $('#profil-suno').href = s.profil;
+function initSuno(suno) {
+  const comptes = suno.comptes;
+  const seg = $('#comptes');
+  const date = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('fr-CA', { day: 'numeric', month: 'short', year: 'numeric' });
+  $('#nb-chansons').textContent = comptes.reduce((n, c) => n + c.chansons, 0);
+  const montrer = (i) => {
+    const s = comptes[i];
+    for (const [j, b] of [...seg.children].entries()) b.setAttribute('aria-pressed', String(j === i));
+    const eq = el('span', { class: 'eq', 'aria-hidden': 'true' }, el('i'), el('i'), el('i'), el('i'));
+    const meta = [s.ecoutes && `${s.ecoutes} écoutes`, s.chansons && `${s.chansons} chansons`].filter(Boolean).join(' · ');
+    $('#artiste').replaceChildren(
+      el('img', { src: s.avatar, alt: '', width: 72, height: 72, loading: 'lazy' }),
+      el('div', {}, el('div', { class: 'who' }, document.createTextNode(s.pseudo), eq),
+        el('div', { class: 'nom', text: s.nom }),
+        el('div', { class: 'meta', text: meta }),
+        el('span', { class: 'date', text: `au ${date(s.date)}` })));
+    $('#top').replaceChildren(...s.top.map((t) => el('li', {}, el('a', { href: t.url, rel: 'noopener', 'aria-label': `${t.titre}, ${t.ecoutes} écoutes, écouter sur Suno` },
+      el('span', { class: 'r', text: String(t.rang) }),
+      el('img', { src: t.pochette, alt: '', width: 56, height: 56, loading: 'lazy' }),
+      el('span', { class: 't' }, document.createTextNode(t.titre), el('span', { class: 'p', text: `${t.ecoutes} écoutes` }))))));
+    const lien = $('#profil-suno'); lien.href = s.profil; lien.textContent = `Écouter ${s.pseudo} sur Suno`;
+  };
+  seg.replaceChildren(...comptes.map((c, i) => {
+    const b = el('button', { type: 'button', class: 'chip', 'data-compte': c.pseudo, 'aria-pressed': 'false' }, document.createTextNode(c.pseudo));
+    b.addEventListener('click', () => montrer(i));
+    return b;
+  }));
+  montrer(0);
 }
 
 function initEsp32(projets, esp) {

@@ -1,10 +1,11 @@
-@font-face{font-family:"Fraunces";src:url("/fonts/fraunces-latin.woff2") format("woff2");font-weight:500 700;font-display:swap}
-@font-face{font-family:"Fraunces fallback";src:local("Georgia");size-adjust:104%;ascent-override:92%}
+[hidden]{display:none!important}
+@font-face{font-family:"Young Serif";src:url("/fonts/young-serif-latin.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Young Serif fallback";src:local("Georgia");size-adjust:104%;ascent-override:92%}
 :root{
   --ink:#0f0d0b;--panel:#191512;--panel-2:#221d18;--line:#342c25;
   --text:#f4ede3;--muted:#b9ad9d;--orange:#ff8c2b;--orange-hi:#ffa552;--on-orange:#1c0e02;
   --proto:#e8c36a;--focus:#ffd29e;
-  --display:"Fraunces","Fraunces fallback",Georgia,serif;
+  --display:"Young Serif","Young Serif fallback",Georgia,serif;
   --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --pad:clamp(16px,4.5vw,32px);--r:14px;--max:1120px;
   color-scheme:dark
@@ -25,8 +26,8 @@ a{color:inherit}
   padding:calc(8px + env(safe-area-inset-top)) var(--pad) 8px;background:rgb(15 13 11 / .92);
   border-bottom:1px solid var(--line)}
 @supports (backdrop-filter:blur(8px)){.top{background:rgb(15 13 11 / .78);backdrop-filter:blur(10px)}}
-.brand{display:flex;align-items:center;gap:10px;font:650 1.15rem/1 var(--display);text-decoration:none;min-height:48px}
-.mark{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--orange);color:var(--on-orange);font:700 1.05rem/1 var(--display)}
+.brand{display:flex;align-items:center;gap:10px;font:400 1.15rem/1 var(--display);text-decoration:none;min-height:48px}
+.mark{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--orange);color:var(--on-orange);font:400 1.05rem/1 var(--display)}
 .top nav{display:flex;gap:2px}
 .top nav a{display:grid;place-items:center;min-height:48px;padding:0 10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem;border-radius:10px}
 .top nav a:hover{color:var(--text)}
@@ -34,14 +35,14 @@ a{color:inherit}
 /* accueil */
 .hero{max-width:var(--max);margin:0 auto;padding:28px var(--pad) 8px}
 .eyebrow,.kicker{margin:0 0 10px;color:var(--orange);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
-h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance;font-variation-settings:"SOFT" 50,"WONK" 1}
+h1{font:400 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 .dot{color:var(--orange)}
 .lede{margin:14px 0 0;color:var(--muted);font-size:1.1rem;max-width:34ch;text-wrap:pretty}
 .stats{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .stats li+li{border-left:1px solid var(--line)}
 .stats a{display:flex;flex-direction:column;gap:2px;padding:12px 10px;text-decoration:none;min-height:64px}
 .stats a:hover{background:var(--panel)}
-.stats strong{font:650 1.6rem/1 var(--display);font-variant-numeric:tabular-nums}
+.stats strong{font:400 1.6rem/1 var(--display);font-variant-numeric:tabular-nums}
 .stats span{color:var(--muted);font-size:.82rem;line-height:1.2}
 .shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 0;align-items:end}
 .shelf img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--panel)}
@@ -49,7 +50,7 @@ h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 
 /* sections */
 .block{max-width:var(--max);margin:0 auto;padding:44px var(--pad) 12px}
-.head h2{font:650 clamp(1.9rem,8vw,3rem)/1.05 var(--display);margin:0;letter-spacing:-.015em}
+.head h2{font:400 clamp(1.9rem,8vw,3rem)/1.05 var(--display);margin:0;letter-spacing:-.015em}
 .sub{margin:8px 0 0;color:var(--muted)}
 .tools{position:sticky;top:64px;z-index:5;margin:16px calc(var(--pad) * -1) 0;padding:10px var(--pad) 8px;background:var(--ink);border-bottom:1px solid transparent}
 .search{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:0 16px;min-height:50px}
@@ -79,7 +80,7 @@ h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
 .tag{font-size:.74rem;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:var(--panel-2);color:var(--muted);text-transform:uppercase}
 .tag.proto{background:transparent;color:var(--proto);border:1px dashed var(--proto)}
-.card h3{font:650 1.12rem/1.15 var(--display);margin:0;text-wrap:balance}
+.card h3{font:400 1.12rem/1.15 var(--display);margin:0;text-wrap:balance}
 .card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin-top:auto;padding:0 18px;border-radius:12px;border:0;
   background:var(--orange);color:var(--on-orange);font:700 1.05rem/1 var(--body);text-decoration:none;cursor:pointer;
@@ -112,7 +113,7 @@ h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 /* musique */
 .artist{display:flex;align-items:center;gap:14px;margin-top:18px}
 .artist img{width:72px;height:72px;border-radius:50%;border:2px solid var(--orange)}
-.artist .who{font:650 1.3rem/1.1 var(--display)}
+.artist .who{font:400 1.3rem/1.1 var(--display)}
 .artist .meta{color:var(--muted);font-size:.92rem}
 .artist .date{display:block;font-size:.8rem;color:#9d917f}
 .eq{display:inline-flex;gap:3px;align-items:end;height:16px;margin-left:8px;vertical-align:-2px}
@@ -122,7 +123,7 @@ h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 .tracks{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
 .tracks a{display:grid;grid-template-columns:1.6rem 56px 1fr;align-items:center;gap:12px;padding:8px;border-radius:12px;text-decoration:none;background:var(--panel);border:1px solid var(--line);transition:transform .2s ease,border-color .2s ease}
 .tracks a:hover{transform:translateY(-2px);border-color:#4a3f35}
-.tracks .r{font:650 1.1rem/1 var(--display);color:var(--orange);text-align:center}
+.tracks .r{font:400 1.1rem/1 var(--display);color:var(--orange);text-align:center}
 .tracks img{width:56px;height:56px;border-radius:8px}
 .tracks .t{font-weight:700;line-height:1.25}
 .tracks .p{display:block;color:var(--muted);font-size:.85rem;font-weight:400;font-variant-numeric:tabular-nums}
@@ -157,17 +158,20 @@ h1{font:650 clamp(2.4rem,11vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em;
 /* ESP32 */
 .tag.live{background:#173322;color:#8fe0a6}
 .tag.soon{background:#2e2615;color:var(--proto)}
-.frame.soon{display:grid;place-items:center;background:
-  repeating-linear-gradient(0deg,transparent 0 23px,#ffffff08 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,#ffffff08 23px 24px),var(--panel-2);
+.frame.soon{display:grid;place-items:center;background:var(--panel-2);
   border-bottom:1px dashed var(--line)}
 .chipset{font:600 .85rem/1.3 ui-monospace,monospace;color:var(--muted);text-align:center;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--ink);max-width:80%}
 .pas-encore{margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:12px;border:1px dashed var(--line);color:var(--muted);font-weight:600}
 .card .btn.alt{margin-top:0;min-height:48px;font-size:.92rem;text-align:center;line-height:1.2}
 .gear{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:var(--r)}
-.gear-t{font:650 1.25rem/1.1 var(--display);margin:0 0 10px}
+.gear-t{font:400 1.25rem/1.1 var(--display);margin:0 0 10px}
 .gear-cols{display:grid;gap:14px}
 .gear h3:not(.gear-t){margin:0 0 6px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
 .gear ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
 .gear li{padding:6px 10px;border-radius:8px;background:var(--panel);border:1px solid var(--line);font-size:.9rem}
 .top nav a{padding:0 8px;font-size:.9rem}
 @media (max-width:370px){.brand{font-size:0;gap:0}.brand .mark{font-size:1.05rem}}
+/* comptes Suno */
+.seg{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.artist .nom{color:var(--text);font-size:.95rem}
+.frame.soon{aspect-ratio:4/3}

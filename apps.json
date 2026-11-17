@@ -1018,70 +1018,142 @@
   ]
  },
  "suno": {
-  "pseudo": "@passcool17",
-  "nom": "PassCool",
-  "profil": "https://suno.com/@passcool17?page=songs",
-  "ecoutes": "26 k",
-  "chansons": 715,
-  "date": "2026-11-16",
-  "source": "https://bold-birch-kind-tulip.grok.me/",
-  "avatar": "img/suno-avatar.webp",
-  "top": [
+  "comptes": [
    {
-    "rang": 1,
-    "titre": "The Real Code Was Never a Bloodline",
-    "ecoutes": "6,2 k",
-    "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
-    "pochette": "img/suno-1.webp"
+    "pseudo": "@passcool17",
+    "nom": "PassCool",
+    "profil": "https://suno.com/@passcool17?page=songs",
+    "ecoutes": "26 k",
+    "chansons": 715,
+    "date": "2026-11-16",
+    "source": "Ancien site https://bold-birch-kind-tulip.grok.me/ (715 chansons confirmé sur l’API publique de Suno)",
+    "avatar": "img/suno-avatar.webp",
+    "top": [
+     {
+      "rang": 1,
+      "titre": "The Real Code Was Never a Bloodline",
+      "ecoutes": "6,2 k",
+      "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
+      "pochette": "img/suno-1.webp"
+     },
+     {
+      "rang": 2,
+      "titre": "Nested Heaven",
+      "ecoutes": "1,1 k",
+      "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
+      "pochette": "img/suno-2.webp"
+     },
+     {
+      "rang": 3,
+      "titre": "Black Triangle (Men in Black Style 4)",
+      "ecoutes": "688",
+      "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
+      "pochette": "img/suno-3.webp"
+     },
+     {
+      "rang": 4,
+      "titre": "Globalism Must Fall",
+      "ecoutes": "527",
+      "url": "https://suno.com/song/048abdb3-e920-483c-bcfe-b6ba45158e19",
+      "pochette": "img/suno-4.webp"
+     },
+     {
+      "rang": 5,
+      "titre": "Broken Collectors of the Outer Seal",
+      "ecoutes": "487",
+      "url": "https://suno.com/song/f163c867-bfe1-4230-abf8-66788d90bed5",
+      "pochette": "img/suno-5.webp"
+     },
+     {
+      "rang": 6,
+      "titre": "Aetherian Final Judgments",
+      "ecoutes": "262",
+      "url": "https://suno.com/song/dc707b1a-599e-4f02-b620-1eeeb409df4a",
+      "pochette": "img/suno-6.webp"
+     },
+     {
+      "rang": 7,
+      "titre": "Twelve Faces Open",
+      "ecoutes": "163",
+      "url": "https://suno.com/song/6c7cb2ed-7783-4388-9ab1-3589c2a9cc50",
+      "pochette": "img/suno-7.webp"
+     },
+     {
+      "rang": 8,
+      "titre": "Fifth Element",
+      "ecoutes": "118",
+      "url": "https://suno.com/song/5bca7a22-63b9-4d22-9e86-186ce79fc462",
+      "pochette": "img/suno-8.webp"
+     }
+    ]
    },
    {
-    "rang": 2,
-    "titre": "Nested Heaven",
-    "ecoutes": "1,1 k",
-    "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
-    "pochette": "img/suno-2.webp"
-   },
-   {
-    "rang": 3,
-    "titre": "Black Triangle (Men in Black Style 4)",
-    "ecoutes": "688",
-    "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
-    "pochette": "img/suno-3.webp"
-   },
-   {
-    "rang": 4,
-    "titre": "Globalism Must Fall",
-    "ecoutes": "527",
-    "url": "https://suno.com/song/048abdb3-e920-483c-bcfe-b6ba45158e19",
-    "pochette": "img/suno-4.webp"
-   },
-   {
-    "rang": 5,
-    "titre": "Broken Collectors of the Outer Seal",
-    "ecoutes": "487",
-    "url": "https://suno.com/song/f163c867-bfe1-4230-abf8-66788d90bed5",
-    "pochette": "img/suno-5.webp"
-   },
-   {
-    "rang": 6,
-    "titre": "Aetherian Final Judgments",
-    "ecoutes": "262",
-    "url": "https://suno.com/song/dc707b1a-599e-4f02-b620-1eeeb409df4a",
-    "pochette": "img/suno-6.webp"
-   },
-   {
-    "rang": 7,
-    "titre": "Twelve Faces Open",
-    "ecoutes": "163",
-    "url": "https://suno.com/song/6c7cb2ed-7783-4388-9ab1-3589c2a9cc50",
-    "pochette": "img/suno-7.webp"
-   },
-   {
-    "rang": 8,
-    "titre": "Fifth Element",
-    "ecoutes": "118",
-    "url": "https://suno.com/song/5bca7a22-63b9-4d22-9e86-186ce79fc462",
-    "pochette": "img/suno-8.webp"
+    "pseudo": "@coolcamille7",
+    "nom": "Č̣@m & P@§ĉãł",
+    "profil": "https://suno.com/@coolcamille7",
+    "ecoutes": "4,8 k",
+    "chansons": 73,
+    "date": "2026-11-16",
+    "source": "Profil public Suno https://suno.com/@coolcamille7 (somme des écoutes des 73 chansons : 4768)",
+    "avatar": "img/camille-avatar.webp",
+    "top": [
+     {
+      "rang": 1,
+      "titre": "Petite mais puissante (432 Hz Mix)",
+      "ecoutes": "1,3 k",
+      "url": "https://suno.com/song/7f2563f7-c0ff-4076-8a2d-592b29963e95",
+      "pochette": "img/camille-1.webp"
+     },
+     {
+      "rang": 2,
+      "titre": "Boldly We Go",
+      "ecoutes": "627",
+      "url": "https://suno.com/song/fb67311b-ca56-4863-8f4c-1f58b5a86b45",
+      "pochette": "img/camille-2.webp"
+     },
+     {
+      "rang": 3,
+      "titre": "Enemy at the Gate V2",
+      "ecoutes": "298",
+      "url": "https://suno.com/song/8b5fec3d-8c44-4539-ad95-1032aa9db061",
+      "pochette": "img/camille-3.webp"
+     },
+     {
+      "rang": 4,
+      "titre": "Clarity Can’t Wait",
+      "ecoutes": "153",
+      "url": "https://suno.com/song/5ac81745-308d-4d72-abfd-6be33db96e80",
+      "pochette": "img/camille-4.webp"
+     },
+     {
+      "rang": 5,
+      "titre": "Les Ref",
+      "ecoutes": "142",
+      "url": "https://suno.com/song/100b4f9f-bb6f-45f0-ba78-02b3f5d66bac",
+      "pochette": "img/camille-5.webp"
+     },
+     {
+      "rang": 6,
+      "titre": "Clarity Coming Down the Line",
+      "ecoutes": "131",
+      "url": "https://suno.com/song/94c26d7e-1ab0-47f9-aa8a-d8c1a35bd8ef",
+      "pochette": "img/camille-6.webp"
+     },
+     {
+      "rang": 7,
+      "titre": "Dragon Prince",
+      "ecoutes": "113",
+      "url": "https://suno.com/song/518c2dfb-fc36-48f6-9859-73ed85fe8558",
+      "pochette": "img/camille-7.webp"
+     },
+     {
+      "rang": 8,
+      "titre": "Rolling Through the Senate",
+      "ecoutes": "87",
+      "url": "https://suno.com/song/351816f7-38aa-4df8-9c7d-f69483c15382",
+      "pochette": "img/camille-8.webp"
+     }
+    ]
    }
   ]
  },

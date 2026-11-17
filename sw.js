@@ -3,13 +3,14 @@
 const VERSION = '1.0.0';
 const CACHE = `portail-${VERSION}`;
 const SHELL = ['/', '/index.html', '/styles.css', '/app.js', '/apps.json', '/manifest.webmanifest',
-  '/fonts/fraunces-latin.woff2', '/icons/icon-192.png', '/icons/icon-512.png'];
+  '/fonts/young-serif-latin.woff2', '/icons/icon-192.png', '/icons/icon-512.png'];
 let fichiers = new Set(SHELL);
 
 async function listeComplete() {
   const r = await fetch('/apps.json', { cache: 'reload' });
   const d = await r.clone().json();
-  const extra = [...d.projets.map((p) => '/' + p.capture), d.suno.avatar && '/' + d.suno.avatar, ...d.suno.top.map((t) => '/' + t.pochette)].filter(Boolean);
+  const extra = [...d.projets.filter((p) => p.capture).map((p) => '/' + p.capture),
+    ...d.suno.comptes.flatMap((c) => [c.avatar, ...c.top.map((t) => t.pochette)]).map((u) => '/' + u)];
   return [...SHELL, ...extra];
 }
 

@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
-<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script src="/app.js" type="module"></script>
 </head>
@@ -31,7 +31,7 @@
     <ul class="stats" data-enter aria-label="En chiffres">
       <li><a href="#jeux"><strong id="nb-projets">35</strong><span>projets publiés</span></a></li>
       <li><a href="#grok"><strong id="nb-grok">66</strong><span>apps Grok</span></a></li>
-      <li><a href="#musique"><strong>715</strong><span>chansons Suno</span></a></li>
+      <li><a href="#musique"><strong id="nb-chansons">788</strong><span>chansons Suno</span></a></li>
     </ul>
     <div class="shelf" aria-hidden="true">
       <img src="/shots/vallee-des-maths.webp" width="360" height="800" alt="" fetchpriority="high">
@@ -91,15 +91,19 @@
       <p class="kicker">04 · Suno</p>
       <h2 id="t-suno">Ma musique</h2>
     </div>
-    <div class="artist" id="artiste"></div>
-    <ol class="tracks" id="top"></ol>
-    <a class="btn wide" id="profil-suno" href="https://suno.com/@passcool17?page=songs" rel="noopener">Écouter sur Suno</a>
+    <p class="sub">Mes deux comptes Suno. Touche un nom pour changer.</p>
+    <div class="seg" role="group" aria-label="Choisir le compte Suno" id="comptes"></div>
+    <div id="compte">
+      <div class="artist" id="artiste"></div>
+      <ol class="tracks" id="top" aria-label="Chansons les plus écoutées"></ol>
+      <a class="btn wide" id="profil-suno" href="https://suno.com/@passcool17?page=songs" rel="noopener">Écouter sur Suno</a>
+    </div>
   </section>
 </main>
 
 <footer class="foot">
   <p>Fait par PassCool. Captures prises sur chaque site le 16 nov. 2026.</p>
-  <p>Police Fraunces (SIL OFL). <span id="version"></span></p>
+  <p>Police Young Serif (SIL OFL). <span id="version"></span></p>
 </footer>
 <noscript><p class="noscript">Active JavaScript pour voir les cartes.</p></noscript>
 </body>
