@@ -1026,7 +1026,7 @@
     "ecoutes": "26 k",
     "chansons": 715,
     "date": "2026-11-16",
-    "source": "26 k écoutes et 715 chansons : ancien site https://bold-birch-kind-tulip.grok.me/ (715 confirmé par l’API publique de Suno). Top 10 : les 8 de l’ancien site + « Still Yours » et « Placebo Mon Ami », écoutes lues sur l’API publique de Suno le 16 nov. 2026.",
+    "source": "26 k écoutes : ancien site https://bold-birch-kind-tulip.grok.me/. 715 chansons et top 10 : vrai classement par écoutes des 715 chansons, lu sur l’API publique de Suno le 16 nov. 2026.",
     "avatar": "img/suno-avatar.webp",
     "top": [
      {
@@ -1034,70 +1034,70 @@
       "titre": "The Real Code Was Never a Bloodline",
       "ecoutes": "6,2 k",
       "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
-      "pochette": "img/suno-1.webp"
+      "pochette": "img/suno-139daaf6.webp"
      },
      {
       "rang": 2,
       "titre": "Still Yours",
       "ecoutes": "1,7 k",
       "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
-      "pochette": "img/suno-still-yours.webp"
+      "pochette": "img/suno-641d0a77.webp"
      },
      {
       "rang": 3,
       "titre": "Nested Heaven",
       "ecoutes": "1,1 k",
       "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
-      "pochette": "img/suno-2.webp"
+      "pochette": "img/suno-90736340.webp"
      },
      {
       "rang": 4,
       "titre": "Black Triangle (Men in Black Style 4)",
       "ecoutes": "688",
       "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
-      "pochette": "img/suno-3.webp"
+      "pochette": "img/suno-dd6e697e.webp"
      },
      {
       "rang": 5,
       "titre": "Placebo Mon Ami",
       "ecoutes": "628",
       "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
-      "pochette": "img/suno-placebo-mon-ami.webp"
+      "pochette": "img/suno-23047490.webp"
      },
      {
       "rang": 6,
       "titre": "Globalism Must Fall",
       "ecoutes": "527",
       "url": "https://suno.com/song/048abdb3-e920-483c-bcfe-b6ba45158e19",
-      "pochette": "img/suno-4.webp"
+      "pochette": "img/suno-048abdb3.webp"
      },
      {
       "rang": 7,
       "titre": "Broken Collectors of the Outer Seal",
       "ecoutes": "487",
       "url": "https://suno.com/song/f163c867-bfe1-4230-abf8-66788d90bed5",
-      "pochette": "img/suno-5.webp"
+      "pochette": "img/suno-f163c867.webp"
      },
      {
       "rang": 8,
-      "titre": "Aetherian Final Judgments",
-      "ecoutes": "262",
-      "url": "https://suno.com/song/dc707b1a-599e-4f02-b620-1eeeb409df4a",
-      "pochette": "img/suno-6.webp"
+      "titre": "Quantum Fracture",
+      "ecoutes": "401",
+      "url": "https://suno.com/song/5097853e-9177-443c-b52c-b8e9b54eb6ba",
+      "pochette": "img/suno-5097853e.webp"
      },
      {
       "rang": 9,
-      "titre": "Twelve Faces Open",
-      "ecoutes": "163",
-      "url": "https://suno.com/song/6c7cb2ed-7783-4388-9ab1-3589c2a9cc50",
-      "pochette": "img/suno-7.webp"
+      "titre": "Through the Veil of Planes",
+      "ecoutes": "282",
+      "url": "https://suno.com/song/5668c515-8035-41b5-a2cc-b7b344061aa9",
+      "pochette": "img/suno-5668c515.webp"
      },
      {
       "rang": 10,
-      "titre": "Fifth Element",
-      "ecoutes": "118",
-      "url": "https://suno.com/song/5bca7a22-63b9-4d22-9e86-186ce79fc462",
-      "pochette": "img/suno-8.webp"
+      "titre": "Harvard’s Secret Terminal V2",
+      "ecoutes": "266",
+      "url": "https://suno.com/song/2a11415a-b24c-4937-815a-8aef917aee35",
+      "pochette": "img/suno-2a11415a.webp"
      }
     ]
    },

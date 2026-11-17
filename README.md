@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.0.1** (16 nov. 2026 : top 10 Suno pour @passcool17). HTML, CSS et JavaScript simples, aucune étape de build. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.0.2** (16 nov. 2026 : vrai top 10 Suno pour @passcool17). HTML, CSS et JavaScript simples, aucune étape de build. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -64,7 +64,7 @@ Apps Grok : `grok.apps` (`nom`, `hote`, `description`, `url`). Suno : `suno.comp
 
 - Dépôts : `gh api /users/passcool17/repos` + `/repos/passcool17/<dépôt>/pages`, chaque adresse vérifiée (200). Plus `pascalcoulombe-tech/pat-escape` (autre compte de Pascal, publié).
 - Apps Grok : page de l’ancien site rendue avec Playwright (66 liens).
-- Suno @passcool17 : 26 k écoutes et 715 chansons repris de l’ancien site (715 confirmé par l’API publique de Suno). Top 10 (demande de Pascal) : les 8 de l’ancien site + « Still Yours » et « Placebo Mon Ami », triés par écoutes ; toutes les écoutes lues sur l’API publique de Suno le 16 nov. 2026 (les 8 anciennes sont identiques à l’ancien site).
+- Suno @passcool17 : 26 k écoutes repris de l’ancien site. 715 chansons et top 10 : vrai classement par écoutes de toutes les chansons, lu sur l’API publique de Suno le 16 nov. 2026 (`/api/profiles/passcool17`, toutes les pages).
 - Suno @coolcamille7 : API publique du profil (73 chansons, 4 768 écoutes au total, affiché 4,8 k), top 8 trié par écoutes.
 
 ## Service worker : ne casse pas les autres sites
@@ -78,7 +78,6 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 ## Limites connues
 
 - Les chiffres Suno et la liste Grok sont une photo du 16 nov. 2026 ; ils ne se mettent pas à jour seuls.
-- Le top 10 de @passcool17 est la liste choisie par Pascal, pas le vrai classement complet : sur Suno, « Quantum Fracture » (401), « Through the Veil of Planes » (282) et « Harvard’s Secret Terminal V2 » (266) dépassent les trois dernières.
 - Les captures montrent l’écran d’accueil de chaque jeu, pas la partie en cours.
 
 ## Prochaines étapes

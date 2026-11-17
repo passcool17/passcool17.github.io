@@ -49,15 +49,18 @@ assert.deepEqual(await p.$$eval('#liste-grok a', (a) => a.map((x) => x.getAttrib
 await shot(p, '#grok', '4-grok.png');
 
 const attendu = { '@passcool17': 10, '@coolcamille7': 8 };
+const vraiTop = ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami', 'Globalism Must Fall', 'Broken Collectors of the Outer Seal', 'Quantum Fracture', 'Through the Veil of Planes', 'Harvard’s Secret Terminal V2'];
 for (const [i, c] of data.suno.comptes.entries()) {
   assert.equal(c.top.length, attendu[c.pseudo]);
+  if (c.pseudo === '@passcool17') assert.deepEqual(c.top.map((t) => t.titre), vraiTop);
   await p.click(`.seg .chip >> nth=${i}`);
-  assert.equal(await p.$$eval('#top li', (l) => l.length), c.top.length);
+  assert.equal(await p.$$eval('#top li', (l) => l.length), attendu[c.pseudo]);
+  if (c.pseudo === '@passcool17') assert.deepEqual(await p.$$eval('#top .t', (l) => l.map((x) => x.firstChild.textContent)), vraiTop);
   assert.deepEqual(await p.$$eval('#top a', (a) => a.map((x) => x.getAttribute('href'))), c.top.map((t) => t.url));
   assert.equal(await p.getAttribute('#profil-suno', 'href'), c.profil);
   ok(`Suno ${c.pseudo} : ${c.top.length} chansons, liens exacts`);
   await shot(p, '#musique', `5-musique-${i + 1}.png`);
-  if (c.pseudo === '@passcool17') { await p.evaluate(() => window.scrollTo({ top: document.querySelector('#musique').offsetTop - 64, behavior: 'instant' })); await p.waitForTimeout(800); await p.locator('#musique').screenshot({ path: `${SHOTS}/6-musique-top10.png` }); }
+  if (c.pseudo === '@passcool17') { await p.evaluate(() => window.scrollTo({ top: document.querySelector('#musique').offsetTop - 64, behavior: 'instant' })); await p.waitForTimeout(800); await p.locator('#musique').screenshot({ path: `${SHOTS}/7-musique-vrai-top10.png` }); }
   const sunoBad = [];
   await Promise.all([...c.top.map((t) => t.url), c.profil].map(async (h) => { const r = await ctx.request.get(h, { timeout: 30000 }).catch(() => null); if (!r || r.status() !== 200) sunoBad.push(h); }));
   assert.deepEqual(sunoBad, []); ok(`Suno ${c.pseudo} : ${c.top.length + 1} liens répondent 200`);
