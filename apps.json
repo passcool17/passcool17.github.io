@@ -1,7 +1,24 @@
 {
  "version": 1,
- "mis_a_jour": "2026-11-17",
+ "mis_a_jour": "2026-11-20",
  "projets": [
+  {
+   "id": "entite-mallette",
+   "nom": "La mallette de l’Entité",
+   "url": "https://passcool17.github.io/entite-mallette/",
+   "depot": "https://github.com/passcool17/entite-mallette",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": false,
+   "description": "Une mallette piégée par une IA qui ment : déduis les indices, coupe le bon fil.",
+   "capture": "shots/entite-mallette.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-20",
+   "categorie": "jeux-apps",
+   "version": "0.1.4"
+  },
   {
    "id": "defuse-mallette",
    "nom": "Défuse la mallette",

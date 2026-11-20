@@ -29,8 +29,11 @@ await p.goto(base + '/', { waitUntil: 'networkidle' });
 await p.waitForSelector('#grille .card');
 const vis = () => p.$$eval('#grille .card', (c) => c.filter((x) => getComputedStyle(x).display !== 'none').length);
 assert.equal(await vis(), jeuxApps.length); ok(`${jeuxApps.length} cartes jeux et apps`);
-assert.equal(jeuxApps.length, 25); const dm = await p.$eval('#grille .card[data-id="defuse-mallette"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !c.querySelector('.tag.proto')]);
-assert.deepEqual(dm, ['https://passcool17.github.io/defuse-mallette/', 'shots/defuse-mallette.webp', true]); ok('Défuse la mallette dans Jeux (25 cartes), lien et capture');
+assert.equal(jeuxApps.length, 26); const em = await p.$eval('#grille .card[data-id="entite-mallette"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !c.querySelector('.tag.proto')]);
+assert.deepEqual(em, ['https://passcool17.github.io/entite-mallette/', 'shots/entite-mallette.webp', true]); ok('La mallette de l’Entité dans Jeux (26 cartes), lien et capture');
+assert.equal(await p.$eval('#grille .card:first-child', (c) => c.dataset.id), 'entite-mallette'); ok('La mallette de l’Entité en tête de Jeux');
+const dm = await p.$eval('#grille .card[data-id="defuse-mallette"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !c.querySelector('.tag.proto')]);
+assert.deepEqual(dm, ['https://passcool17.github.io/defuse-mallette/', 'shots/defuse-mallette.webp', true]); ok('Défuse la mallette toujours dans Jeux, lien et capture');
 assert.equal(await p.$$eval('#grille .tag.proto', (t) => t.length), jeuxApps.filter((x) => x.prototype).length); ok('prototypes marqués');
 
 await p.screenshot({ path: `${SHOTS}/1-accueil.png` });

@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.3.2** (17 nov. 2026 : Défuse la mallette ajouté dans Jeux). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.3** (20 nov. 2026 : La mallette de l’Entité ajouté dans Jeux). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,10 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.3
+
+- **La mallette de l’Entité** (v0.1.4) ajouté dans **Jeux et apps** (pas dans Prototypes) : https://passcool17.github.io/entite-mallette/. La capture vient d’une vraie partie (œil et panneau, trappe ouverte), en WebP 360×800 de 36 Ko. La grille principale passe de 25 à 26 cartes.
 
 ## Changements 1.3.2
 
