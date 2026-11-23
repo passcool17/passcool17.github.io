@@ -1,6 +1,6 @@
 {
  "version": 1,
- "mis_a_jour": "2026-11-20",
+ "mis_a_jour": "2026-11-23",
  "projets": [
   {
    "id": "entite-mallette",
@@ -17,7 +17,24 @@
    "format": "portrait",
    "ajoute": "2026-11-20",
    "categorie": "jeux-apps",
-   "version": "0.1.4"
+   "version": "0.1.5"
+  },
+  {
+   "id": "entite-mallette-v016",
+   "nom": "La mallette de l’Entité (v0.1.6)",
+   "url": "https://passcool17.github.io/entite-mallette-v016/",
+   "depot": "https://github.com/passcool17/entite-mallette-v016",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Archive figée de la v0.1.6 : 12 étapes d’énigmes de logique visuelle, 8 minutes, voix Piper.",
+   "capture": "shots/entite-mallette-v016.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-23",
+   "categorie": "prototypes",
+   "version": "0.1.6"
   },
   {
    "id": "defuse-mallette",
