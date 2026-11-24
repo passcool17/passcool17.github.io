@@ -12,12 +12,12 @@
     "2D"
    ],
    "prototype": false,
-   "description": "Une mallette piégée par une IA qui ment : déduis les indices, coupe le bon fil.",
+   "description": "Une mallette à trois faces. Les consignes sont dictées à la voix, et l’Entité te met sous pression. Douze étapes pour la désamorcer.",
    "capture": "shots/entite-mallette.webp",
    "format": "portrait",
    "ajoute": "2026-11-20",
    "categorie": "jeux-apps",
-   "version": "0.1.5"
+   "version": "0.2.0"
   },
   {
    "id": "entite-mallette-v016",
@@ -35,6 +35,23 @@
    "ajoute": "2026-11-23",
    "categorie": "prototypes",
    "version": "0.1.6"
+  },
+  {
+   "id": "entite-mallette-v015",
+   "nom": "La mallette de l’Entité (v0.1.5)",
+   "url": "https://passcool17.github.io/entite-mallette-v015/",
+   "depot": "https://github.com/passcool17/entite-mallette-v015",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Archive figée de la v0.1.5 : 12 étapes, 8 minutes, voix ElevenLabs.",
+   "capture": "shots/entite-mallette-v015.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-23",
+   "categorie": "prototypes",
+   "version": "0.1.5"
   },
   {
    "id": "defuse-mallette",
