@@ -1,6 +1,6 @@
 {
  "version": 1,
- "mis_a_jour": "2026-11-23",
+ "mis_a_jour": "2026-11-25",
  "projets": [
   {
    "id": "entite-mallette",
@@ -12,12 +12,29 @@
     "2D"
    ],
    "prototype": false,
-   "description": "Une mallette à trois faces. Les consignes sont dictées à la voix, et l’Entité te met sous pression. Douze étapes pour la désamorcer.",
+   "description": "Douze étapes pour désamorcer la mallette : trappes, cinq molettes KY-040 (mots de 5 lettres) et un Simon sur cinq barrettes LED, sous la pression de l’Entité et d’une minuterie.",
    "capture": "shots/entite-mallette.webp",
    "format": "portrait",
    "ajoute": "2026-11-20",
    "categorie": "jeux-apps",
-   "version": "0.2.0"
+   "version": "0.3.2"
+  },
+  {
+   "id": "entite-mallette-v026a",
+   "nom": "La mallette de l’Entité (v0.2.6a)",
+   "url": "https://passcool17.github.io/entite-mallette-v026a/",
+   "depot": "https://github.com/passcool17/entite-mallette-v026a",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Archive figée de la v0.2.6a, juste avant la refonte v0.3 : n° de série sur le CYD 2, barre de 32 LED, 12 étapes.",
+   "capture": "shots/entite-mallette-v026a.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-25",
+   "categorie": "prototypes",
+   "version": "0.2.6a"
   },
   {
    "id": "entite-mallette-v016",
@@ -128,6 +145,23 @@
    "capture": "shots/wifi-tamagotchi.webp",
    "format": "portrait",
    "ajoute": "2026-11-16",
+   "categorie": "esp32",
+   "statut": "live"
+  },
+  {
+   "id": "tamagotchi-elon-man",
+   "nom": "Tamagotchi Elon Man",
+   "url": "https://passcool17.github.io/tamagotchi-elon-man/",
+   "depot": "https://github.com/passcool17/tamagotchi-elon-man",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": false,
+   "description": "Prends soin d’Elon Man, le petit robot de bureau. Version web seulement, aucun matériel requis.",
+   "capture": "shots/tamagotchi-elon-man.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-25",
    "categorie": "esp32",
    "statut": "live"
   },

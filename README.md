@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.3.5** (23 nov. 2026 : mallette v0.2.0 en Jeux, archive v0.1.5 dans Prototypes). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.6** (25 nov. 2026 : mallette v0.3.2 en Jeux, Tamagotchi Elon Man en ESP32, archive v0.2.6a dans Prototypes). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,12 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.6
+
+- **La mallette de l’Entité** en Jeux passe en v0.3.2 (trappes, cinq molettes KY-040 pour des mots de 5 lettres, Simon sur cinq barrettes LED, minuterie TM1637) : https://passcool17.github.io/entite-mallette/. Nouvelle capture WebP 360×800 de la mallette ouverte (version en ligne, cache `entite-mallette-v0.3.2`).
+- Archive figée de la **v0.2.6a** ajoutée dans **Prototypes** : https://passcool17.github.io/entite-mallette-v026a/. La section Prototypes passe de 11 à 12 cartes. Les cartes v0.1.5 et v0.1.6 restent en place.
+- **Tamagotchi Elon Man** ajouté dans **ESP32** : https://passcool17.github.io/tamagotchi-elon-man/. Jeu web pour le robot de bureau Elon Man, aucun matériel requis. Capture WebP 360×800 de l’écran de jeu.
 
 ## Changements 1.3.5
 
