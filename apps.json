@@ -1,6 +1,6 @@
 {
  "version": 1,
- "mis_a_jour": "2026-11-25",
+ "mis_a_jour": "2026-11-26",
  "projets": [
   {
    "id": "entite-mallette",
@@ -120,6 +120,23 @@
    "ajoute": "2026-11-17",
    "categorie": "jeux-apps",
    "version": "0.1.1"
+  },
+  {
+   "id": "analgesie-congenitale",
+   "nom": "Comprendre l’ICD · Insensibilité congénitale à la douleur",
+   "url": "https://passcool17.github.io/analgesie-congenitale/",
+   "depot": "https://github.com/passcool17/analgesie-congenitale",
+   "type": "app",
+   "tags": [
+    "app",
+    "éducatif"
+   ],
+   "prototype": false,
+   "description": "Neuf fiches claires en français pour les familles et les proches : causes génétiques, symptômes, prise en charge, vivre avec, FAQ. Recherche, lexique, quiz et tableau de toutes les sources. Hors ligne, sans conseil médical personnalisé.",
+   "capture": "shots/analgesie-congenitale.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-26",
+   "categorie": "jeux-apps"
   },
   {
    "id": "test-qi",
