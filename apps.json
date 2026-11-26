@@ -1,1441 +1,1441 @@
 {
- "version": 1,
- "mis_a_jour": "2026-11-26",
- "projets": [
-  {
-   "id": "entite-mallette",
-   "nom": "La mallette de l’Entité",
-   "url": "https://passcool17.github.io/entite-mallette/",
-   "depot": "https://github.com/passcool17/entite-mallette",
-   "type": "jeu",
-   "tags": [
-    "2D"
+   "version": 1,
+   "mis_a_jour": "2026-11-26",
+   "projets": [
+      {
+         "id": "entite-mallette",
+         "nom": "La mallette de l’Entité",
+         "url": "https://passcool17.github.io/entite-mallette/",
+         "depot": "https://github.com/passcool17/entite-mallette",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Douze étapes pour désamorcer la mallette, au plan de la vraie valise imprimée en 3D : deux trappes (A, B), deux serrures (I, II), un Simon à notes, un labyrinthe dans le noir avec un mur qui peut bouger, un clavier qui se bloque après un faux code, les clés cachées derrière les trappes, et un « mot mêlé » sur cinq molettes KY-040.",
+         "capture": "shots/entite-mallette.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-20",
+         "categorie": "jeux-apps",
+         "version": "0.5.3"
+      },
+      {
+         "id": "entite-mallette-v040",
+         "nom": "La mallette de l’Entité (v0.4.0)",
+         "url": "https://passcool17.github.io/entite-mallette-v040/",
+         "depot": "https://github.com/passcool17/entite-mallette-v040",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Archive figée de la v0.4.0, au plan d’impression v0.8, juste avant la refonte des jeux v0.5 : deux trappes A B, deux serrures I II, cinq molettes KY-040 en ligne, n° de série à lettres sur les molettes.",
+         "capture": "shots/entite-mallette-v040.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-25",
+         "categorie": "prototypes",
+         "version": "0.4.0"
+      },
+      {
+         "id": "entite-mallette-v032",
+         "nom": "La mallette de l’Entité (v0.3.2)",
+         "url": "https://passcool17.github.io/entite-mallette-v032/",
+         "depot": "https://github.com/passcool17/entite-mallette-v032",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Archive figée de la v0.3.2, juste avant la refonte v0.4 : trois trappes, trois serrures, cinq molettes KY-040, Simon sur cinq barrettes LED, 25 voix v0.3.",
+         "capture": "shots/entite-mallette-v032.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-25",
+         "categorie": "prototypes",
+         "version": "0.3.2"
+      },
+      {
+         "id": "entite-mallette-v026a",
+         "nom": "La mallette de l’Entité (v0.2.6a)",
+         "url": "https://passcool17.github.io/entite-mallette-v026a/",
+         "depot": "https://github.com/passcool17/entite-mallette-v026a",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Archive figée de la v0.2.6a, juste avant la refonte v0.3 : n° de série sur le CYD 2, barre de 32 LED, 12 étapes.",
+         "capture": "shots/entite-mallette-v026a.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-25",
+         "categorie": "prototypes",
+         "version": "0.2.6a"
+      },
+      {
+         "id": "entite-mallette-v016",
+         "nom": "La mallette de l’Entité (v0.1.6)",
+         "url": "https://passcool17.github.io/entite-mallette-v016/",
+         "depot": "https://github.com/passcool17/entite-mallette-v016",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Archive figée de la v0.1.6 : 12 étapes d’énigmes de logique visuelle, 8 minutes, voix Piper.",
+         "capture": "shots/entite-mallette-v016.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-23",
+         "categorie": "prototypes",
+         "version": "0.1.6"
+      },
+      {
+         "id": "entite-mallette-v015",
+         "nom": "La mallette de l’Entité (v0.1.5)",
+         "url": "https://passcool17.github.io/entite-mallette-v015/",
+         "depot": "https://github.com/passcool17/entite-mallette-v015",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Archive figée de la v0.1.5 : 12 étapes, 8 minutes, voix ElevenLabs.",
+         "capture": "shots/entite-mallette-v015.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-23",
+         "categorie": "prototypes",
+         "version": "0.1.5"
+      },
+      {
+         "id": "defuse-mallette",
+         "nom": "Défuse la mallette",
+         "url": "https://passcool17.github.io/defuse-mallette/",
+         "depot": "https://github.com/passcool17/defuse-mallette",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Une mallette orange piégée en 3D, cinq modules : un désamorceur la manipule, un expert lit le manuel.",
+         "capture": "shots/defuse-mallette.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-17",
+         "categorie": "jeux-apps",
+         "version": "0.1.1"
+      },
+      {
+         "id": "analgesie-congenitale",
+         "nom": "Comprendre l’ICD · Insensibilité congénitale à la douleur",
+         "url": "https://passcool17.github.io/analgesie-congenitale/",
+         "depot": "https://github.com/passcool17/analgesie-congenitale",
+         "type": "app",
+         "tags": [
+            "app",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Neuf fiches claires en français pour les familles et les proches : causes génétiques, symptômes, prise en charge, vivre avec, FAQ. Recherche, lexique, quiz et tableau de toutes les sources. Hors ligne, sans conseil médical personnalisé.",
+         "capture": "shots/analgesie-congenitale.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-26",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "test-qi",
+         "nom": "Test QI · L’observatoire de l’esprit",
+         "url": "https://passcool17.github.io/test-qi/",
+         "depot": "https://github.com/passcool17/test-qi",
+         "type": "app",
+         "tags": [
+            "app",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Six épreuves générées au hasard, environ 20 minutes, puis une estimation ludique du score avec sa marge d’erreur. Hors ligne.",
+         "capture": "shots/test-qi.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "wifi-radar",
+         "nom": "Wi-Fi Radar",
+         "url": "https://passcool17.github.io/wifi-radar/",
+         "depot": "https://github.com/passcool17/wifi-radar",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Détection de présence par Wi-Fi (ESP-CSI) : un ESP32 classique (CP2102) et l’app sur le téléphone. Le microprogramme 1.1 ajoute écran OLED, buzzer et détecteur PIR.",
+         "capture": "shots/wifi-radar.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "esp32",
+         "statut": "live",
+         "liens": [
+            {
+               "label": "Installer le microprogramme",
+               "url": "https://passcool17.github.io/wifi-radar/flash/"
+            },
+            {
+               "label": "Guide de câblage",
+               "url": "https://passcool17.github.io/wifi-radar/cablage/"
+            }
+         ]
+      },
+      {
+         "id": "wifi-tamagotchi",
+         "nom": "Wi-Fi Tamagotchi",
+         "url": "https://passcool17.github.io/wifi-tamagotchi/",
+         "depot": "https://github.com/passcool17/wifi-tamagotchi",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Un familier pixel sur l’écran OLED qui mange les nouveaux réseaux Wi-Fi qu’il entend (balayage passif). Microprogramme pas encore testé sur la vraie carte.",
+         "capture": "shots/wifi-tamagotchi.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "esp32",
+         "statut": "live"
+      },
+      {
+         "id": "tamagotchi-elon-man",
+         "nom": "Tamagotchi Elon Man",
+         "url": "https://passcool17.github.io/tamagotchi-elon-man/",
+         "depot": "https://github.com/passcool17/tamagotchi-elon-man",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Prends soin d’Elon Man, dessiné à l’échelle du vrai robot final (print-v2) : tête qui tourne, hoche et penche, 3 écrans OLED derrière la plaque, musique et voix.",
+         "capture": "shots/tamagotchi-elon-man.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-25",
+         "categorie": "esp32",
+         "statut": "live",
+         "version": "2.2"
+      },
+      {
+         "id": "tamagotchi-elon-man-v2-1",
+         "nom": "Tamagotchi Elon Man — Prototype v2.1",
+         "url": "https://passcool17.github.io/tamagotchi-elon-man-v2-1/",
+         "depot": "https://github.com/passcool17/tamagotchi-elon-man-v2-1",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Version figée v2.1 : formes du robot elon-man d’origine, plaque de visage à découpes, 3 OLED.",
+         "capture": "shots/tamagotchi-elon-man-v2-1.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-26",
+         "categorie": "prototypes",
+         "version": "2.1"
+      },
+      {
+         "id": "tamagotchi-elon-man-v2",
+         "nom": "Tamagotchi Elon Man — Prototype v2.0.1",
+         "url": "https://passcool17.github.io/tamagotchi-elon-man-v2/",
+         "depot": "https://github.com/passcool17/tamagotchi-elon-man-v2",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Version figée de la v2.0.1 : réplique 2D du robot print-v1, tête en dôme, 3 écrans OLED 128x64 horizontaux, servos pan/hochement/roulis, cerveau démo + passerelle PC.",
+         "capture": "shots/tamagotchi-elon-man-v2.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-26",
+         "categorie": "prototypes",
+         "version": "2.0.1"
+      },
+      {
+         "id": "tamagotchi-elon-man-v1",
+         "nom": "Tamagotchi Elon Man — Prototype v1",
+         "url": "https://passcool17.github.io/tamagotchi-elon-man-v1/",
+         "depot": "https://github.com/passcool17/tamagotchi-elon-man-v1",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "La première version figée : prends soin d’Elon Man (nourrir, jouer, dormir, nettoyer), visage pixel sur écran rond, musique et 14 répliques vocales.",
+         "capture": "shots/tamagotchi-elon-man-v1.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-25",
+         "categorie": "prototypes",
+         "version": "1"
+      },
+      {
+         "id": "dossier-baass-3d",
+         "nom": "Dossier BAASS · 3D",
+         "url": "https://passcool17.github.io/dossier-baass-3d/",
+         "depot": "https://github.com/passcool17/dossier-baass-3d",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Enquêteur fictif sur un site de recherche secret : les preuves sont des extraits réels du plan BAASS de 2008.",
+         "capture": "shots/dossier-baass-3d.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "titor-c204-jeu",
+         "nom": "Mission Titor · C204",
+         "url": "https://passcool17.github.io/titor-c204-jeu/",
+         "depot": "https://github.com/passcool17/titor-c204-jeu",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Opérateur de l’unité C204 dans une Corvette 1967. Les faits vérifiables sont étiquetés et sourcés.",
+         "capture": "shots/titor-c204-jeu.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "dossier-baass-duel",
+         "nom": "Dossier BAASS : Duel",
+         "url": "https://passcool17.github.io/dossier-baass-duel/",
+         "depot": "https://github.com/passcool17/dossier-baass-duel",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Jeu de cartes solo : l’Enquête affronte le Secret DIA. Chaque carte cite le plan BAASS de 2008.",
+         "capture": "shots/dossier-baass-duel.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "dossier-baass",
+         "nom": "Dossier BAASS",
+         "url": "https://passcool17.github.io/dossier-baass/",
+         "depot": "https://github.com/passcool17/dossier-baass",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Jeu solo de cartes et de plateau : rassemble un dossier de divulgation à partir du vrai plan BAASS de 2008.",
+         "capture": "shots/dossier-baass.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "c204-2026",
+         "nom": "C204 · 2026",
+         "url": "https://passcool17.github.io/c204-2026/",
+         "depot": "https://github.com/passcool17/c204-2026",
+         "type": "app",
+         "tags": [
+            "3D",
+            "app"
+         ],
+         "prototype": false,
+         "description": "Unité fictive modernisée en simulation 3D : pièces, étiquettes et vue éclatée.",
+         "capture": "shots/c204-2026.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "titor-c204",
+         "nom": "C204 · Unité de déplacement temporel",
+         "url": "https://passcool17.github.io/titor-c204/",
+         "depot": "https://github.com/passcool17/titor-c204",
+         "type": "app",
+         "tags": [
+            "3D",
+            "app"
+         ],
+         "prototype": false,
+         "description": "Simulation 3D de l’unité C204 : pièces, étiquettes, distances et vue éclatée.",
+         "capture": "shots/titor-c204.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "atelier-preuves",
+         "nom": "L’atelier des preuves",
+         "url": "https://passcool17.github.io/atelier-preuves/",
+         "depot": "https://github.com/passcool17/atelier-preuves",
+         "type": "jeu",
+         "tags": [
+            "2D",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Deviens le Logic Theorist de 1956 : prouve 12 théorèmes des Principia et fais pousser un jardin zen.",
+         "capture": "shots/atelier-preuves.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "desamorce-3d",
+         "nom": "Désamorce! 3D",
+         "url": "https://passcool17.github.io/desamorce-3d/",
+         "depot": "https://github.com/passcool17/desamorce-3d",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Une bombe fictive en 3D que tu tournes au doigt pour trouver les modules à désamorcer.",
+         "capture": "shots/desamorce-3d.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "desamorce",
+         "nom": "Désamorce!",
+         "url": "https://passcool17.github.io/desamorce/",
+         "depot": "https://github.com/passcool17/desamorce",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Bombe fictive à quatre faces, cinq minutes : les indices sont cachés sur les autres faces.",
+         "capture": "shots/desamorce.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "logic-lab-camille",
+         "nom": "Atelier Logique · Camille",
+         "url": "https://passcool17.github.io/logic-lab-camille/",
+         "depot": "https://github.com/passcool17/logic-lab-camille",
+         "type": "app",
+         "tags": [
+            "app",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Vérifier un raisonnement : validité d’un argument, table de vérité, analyse.",
+         "capture": "shots/logic-lab-camille.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "logic-theorist-camille",
+         "nom": "Logic Theorist · Camille",
+         "url": "https://passcool17.github.io/logic-theorist-camille/",
+         "depot": "https://github.com/passcool17/logic-theorist-camille",
+         "type": "jeu",
+         "tags": [
+            "2D",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Cinq chapitres courts pour découvrir Logic Theorist (1955-56), le programme qui raisonne.",
+         "capture": "shots/logic-theorist-camille.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "coffret-futuriste",
+         "nom": "Le Coffret — Noyau boréal",
+         "url": "https://passcool17.github.io/coffret-futuriste/",
+         "depot": "https://github.com/passcool17/coffret-futuriste",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": true,
+         "description": "Déduction en 3D : câbles, anneaux et séquence de libération du noyau. Douze dossiers.",
+         "capture": "shots/coffret-futuriste.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "neon-breach",
+         "nom": "Néon Breach",
+         "url": "https://passcool17.github.io/neon-breach/",
+         "depot": "https://github.com/passcool17/neon-breach",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Déduis un code à trois chiffres en interrogeant des pare-feu qui répondent seulement ✔ ou ✖.",
+         "capture": "shots/neon-breach.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "vallee-des-maths",
+         "nom": "Vallée des Maths",
+         "url": "https://passcool17.github.io/vallee-des-maths/",
+         "depot": "https://github.com/passcool17/vallee-des-maths",
+         "type": "jeu",
+         "tags": [
+            "3D",
+            "éducatif"
+         ],
+         "prototype": false,
+         "description": "Île douillette en 3D où tu améliores tes outils en faisant des maths du secondaire (programme du Québec).",
+         "capture": "shots/vallee-des-maths.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "virtual-matrix",
+         "nom": "Virtual Matrix · Lockdown",
+         "url": "https://passcool17.github.io/virtual-matrix/",
+         "depot": "https://github.com/passcool17/virtual-matrix",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Vole dans une grille de code et déverrouille six nœuds. ACCESS DENIED ou ACCESS GRANTED.",
+         "capture": "shots/virtual-matrix.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "pilier",
+         "nom": "Pilier",
+         "url": "https://passcool17.github.io/pilier/",
+         "depot": "https://github.com/passcool17/pilier",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Séances d’haltères pour deux gabarits, dos protégé. S’installe et marche hors ligne.",
+         "capture": "shots/pilier.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "pat-cognefoudre",
+         "nom": "Pat Cognefoudre",
+         "url": "https://passcool17.github.io/pat-cognefoudre/",
+         "depot": "https://github.com/passcool17/pat-cognefoudre",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Remplace les cartes Plan, Complot et Tactiques de l’automate solo d’Everdell : Silverfrost.",
+         "capture": "shots/pat-cognefoudre.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "planche-pompes",
+         "nom": "Planche Pompes",
+         "url": "https://passcool17.github.io/planche-pompes/",
+         "depot": "https://github.com/passcool17/planche-pompes",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Coach pour la planche à pompes 21 en 1 : test, plan de 7 jours, séance guidée, minuteur et suivi.",
+         "capture": "shots/planche-pompes.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "combat-le-rhume",
+         "nom": "Combat le rhume",
+         "url": "https://passcool17.github.io/combat-le-rhume/",
+         "depot": "https://github.com/passcool17/combat-le-rhume",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Guide pratique pour le rhume et la grippe : protocole, plantes, préparations et suivi des symptômes.",
+         "capture": "shots/combat-le-rhume.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "voxelle-quebec",
+         "nom": "Voxelle-Québec",
+         "url": "https://passcool17.github.io/voxelle-quebec/",
+         "depot": "https://github.com/passcool17/voxelle-quebec",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "RPG d’action en voxels dans un Québec satirique et fictif : tuques, cônes et nids-de-poule.",
+         "capture": "shots/voxelle-quebec.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "remparts-neon",
+         "nom": "Remparts Néon",
+         "url": "https://passcool17.github.io/remparts-neon/",
+         "depot": "https://github.com/passcool17/remparts-neon",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": false,
+         "description": "Survie par vagues à la première personne dans un Québec néon : trance, tuques et formulaires.",
+         "capture": "shots/remparts-neon.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "la-tribu",
+         "nom": "LA TRIBU : contre le tramway du maire",
+         "url": "https://passcool17.github.io/la-tribu/",
+         "depot": "https://github.com/passcool17/la-tribu",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Tower defense satirique en pixel art : place les citoyens pour arrêter le chantier du tramway.",
+         "capture": "shots/la-tribu.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "true-north-dragons",
+         "nom": "True North Dragons",
+         "url": "https://passcool17.github.io/true-north-dragons/",
+         "depot": "https://github.com/passcool17/true-north-dragons",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": false,
+         "description": "Beat-em-up rétro, satire politique canadienne fictive. Camionneur, Reporter et autres héros.",
+         "capture": "shots/true-north-dragons.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "abime-apocalypse",
+         "nom": "Abîme de l’Apocalypse",
+         "url": "https://passcool17.github.io/abime-apocalypse/",
+         "depot": "https://github.com/passcool17/abime-apocalypse",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "RPG tactique sombre à la Darkest Dungeon : quatre héros, trois donjons, combats au tour par tour.",
+         "capture": "shots/abime-apocalypse.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "babel-rpg",
+         "nom": "Babel — Chapitre 1",
+         "url": "https://passcool17.github.io/babel-rpg/",
+         "depot": "https://github.com/passcool17/babel-rpg",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": true,
+         "description": "RPG 2.5D façon Final Fantasy classique, en français québécois : le village de départ.",
+         "capture": "shots/babel-rpg.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "cite-stellaire",
+         "nom": "Cité Stellaire — Chapitre 1",
+         "url": "https://passcool17.github.io/cite-stellaire/",
+         "depot": "https://github.com/passcool17/cite-stellaire",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "RPG façon Final Fantasy à Eridu, mythologie mésopotamienne, combat ATB. Se joue en paysage.",
+         "capture": "shots/cite-stellaire.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "pendragon-aventure",
+         "nom": "Merlin : Les Brumes de Bretagne",
+         "url": "https://passcool17.github.io/pendragon-aventure/",
+         "depot": "https://github.com/passcool17/pendragon-aventure",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Aventure à la Zelda vue de dessus, dans la Bretagne post-romaine. Se joue en paysage.",
+         "capture": "shots/pendragon-aventure.webp",
+         "format": "paysage",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "desamorcage-diagnostic",
+         "nom": "Désamorçage diagnostique",
+         "url": "https://passcool17.github.io/desamorcage-diagnostic/",
+         "depot": "https://github.com/passcool17/desamorcage-diagnostic",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Casse-tête de diagnostic sur une mallette fictive : voyants, douze configurations, carnet logique.",
+         "capture": "shots/desamorcage-diagnostic.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "foreuse-boreale",
+         "nom": "Foreuse Boréale",
+         "url": "https://passcool17.github.io/foreuse-boreale/",
+         "depot": "https://github.com/passcool17/foreuse-boreale",
+         "type": "jeu",
+         "tags": [
+            "2D"
+         ],
+         "prototype": true,
+         "description": "Pilote une foreuse sous le pergélisol, vends au Poste et ramène le Cœur boréal. Équilibre pas final.",
+         "capture": "shots/foreuse-boreale.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "scythe-automa",
+         "nom": "Scythe Automa",
+         "url": "https://passcool17.github.io/scythe-automa/",
+         "depot": "https://github.com/passcool17/scythe-automa",
+         "type": "app",
+         "tags": [
+            "app"
+         ],
+         "prototype": false,
+         "description": "Joue à Scythe contre 1 à 3 Automates : l’app pioche et explique les cartes en français.",
+         "capture": "shots/scythe-automa.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "jeux-apps"
+      },
+      {
+         "id": "vita",
+         "nom": "Vita — Jeu de la vie",
+         "url": "https://passcool17.github.io/vita/",
+         "depot": "https://github.com/passcool17/vita",
+         "type": "app",
+         "tags": [
+            "app",
+            "éducatif"
+         ],
+         "prototype": true,
+         "description": "Jeu de la vie de Conway, mode tournesol (angle d’or) et triangle de Pascal. Au doigt.",
+         "capture": "shots/vita.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "pat-escape",
+         "nom": "Pat Escape",
+         "url": "https://pascalcoulombe-tech.github.io/pat-escape/",
+         "depot": "https://github.com/pascalcoulombe-tech/pat-escape",
+         "type": "jeu",
+         "tags": [
+            "3D"
+         ],
+         "prototype": true,
+         "description": "Escape room en première personne : une pièce par partie, trois ambiances, Pat comme guide.",
+         "capture": "shots/pat-escape.webp",
+         "format": "portrait",
+         "ajoute": "2026-11-16",
+         "categorie": "prototypes"
+      },
+      {
+         "id": "ruview",
+         "nom": "RuView",
+         "categorie": "esp32",
+         "statut": "bientôt",
+         "type": "app",
+         "tags": [],
+         "prototype": false,
+         "url": null,
+         "depot": null,
+         "capture": null,
+         "format": "portrait",
+         "description": "Projet sur trois ESP32-S3 N16R8. Les cartes arrivent le 21 nov.",
+         "materiel": "3 × ESP32-S3 N16R8",
+         "ajoute": "2026-11-16"
+      },
+      {
+         "id": "elegoo-cyd",
+         "nom": "Écran tactile CYD",
+         "categorie": "esp32",
+         "statut": "bientôt",
+         "type": "app",
+         "tags": [],
+         "prototype": false,
+         "url": null,
+         "depot": null,
+         "capture": null,
+         "format": "portrait",
+         "description": "Projet à venir sur l’ELEGOO CYD, un ESP32 avec écran tactile de 2,8 po.",
+         "materiel": "ELEGOO CYD 2,8 po tactile",
+         "ajoute": "2026-11-16"
+      }
    ],
-   "prototype": false,
-   "description": "Douze étapes pour désamorcer la mallette, au plan de la vraie valise imprimée en 3D : deux trappes (A, B), deux serrures (I, II), un Simon à notes sur cinq barrettes LED vivantes, des trappes qui tremblent et cachent les clés, deux clés à tourner ensemble au signal vert, et un « mot mêlé » sur cinq molettes KY-040, sous la pression de l’Entité et d’une minuterie.",
-   "capture": "shots/entite-mallette.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-20",
-   "categorie": "jeux-apps",
-   "version": "0.5.2.1"
-  },
-  {
-   "id": "entite-mallette-v040",
-   "nom": "La mallette de l’Entité (v0.4.0)",
-   "url": "https://passcool17.github.io/entite-mallette-v040/",
-   "depot": "https://github.com/passcool17/entite-mallette-v040",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Archive figée de la v0.4.0, au plan d’impression v0.8, juste avant la refonte des jeux v0.5 : deux trappes A B, deux serrures I II, cinq molettes KY-040 en ligne, n° de série à lettres sur les molettes.",
-   "capture": "shots/entite-mallette-v040.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-25",
-   "categorie": "prototypes",
-   "version": "0.4.0"
-  },
-  {
-   "id": "entite-mallette-v032",
-   "nom": "La mallette de l’Entité (v0.3.2)",
-   "url": "https://passcool17.github.io/entite-mallette-v032/",
-   "depot": "https://github.com/passcool17/entite-mallette-v032",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Archive figée de la v0.3.2, juste avant la refonte v0.4 : trois trappes, trois serrures, cinq molettes KY-040, Simon sur cinq barrettes LED, 25 voix v0.3.",
-   "capture": "shots/entite-mallette-v032.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-25",
-   "categorie": "prototypes",
-   "version": "0.3.2"
-  },
-  {
-   "id": "entite-mallette-v026a",
-   "nom": "La mallette de l’Entité (v0.2.6a)",
-   "url": "https://passcool17.github.io/entite-mallette-v026a/",
-   "depot": "https://github.com/passcool17/entite-mallette-v026a",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Archive figée de la v0.2.6a, juste avant la refonte v0.3 : n° de série sur le CYD 2, barre de 32 LED, 12 étapes.",
-   "capture": "shots/entite-mallette-v026a.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-25",
-   "categorie": "prototypes",
-   "version": "0.2.6a"
-  },
-  {
-   "id": "entite-mallette-v016",
-   "nom": "La mallette de l’Entité (v0.1.6)",
-   "url": "https://passcool17.github.io/entite-mallette-v016/",
-   "depot": "https://github.com/passcool17/entite-mallette-v016",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Archive figée de la v0.1.6 : 12 étapes d’énigmes de logique visuelle, 8 minutes, voix Piper.",
-   "capture": "shots/entite-mallette-v016.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-23",
-   "categorie": "prototypes",
-   "version": "0.1.6"
-  },
-  {
-   "id": "entite-mallette-v015",
-   "nom": "La mallette de l’Entité (v0.1.5)",
-   "url": "https://passcool17.github.io/entite-mallette-v015/",
-   "depot": "https://github.com/passcool17/entite-mallette-v015",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Archive figée de la v0.1.5 : 12 étapes, 8 minutes, voix ElevenLabs.",
-   "capture": "shots/entite-mallette-v015.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-23",
-   "categorie": "prototypes",
-   "version": "0.1.5"
-  },
-  {
-   "id": "defuse-mallette",
-   "nom": "Défuse la mallette",
-   "url": "https://passcool17.github.io/defuse-mallette/",
-   "depot": "https://github.com/passcool17/defuse-mallette",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Une mallette orange piégée en 3D, cinq modules : un désamorceur la manipule, un expert lit le manuel.",
-   "capture": "shots/defuse-mallette.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-17",
-   "categorie": "jeux-apps",
-   "version": "0.1.1"
-  },
-  {
-   "id": "analgesie-congenitale",
-   "nom": "Comprendre l’ICD · Insensibilité congénitale à la douleur",
-   "url": "https://passcool17.github.io/analgesie-congenitale/",
-   "depot": "https://github.com/passcool17/analgesie-congenitale",
-   "type": "app",
-   "tags": [
-    "app",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Neuf fiches claires en français pour les familles et les proches : causes génétiques, symptômes, prise en charge, vivre avec, FAQ. Recherche, lexique, quiz et tableau de toutes les sources. Hors ligne, sans conseil médical personnalisé.",
-   "capture": "shots/analgesie-congenitale.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-26",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "test-qi",
-   "nom": "Test QI · L’observatoire de l’esprit",
-   "url": "https://passcool17.github.io/test-qi/",
-   "depot": "https://github.com/passcool17/test-qi",
-   "type": "app",
-   "tags": [
-    "app",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Six épreuves générées au hasard, environ 20 minutes, puis une estimation ludique du score avec sa marge d’erreur. Hors ligne.",
-   "capture": "shots/test-qi.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "wifi-radar",
-   "nom": "Wi-Fi Radar",
-   "url": "https://passcool17.github.io/wifi-radar/",
-   "depot": "https://github.com/passcool17/wifi-radar",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Détection de présence par Wi-Fi (ESP-CSI) : un ESP32 classique (CP2102) et l’app sur le téléphone. Le microprogramme 1.1 ajoute écran OLED, buzzer et détecteur PIR.",
-   "capture": "shots/wifi-radar.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "esp32",
-   "statut": "live",
-   "liens": [
-    {
-     "label": "Installer le microprogramme",
-     "url": "https://passcool17.github.io/wifi-radar/flash/"
-    },
-    {
-     "label": "Guide de câblage",
-     "url": "https://passcool17.github.io/wifi-radar/cablage/"
-    }
-   ]
-  },
-  {
-   "id": "wifi-tamagotchi",
-   "nom": "Wi-Fi Tamagotchi",
-   "url": "https://passcool17.github.io/wifi-tamagotchi/",
-   "depot": "https://github.com/passcool17/wifi-tamagotchi",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Un familier pixel sur l’écran OLED qui mange les nouveaux réseaux Wi-Fi qu’il entend (balayage passif). Microprogramme pas encore testé sur la vraie carte.",
-   "capture": "shots/wifi-tamagotchi.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "esp32",
-   "statut": "live"
-  },
-  {
-   "id": "tamagotchi-elon-man",
-   "nom": "Tamagotchi Elon Man",
-   "url": "https://passcool17.github.io/tamagotchi-elon-man/",
-   "depot": "https://github.com/passcool17/tamagotchi-elon-man",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Prends soin d’Elon Man, dessiné à l’échelle du vrai robot final (print-v2) : tête qui tourne, hoche et penche, 3 écrans OLED derrière la plaque, musique et voix.",
-   "capture": "shots/tamagotchi-elon-man.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-25",
-   "categorie": "esp32",
-   "statut": "live",
-   "version": "2.2"
-  },
-  {
-   "id": "tamagotchi-elon-man-v2-1",
-   "nom": "Tamagotchi Elon Man — Prototype v2.1",
-   "url": "https://passcool17.github.io/tamagotchi-elon-man-v2-1/",
-   "depot": "https://github.com/passcool17/tamagotchi-elon-man-v2-1",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Version figée v2.1 : formes du robot elon-man d’origine, plaque de visage à découpes, 3 OLED.",
-   "capture": "shots/tamagotchi-elon-man-v2-1.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-26",
-   "categorie": "prototypes",
-   "version": "2.1"
-  },
-  {
-   "id": "tamagotchi-elon-man-v2",
-   "nom": "Tamagotchi Elon Man — Prototype v2.0.1",
-   "url": "https://passcool17.github.io/tamagotchi-elon-man-v2/",
-   "depot": "https://github.com/passcool17/tamagotchi-elon-man-v2",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Version figée de la v2.0.1 : réplique 2D du robot print-v1, tête en dôme, 3 écrans OLED 128x64 horizontaux, servos pan/hochement/roulis, cerveau démo + passerelle PC.",
-   "capture": "shots/tamagotchi-elon-man-v2.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-26",
-   "categorie": "prototypes",
-   "version": "2.0.1"
-  },
-  {
-   "id": "tamagotchi-elon-man-v1",
-   "nom": "Tamagotchi Elon Man — Prototype v1",
-   "url": "https://passcool17.github.io/tamagotchi-elon-man-v1/",
-   "depot": "https://github.com/passcool17/tamagotchi-elon-man-v1",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "La première version figée : prends soin d’Elon Man (nourrir, jouer, dormir, nettoyer), visage pixel sur écran rond, musique et 14 répliques vocales.",
-   "capture": "shots/tamagotchi-elon-man-v1.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-25",
-   "categorie": "prototypes",
-   "version": "1"
-  },
-  {
-   "id": "dossier-baass-3d",
-   "nom": "Dossier BAASS · 3D",
-   "url": "https://passcool17.github.io/dossier-baass-3d/",
-   "depot": "https://github.com/passcool17/dossier-baass-3d",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Enquêteur fictif sur un site de recherche secret : les preuves sont des extraits réels du plan BAASS de 2008.",
-   "capture": "shots/dossier-baass-3d.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "titor-c204-jeu",
-   "nom": "Mission Titor · C204",
-   "url": "https://passcool17.github.io/titor-c204-jeu/",
-   "depot": "https://github.com/passcool17/titor-c204-jeu",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Opérateur de l’unité C204 dans une Corvette 1967. Les faits vérifiables sont étiquetés et sourcés.",
-   "capture": "shots/titor-c204-jeu.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "dossier-baass-duel",
-   "nom": "Dossier BAASS : Duel",
-   "url": "https://passcool17.github.io/dossier-baass-duel/",
-   "depot": "https://github.com/passcool17/dossier-baass-duel",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Jeu de cartes solo : l’Enquête affronte le Secret DIA. Chaque carte cite le plan BAASS de 2008.",
-   "capture": "shots/dossier-baass-duel.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "dossier-baass",
-   "nom": "Dossier BAASS",
-   "url": "https://passcool17.github.io/dossier-baass/",
-   "depot": "https://github.com/passcool17/dossier-baass",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Jeu solo de cartes et de plateau : rassemble un dossier de divulgation à partir du vrai plan BAASS de 2008.",
-   "capture": "shots/dossier-baass.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "c204-2026",
-   "nom": "C204 · 2026",
-   "url": "https://passcool17.github.io/c204-2026/",
-   "depot": "https://github.com/passcool17/c204-2026",
-   "type": "app",
-   "tags": [
-    "3D",
-    "app"
-   ],
-   "prototype": false,
-   "description": "Unité fictive modernisée en simulation 3D : pièces, étiquettes et vue éclatée.",
-   "capture": "shots/c204-2026.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "titor-c204",
-   "nom": "C204 · Unité de déplacement temporel",
-   "url": "https://passcool17.github.io/titor-c204/",
-   "depot": "https://github.com/passcool17/titor-c204",
-   "type": "app",
-   "tags": [
-    "3D",
-    "app"
-   ],
-   "prototype": false,
-   "description": "Simulation 3D de l’unité C204 : pièces, étiquettes, distances et vue éclatée.",
-   "capture": "shots/titor-c204.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "atelier-preuves",
-   "nom": "L’atelier des preuves",
-   "url": "https://passcool17.github.io/atelier-preuves/",
-   "depot": "https://github.com/passcool17/atelier-preuves",
-   "type": "jeu",
-   "tags": [
-    "2D",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Deviens le Logic Theorist de 1956 : prouve 12 théorèmes des Principia et fais pousser un jardin zen.",
-   "capture": "shots/atelier-preuves.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "desamorce-3d",
-   "nom": "Désamorce! 3D",
-   "url": "https://passcool17.github.io/desamorce-3d/",
-   "depot": "https://github.com/passcool17/desamorce-3d",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Une bombe fictive en 3D que tu tournes au doigt pour trouver les modules à désamorcer.",
-   "capture": "shots/desamorce-3d.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "desamorce",
-   "nom": "Désamorce!",
-   "url": "https://passcool17.github.io/desamorce/",
-   "depot": "https://github.com/passcool17/desamorce",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Bombe fictive à quatre faces, cinq minutes : les indices sont cachés sur les autres faces.",
-   "capture": "shots/desamorce.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "logic-lab-camille",
-   "nom": "Atelier Logique · Camille",
-   "url": "https://passcool17.github.io/logic-lab-camille/",
-   "depot": "https://github.com/passcool17/logic-lab-camille",
-   "type": "app",
-   "tags": [
-    "app",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Vérifier un raisonnement : validité d’un argument, table de vérité, analyse.",
-   "capture": "shots/logic-lab-camille.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "logic-theorist-camille",
-   "nom": "Logic Theorist · Camille",
-   "url": "https://passcool17.github.io/logic-theorist-camille/",
-   "depot": "https://github.com/passcool17/logic-theorist-camille",
-   "type": "jeu",
-   "tags": [
-    "2D",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Cinq chapitres courts pour découvrir Logic Theorist (1955-56), le programme qui raisonne.",
-   "capture": "shots/logic-theorist-camille.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "coffret-futuriste",
-   "nom": "Le Coffret — Noyau boréal",
-   "url": "https://passcool17.github.io/coffret-futuriste/",
-   "depot": "https://github.com/passcool17/coffret-futuriste",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": true,
-   "description": "Déduction en 3D : câbles, anneaux et séquence de libération du noyau. Douze dossiers.",
-   "capture": "shots/coffret-futuriste.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "neon-breach",
-   "nom": "Néon Breach",
-   "url": "https://passcool17.github.io/neon-breach/",
-   "depot": "https://github.com/passcool17/neon-breach",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Déduis un code à trois chiffres en interrogeant des pare-feu qui répondent seulement ✔ ou ✖.",
-   "capture": "shots/neon-breach.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "vallee-des-maths",
-   "nom": "Vallée des Maths",
-   "url": "https://passcool17.github.io/vallee-des-maths/",
-   "depot": "https://github.com/passcool17/vallee-des-maths",
-   "type": "jeu",
-   "tags": [
-    "3D",
-    "éducatif"
-   ],
-   "prototype": false,
-   "description": "Île douillette en 3D où tu améliores tes outils en faisant des maths du secondaire (programme du Québec).",
-   "capture": "shots/vallee-des-maths.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "virtual-matrix",
-   "nom": "Virtual Matrix · Lockdown",
-   "url": "https://passcool17.github.io/virtual-matrix/",
-   "depot": "https://github.com/passcool17/virtual-matrix",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Vole dans une grille de code et déverrouille six nœuds. ACCESS DENIED ou ACCESS GRANTED.",
-   "capture": "shots/virtual-matrix.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "pilier",
-   "nom": "Pilier",
-   "url": "https://passcool17.github.io/pilier/",
-   "depot": "https://github.com/passcool17/pilier",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Séances d’haltères pour deux gabarits, dos protégé. S’installe et marche hors ligne.",
-   "capture": "shots/pilier.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "pat-cognefoudre",
-   "nom": "Pat Cognefoudre",
-   "url": "https://passcool17.github.io/pat-cognefoudre/",
-   "depot": "https://github.com/passcool17/pat-cognefoudre",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Remplace les cartes Plan, Complot et Tactiques de l’automate solo d’Everdell : Silverfrost.",
-   "capture": "shots/pat-cognefoudre.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "planche-pompes",
-   "nom": "Planche Pompes",
-   "url": "https://passcool17.github.io/planche-pompes/",
-   "depot": "https://github.com/passcool17/planche-pompes",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Coach pour la planche à pompes 21 en 1 : test, plan de 7 jours, séance guidée, minuteur et suivi.",
-   "capture": "shots/planche-pompes.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "combat-le-rhume",
-   "nom": "Combat le rhume",
-   "url": "https://passcool17.github.io/combat-le-rhume/",
-   "depot": "https://github.com/passcool17/combat-le-rhume",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Guide pratique pour le rhume et la grippe : protocole, plantes, préparations et suivi des symptômes.",
-   "capture": "shots/combat-le-rhume.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "voxelle-quebec",
-   "nom": "Voxelle-Québec",
-   "url": "https://passcool17.github.io/voxelle-quebec/",
-   "depot": "https://github.com/passcool17/voxelle-quebec",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "RPG d’action en voxels dans un Québec satirique et fictif : tuques, cônes et nids-de-poule.",
-   "capture": "shots/voxelle-quebec.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "remparts-neon",
-   "nom": "Remparts Néon",
-   "url": "https://passcool17.github.io/remparts-neon/",
-   "depot": "https://github.com/passcool17/remparts-neon",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": false,
-   "description": "Survie par vagues à la première personne dans un Québec néon : trance, tuques et formulaires.",
-   "capture": "shots/remparts-neon.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "la-tribu",
-   "nom": "LA TRIBU : contre le tramway du maire",
-   "url": "https://passcool17.github.io/la-tribu/",
-   "depot": "https://github.com/passcool17/la-tribu",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Tower defense satirique en pixel art : place les citoyens pour arrêter le chantier du tramway.",
-   "capture": "shots/la-tribu.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "true-north-dragons",
-   "nom": "True North Dragons",
-   "url": "https://passcool17.github.io/true-north-dragons/",
-   "depot": "https://github.com/passcool17/true-north-dragons",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": false,
-   "description": "Beat-em-up rétro, satire politique canadienne fictive. Camionneur, Reporter et autres héros.",
-   "capture": "shots/true-north-dragons.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "abime-apocalypse",
-   "nom": "Abîme de l’Apocalypse",
-   "url": "https://passcool17.github.io/abime-apocalypse/",
-   "depot": "https://github.com/passcool17/abime-apocalypse",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "RPG tactique sombre à la Darkest Dungeon : quatre héros, trois donjons, combats au tour par tour.",
-   "capture": "shots/abime-apocalypse.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "babel-rpg",
-   "nom": "Babel — Chapitre 1",
-   "url": "https://passcool17.github.io/babel-rpg/",
-   "depot": "https://github.com/passcool17/babel-rpg",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": true,
-   "description": "RPG 2.5D façon Final Fantasy classique, en français québécois : le village de départ.",
-   "capture": "shots/babel-rpg.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "cite-stellaire",
-   "nom": "Cité Stellaire — Chapitre 1",
-   "url": "https://passcool17.github.io/cite-stellaire/",
-   "depot": "https://github.com/passcool17/cite-stellaire",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "RPG façon Final Fantasy à Eridu, mythologie mésopotamienne, combat ATB. Se joue en paysage.",
-   "capture": "shots/cite-stellaire.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "pendragon-aventure",
-   "nom": "Merlin : Les Brumes de Bretagne",
-   "url": "https://passcool17.github.io/pendragon-aventure/",
-   "depot": "https://github.com/passcool17/pendragon-aventure",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Aventure à la Zelda vue de dessus, dans la Bretagne post-romaine. Se joue en paysage.",
-   "capture": "shots/pendragon-aventure.webp",
-   "format": "paysage",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "desamorcage-diagnostic",
-   "nom": "Désamorçage diagnostique",
-   "url": "https://passcool17.github.io/desamorcage-diagnostic/",
-   "depot": "https://github.com/passcool17/desamorcage-diagnostic",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Casse-tête de diagnostic sur une mallette fictive : voyants, douze configurations, carnet logique.",
-   "capture": "shots/desamorcage-diagnostic.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "foreuse-boreale",
-   "nom": "Foreuse Boréale",
-   "url": "https://passcool17.github.io/foreuse-boreale/",
-   "depot": "https://github.com/passcool17/foreuse-boreale",
-   "type": "jeu",
-   "tags": [
-    "2D"
-   ],
-   "prototype": true,
-   "description": "Pilote une foreuse sous le pergélisol, vends au Poste et ramène le Cœur boréal. Équilibre pas final.",
-   "capture": "shots/foreuse-boreale.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "scythe-automa",
-   "nom": "Scythe Automa",
-   "url": "https://passcool17.github.io/scythe-automa/",
-   "depot": "https://github.com/passcool17/scythe-automa",
-   "type": "app",
-   "tags": [
-    "app"
-   ],
-   "prototype": false,
-   "description": "Joue à Scythe contre 1 à 3 Automates : l’app pioche et explique les cartes en français.",
-   "capture": "shots/scythe-automa.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "jeux-apps"
-  },
-  {
-   "id": "vita",
-   "nom": "Vita — Jeu de la vie",
-   "url": "https://passcool17.github.io/vita/",
-   "depot": "https://github.com/passcool17/vita",
-   "type": "app",
-   "tags": [
-    "app",
-    "éducatif"
-   ],
-   "prototype": true,
-   "description": "Jeu de la vie de Conway, mode tournesol (angle d’or) et triangle de Pascal. Au doigt.",
-   "capture": "shots/vita.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "pat-escape",
-   "nom": "Pat Escape",
-   "url": "https://pascalcoulombe-tech.github.io/pat-escape/",
-   "depot": "https://github.com/pascalcoulombe-tech/pat-escape",
-   "type": "jeu",
-   "tags": [
-    "3D"
-   ],
-   "prototype": true,
-   "description": "Escape room en première personne : une pièce par partie, trois ambiances, Pat comme guide.",
-   "capture": "shots/pat-escape.webp",
-   "format": "portrait",
-   "ajoute": "2026-11-16",
-   "categorie": "prototypes"
-  },
-  {
-   "id": "ruview",
-   "nom": "RuView",
-   "categorie": "esp32",
-   "statut": "bientôt",
-   "type": "app",
-   "tags": [],
-   "prototype": false,
-   "url": null,
-   "depot": null,
-   "capture": null,
-   "format": "portrait",
-   "description": "Projet sur trois ESP32-S3 N16R8. Les cartes arrivent le 21 nov.",
-   "materiel": "3 × ESP32-S3 N16R8",
-   "ajoute": "2026-11-16"
-  },
-  {
-   "id": "elegoo-cyd",
-   "nom": "Écran tactile CYD",
-   "categorie": "esp32",
-   "statut": "bientôt",
-   "type": "app",
-   "tags": [],
-   "prototype": false,
-   "url": null,
-   "depot": null,
-   "capture": null,
-   "format": "portrait",
-   "description": "Projet à venir sur l’ELEGOO CYD, un ESP32 avec écran tactile de 2,8 po.",
-   "materiel": "ELEGOO CYD 2,8 po tactile",
-   "ajoute": "2026-11-16"
-  }
- ],
- "grok": {
-  "source": "https://bold-birch-kind-tulip.grok.me/",
-  "date": "2026-11-16",
-  "apps": [
-   {
-    "nom": "Test QI · L’observatoire de l’esprit",
-    "hote": "passcool17.github.io",
-    "description": "Six épreuves générées au hasard, environ 20 minutes, une estimation de ton score avec sa marge d’erreur. Hors ligne, en français.",
-    "url": "https://passcool17.github.io/test-qi/"
-   },
-   {
-    "nom": "Wi-Fi Radar",
-    "hote": "passcool17.github.io",
-    "description": "Radar de présence et de mouvement par Wi-Fi CSI.",
-    "url": "https://passcool17.github.io/wifi-radar/?v=39e6bc3"
-   },
-   {
-    "nom": "Dossier BAASS · 3D",
-    "hote": "passcool17.github.io",
-    "description": "Dossier BAASS : jeu 3D. Tu explores un site de recherche fictif et tu recueilles des extraits réels du plan BAASS de décembre 2008. Plan de recherche, pas une preuve ; histoire fictive.",
-    "url": "https://passcool17.github.io/dossier-baass-3d/?v=e22f0b1"
-   },
-   {
-    "nom": "Mission Titor · C204",
-    "hote": "passcool17.github.io",
-    "description": "Mission Titor : jeu 3D, opérateur de l’unité C204 dans une Corvette 1967. Les faits vérifiables sont sourcés ; le récit de Titor n’a jamais été authentifié.",
-    "url": "https://passcool17.github.io/titor-c204-jeu/"
-   },
-   {
-    "nom": "Dossier BAASS : Duel",
-    "hote": "passcool17.github.io",
-    "description": "Dossier BAASS : Duel — jeu de cartes contre le Secret DIA. Plan de 2008, pas une preuve.",
-    "url": "https://passcool17.github.io/dossier-baass-duel/"
-   },
-   {
-    "nom": "Dossier BAASS",
-    "hote": "passcool17.github.io",
-    "description": "Jeu de cartes et de plateau solo : rassemble un dossier de divulgation à partir du plan BAASS de 2008.",
-    "url": "https://passcool17.github.io/dossier-baass/"
-   },
-   {
-    "nom": "C204 · 2026 — unité fictive modernisée",
-    "hote": "passcool17.github.io",
-    "description": "C204 · 2026 : simulation 3D d",
-    "url": "https://passcool17.github.io/c204-2026/?v=5ea10f7"
-   },
-   {
-    "nom": "C204 · Unité de déplacement temporel (simulation 3D)",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/titor-c204/"
-   },
-   {
-    "nom": "L’atelier des preuves",
-    "hote": "passcool17.github.io",
-    "description": "Deviens la machine de 1956 : prouve 12 théorèmes des Principia et fais pousser un jardin zen.",
-    "url": "https://passcool17.github.io/atelier-preuves/"
-   },
-   {
-    "nom": "Désamorce! 3D",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/desamorce-3d/"
-   },
-   {
-    "nom": "Atelier Logique · Camille",
-    "hote": "passcool17.github.io",
-    "description": "Atelier Logique : vérifie un argument, fais une table de vérité, analyse une affirmation. Pour Camille.",
-    "url": "https://passcool17.github.io/logic-lab-camille/"
-   },
-   {
-    "nom": "Logic Theorist · Camille",
-    "hote": "passcool17.github.io",
-    "description": "Jeu éducatif pour découvrir Logic Theorist (1955–56) avec Camille.",
-    "url": "https://passcool17.github.io/logic-theorist-camille/?v=08173cd"
-   },
-   {
-    "nom": "Le Coffret — Noyau boréal",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/coffret-futuriste/"
-   },
-   {
-    "nom": "Néon Breach",
-    "hote": "passcool17.github.io",
-    "description": "Néon Breach — casse-tête de déduction solo dans un labo de hacker néon. Trouve le code, interroge les pare-feu.",
-    "url": "https://passcool17.github.io/neon-breach/"
-   },
-   {
-    "nom": "Vallée des Maths",
-    "hote": "passcool17.github.io",
-    "description": "Une petite île douillette où les maths du secondaire 1 améliorent tes outils.",
-    "url": "https://passcool17.github.io/vallee-des-maths/"
-   },
-   {
-    "nom": "Virtual Matrix · Lockdown",
-    "hote": "passcool17.github.io",
-    "description": "Vole dans la grille, crochète six verrous, ouvre la Source. Chaque erreur : ACCESS DENIED.",
-    "url": "https://passcool17.github.io/virtual-matrix/"
-   },
-   {
-    "nom": "Pilier",
-    "hote": "passcool17.github.io",
-    "description": "Haltères pour deux gabarits. Homme 5'10&quot; 160 lb, ou fille 5'3&quot; 100 lb. Trois séances, dos protégé.",
-    "url": "https://passcool17.github.io/pilier/"
-   },
-   {
-    "nom": "Pat Cognefoudre — automate solo Everdell : Silverfrost",
-    "hote": "passcool17.github.io",
-    "description": "Le Roi des Bandits virtuel : joue Pat Cognefoudre, l",
-    "url": "https://passcool17.github.io/pat-cognefoudre/"
-   },
-   {
-    "nom": "Planche Pompes",
-    "hote": "passcool17.github.io",
-    "description": "Ton coach pour la planche à pompes 21 en 1.",
-    "url": "https://passcool17.github.io/planche-pompes/"
-   },
-   {
-    "nom": "Combat le rhume",
-    "hote": "passcool17.github.io",
-    "description": "Guide pratique pour le rhume et la grippe : protocole, plantes, préparations et suivi des symptômes.",
-    "url": "https://passcool17.github.io/combat-le-rhume/"
-   },
-   {
-    "nom": "Voxelle-Québec",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/voxelle-quebec/"
-   },
-   {
-    "nom": "Remparts Néon",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/remparts-neon/"
-   },
-   {
-    "nom": "LA TRIBU : contre le tramway du maire",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/la-tribu/"
-   },
-   {
-    "nom": "L'Huile Sacrée",
-    "hote": "cinder-fair-amber-kind.grok.me",
-    "description": "Fenêtres mensuelles où la Lune transite votre signe solaire sidéral natal, ayanamsa Lahiri, à la minute.",
-    "url": "https://cinder-fair-amber-kind.grok.me/"
-   },
-   {
-    "nom": "FastKey 84",
-    "hote": "apex-cosmic-moss-tiger.grok.me",
-    "description": "Suivi d’un jeûne de 84 heures, de l’eau et des scoops KeyNutrients.",
-    "url": "https://apex-cosmic-moss-tiger.grok.me/"
-   },
-   {
-    "nom": "Observateur L’Étape",
-    "hote": "mint-orchid-oasis-kite.grok.me",
-    "description": "Caméra de circulation et météo en direct sur la route 175 à L’Étape, dans la Réserve faunique des Laurentides.",
-    "url": "https://mint-orchid-oasis-kite.grok.me/"
-   },
-   {
-    "nom": "Yellow Brick Road",
-    "hote": "dove-yellow-iris-flame.grok.me",
-    "description": "Runner météo live. La route de briques jaunes change avec le vrai ciel.",
-    "url": "https://dove-yellow-iris-flame.grok.me/"
-   },
-   {
-    "nom": "Séisme Nord",
-    "hote": "acre-vivid-spring-storm.grok.me",
-    "description": "Veille sismique en direct pour le Québec, le Canada et l'Amérique du Nord.",
-    "url": "https://acre-vivid-spring-storm.grok.me/"
-   },
-   {
-    "nom": "TRUE NORTH DRAGONS",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/true-north-dragons/"
-   },
-   {
-    "nom": "Suno 432 Lab",
-    "hote": "brush-ember-tundra-cloud.grok.me",
-    "description": "Master Suno exports locally — 432 Hz, clarity, glue, loudness. The file never leaves the device.",
-    "url": "https://brush-ember-tundra-cloud.grok.me/"
-   },
-   {
-    "nom": "Tartarian Frequencies",
-    "hote": "wolf-hill-yellow-gold.grok.me",
-    "description": "A cinematic chamber for lost classical music — gold palaces under a starfield.",
-    "url": "https://wolf-hill-yellow-gold.grok.me/"
-   },
-   {
-    "nom": "Fuite proche-IR",
-    "hote": "umbra-otter-scarlet-gem.grok.me",
-    "description": "Le téléphone capte un peu de lumière invisible. L’app la repeint en couleurs qu’on peut voir.",
-    "url": "https://umbra-otter-scarlet-gem.grok.me/"
-   },
-   {
-    "nom": "Désamorce!",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/desamorce/"
-   },
-   {
-    "nom": "Abîme de l'Apocalypse",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/abime-apocalypse/"
-   },
-   {
-    "nom": "Babel — Chapitre 1 : Le village de départ",
-    "hote": "passcool17.github.io",
-    "description": "Babel, chapitre 1 : un RPG 2.5D inspiré de Genèse 10-11.",
-    "url": "https://passcool17.github.io/babel-rpg/"
-   },
-   {
-    "nom": "Merlin : Les Brumes de Bretagne",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/pendragon-aventure/"
-   },
-   {
-    "nom": "Diagnostic — machine fictive",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/desamorcage-diagnostic/"
-   },
-   {
-    "nom": "Pat Escape",
-    "hote": "pascalcoulombe-tech.github.io",
-    "description": "",
-    "url": "https://pascalcoulombe-tech.github.io/pat-escape/"
-   },
-   {
-    "nom": "Foreuse Boréale",
-    "hote": "passcool17.github.io",
-    "description": "",
-    "url": "https://passcool17.github.io/foreuse-boreale/"
-   },
-   {
-    "nom": "Scythe Automa — compagnon en français",
-    "hote": "passcool17.github.io",
-    "description": "Compagnon pour jouer contre l’Automate de Scythe : pioche des cartes, programme, piste Étoiles, combats. Base, Invaders from Afar, The Wind Gambit, The Rise of Fenris.",
-    "url": "https://passcool17.github.io/scythe-automa/"
-   },
-   {
-    "nom": "Plume",
-    "hote": "bird-nova-star-delta.grok.me",
-    "description": "Atelier d'agent dans le navigateur : sessions, recettes, extensions et fichiers.",
-    "url": "https://bird-nova-star-delta.grok.me/"
-   },
-   {
-    "nom": "Mag Seed",
-    "hote": "king-light-drift-onyx.grok.me",
-    "description": "Lire la graine Mag : l'ADN public d'un agent souverain, ses reçus, et un cahier dont les pages sont collées.",
-    "url": "https://king-light-drift-onyx.grok.me/"
-   },
-   {
-    "nom": "Tablettes d'Enki",
-    "hote": "fire-mist-juniper-sail.grok.me",
-    "description": "La saga du film Anunnaki, en dix actes.",
-    "url": "https://fire-mist-juniper-sail.grok.me/"
-   },
-   {
-    "nom": "Saturne Live",
-    "hote": "stone-tiger-cobalt-sand.grok.me",
-    "description": "Saturne en 3D : anneaux, lunes et éphémérides mis à jour en temps réel pour le Québec.",
-    "url": "https://stone-tiger-cobalt-sand.grok.me/"
-   },
-   {
-    "nom": "Le Premier Clone",
-    "hote": "light-wood-valley-lilac.grok.me",
-    "description": "Et si le premier clone était Adam ? Une lecture de la Genèse et des récits sumériens.",
-    "url": "https://light-wood-valley-lilac.grok.me/"
-   },
-   {
-    "nom": "Mesure",
-    "hote": "jolly-crisp-ocean-swift.grok.me",
-    "description": "Les flux géophysiques en direct, et ce qu'ils ne prouvent pas.",
-    "url": "https://jolly-crisp-ocean-swift.grok.me/"
-   },
-   {
-    "nom": "Rue Close",
-    "hote": "onyx-lark-wave-pearl.grok.me",
-    "description": "Jeu d'évasion photographique. La rue s'est arrêtée à 15 h 17.",
-    "url": "https://onyx-lark-wave-pearl.grok.me/"
-   },
-   {
-    "nom": "NOVA LYNX",
-    "hote": "wood-eagle-blend-quiet.grok.me",
-    "description": "Nova Lynx — shooter spatial. Pilote le chasseur Lynx à travers les nébuleuses.",
-    "url": "https://wood-eagle-blend-quiet.grok.me/"
-   },
-   {
-    "nom": "Sentinelle",
-    "hote": "yonder-leaf-acorn-leaf.grok.me",
-    "description": "Défends ta rue. Pose tes tours, tiens les vagues, protège la maison.",
-    "url": "https://yonder-leaf-acorn-leaf.grok.me/"
-   },
-   {
-    "nom": "Bosquet",
-    "hote": "brook-bird-granite-moon.grok.me",
-    "description": "Trouve la porte au bout du jardin — labyrinthe de haies en 3D.",
-    "url": "https://brook-bird-granite-moon.grok.me/"
-   },
-   {
-    "nom": "Coureuse sans fin",
-    "hote": "clover-pixel-bold-wolf.grok.me",
-    "description": "Course sans fin dans le quartier — saute, glisse, collectionne les melons d’eau.",
-    "url": "https://clover-pixel-bold-wolf.grok.me/"
-   },
-   {
-    "nom": "Camille au parc",
-    "hote": "fleet-cliff-rapid-glow.grok.me",
-    "description": "Platformer : Camille cueille des melons d'eau au parc.",
-    "url": "https://fleet-cliff-rapid-glow.grok.me/"
-   },
-   {
-    "nom": "Irréguliers",
-    "hote": "bloom-palm-maple-mint.grok.me",
-    "description": "Apprends les verbes irréguliers anglais : liste, cartes, quiz audio, dictée et paires.",
-    "url": "https://bloom-palm-maple-mint.grok.me/"
-   },
-   {
-    "nom": "Oh My Goods! Coach",
-    "hote": "fair-cosmic-honey-tundra.grok.me",
-    "description": "Bilingual coach for Oh My Goods! — lessons, a guided round, building codex and quiz.",
-    "url": "https://fair-cosmic-honey-tundra.grok.me/"
-   },
-   {
-    "nom": "The Feudum Primer",
-    "hote": "sky-plum-zest-falcon.grok.me",
-    "description": "Learn to play Feudum — the map, the six guilds, the four-card round, and the fight math — in a short unofficial primer.",
-    "url": "https://sky-plum-zest-falcon.grok.me/"
-   },
-   {
-    "nom": "LIMEN",
-    "hote": "swift-granite-sand-lion.grok.me",
-    "description": "Don't go toward the light. Threshold training — Saturn, the Moon, the false tunnel.",
-    "url": "https://swift-granite-sand-lion.grok.me/"
-   },
-   {
-    "nom": "One Geometry",
-    "hote": "granite-bold-brave-clover.grok.me",
-    "description": "A visual proof that the Flower of Life, the star tetrahedron, and the Star of David are three readings of the same hexagonal lattice.",
-    "url": "https://granite-bold-brave-clover.grok.me/"
-   },
-   {
-    "nom": "369",
-    "hote": "reef-shadow-zenith-prism.grok.me",
-    "description": "Énergie · Fréquence · Vibration",
-    "url": "https://reef-shadow-zenith-prism.grok.me/"
-   },
-   {
-    "nom": "L'Hexagone de Saturne",
-    "hote": "berry-scarlet-moon-turbo.grok.me",
-    "description": "Moteur topologique IT³ : l'hexagone de Saturne comme projection d'un cristal cuboctaédrique.",
-    "url": "https://berry-scarlet-moon-turbo.grok.me/"
-   },
-   {
-    "nom": "Dédale 45",
-    "hote": "rocket-solar-valley-reef.grok.me",
-    "description": "Dédale 45 — une maison de quarante-cinq chambres à énigmes. Camille cherche le fil le plus court.",
-    "url": "https://rocket-solar-valley-reef.grok.me/"
-   },
-   {
-    "nom": "Esprit Vif",
-    "hote": "timber-lake-bay-yarrow.grok.me",
-    "description": "Gymnastique du cerveau : mémoire, calcul, langage et attention, à un rythme calme.",
-    "url": "https://timber-lake-bay-yarrow.grok.me/"
-   },
-   {
-    "nom": "Résona",
-    "hote": "crystal-fleet-sapphire-lotus.grok.me",
-    "description": "Générateur de battements binauraux calés sur le corps : ondes cérébrales, Schumann, cohérence cardiaque et solfège.",
-    "url": "https://crystal-fleet-sapphire-lotus.grok.me/"
-   },
-   {
-    "nom": "Toutou",
-    "hote": "tango-sapphire-zephyr-spruce.grok.me",
-    "description": "Un compagnon virtuel tout doux, à câliner, nourrir et faire dormir.",
-    "url": "https://tango-sapphire-zephyr-spruce.grok.me/"
-   },
-   {
-    "nom": "Puppet Master",
-    "hote": "cedar-drift-aurora-coral.grok.me",
-    "description": "Vous n'êtes sur aucun organigramme. Tenez le fauteuil pendant huit nuits.",
-    "url": "https://cedar-drift-aurora-coral.grok.me/"
-   },
-   {
-    "nom": "Plasma",
-    "hote": "king-yarrow-pearl-ember.grok.me",
-    "description": "Simulateur de confinement magnétique — pilotez un tokamak, un stellarator ou un réacteur compact jusqu'à l'allumage.",
-    "url": "https://king-yarrow-pearl-ember.grok.me/"
-   },
-   {
-    "nom": "Vita",
-    "hote": "glow-flora-light-fern.grok.me",
-    "description": "Jeu de la vie de Conway : dessinez, lancez le pistolet de Gosper, zoomez et observez les générations.",
-    "url": "https://glow-flora-light-fern.grok.me/"
+   "grok": {
+      "source": "https://bold-birch-kind-tulip.grok.me/",
+      "date": "2026-11-16",
+      "apps": [
+         {
+            "nom": "Test QI · L’observatoire de l’esprit",
+            "hote": "passcool17.github.io",
+            "description": "Six épreuves générées au hasard, environ 20 minutes, une estimation de ton score avec sa marge d’erreur. Hors ligne, en français.",
+            "url": "https://passcool17.github.io/test-qi/"
+         },
+         {
+            "nom": "Wi-Fi Radar",
+            "hote": "passcool17.github.io",
+            "description": "Radar de présence et de mouvement par Wi-Fi CSI.",
+            "url": "https://passcool17.github.io/wifi-radar/?v=39e6bc3"
+         },
+         {
+            "nom": "Dossier BAASS · 3D",
+            "hote": "passcool17.github.io",
+            "description": "Dossier BAASS : jeu 3D. Tu explores un site de recherche fictif et tu recueilles des extraits réels du plan BAASS de décembre 2008. Plan de recherche, pas une preuve ; histoire fictive.",
+            "url": "https://passcool17.github.io/dossier-baass-3d/?v=e22f0b1"
+         },
+         {
+            "nom": "Mission Titor · C204",
+            "hote": "passcool17.github.io",
+            "description": "Mission Titor : jeu 3D, opérateur de l’unité C204 dans une Corvette 1967. Les faits vérifiables sont sourcés ; le récit de Titor n’a jamais été authentifié.",
+            "url": "https://passcool17.github.io/titor-c204-jeu/"
+         },
+         {
+            "nom": "Dossier BAASS : Duel",
+            "hote": "passcool17.github.io",
+            "description": "Dossier BAASS : Duel — jeu de cartes contre le Secret DIA. Plan de 2008, pas une preuve.",
+            "url": "https://passcool17.github.io/dossier-baass-duel/"
+         },
+         {
+            "nom": "Dossier BAASS",
+            "hote": "passcool17.github.io",
+            "description": "Jeu de cartes et de plateau solo : rassemble un dossier de divulgation à partir du plan BAASS de 2008.",
+            "url": "https://passcool17.github.io/dossier-baass/"
+         },
+         {
+            "nom": "C204 · 2026 — unité fictive modernisée",
+            "hote": "passcool17.github.io",
+            "description": "C204 · 2026 : simulation 3D d",
+            "url": "https://passcool17.github.io/c204-2026/?v=5ea10f7"
+         },
+         {
+            "nom": "C204 · Unité de déplacement temporel (simulation 3D)",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/titor-c204/"
+         },
+         {
+            "nom": "L’atelier des preuves",
+            "hote": "passcool17.github.io",
+            "description": "Deviens la machine de 1956 : prouve 12 théorèmes des Principia et fais pousser un jardin zen.",
+            "url": "https://passcool17.github.io/atelier-preuves/"
+         },
+         {
+            "nom": "Désamorce! 3D",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/desamorce-3d/"
+         },
+         {
+            "nom": "Atelier Logique · Camille",
+            "hote": "passcool17.github.io",
+            "description": "Atelier Logique : vérifie un argument, fais une table de vérité, analyse une affirmation. Pour Camille.",
+            "url": "https://passcool17.github.io/logic-lab-camille/"
+         },
+         {
+            "nom": "Logic Theorist · Camille",
+            "hote": "passcool17.github.io",
+            "description": "Jeu éducatif pour découvrir Logic Theorist (1955–56) avec Camille.",
+            "url": "https://passcool17.github.io/logic-theorist-camille/?v=08173cd"
+         },
+         {
+            "nom": "Le Coffret — Noyau boréal",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/coffret-futuriste/"
+         },
+         {
+            "nom": "Néon Breach",
+            "hote": "passcool17.github.io",
+            "description": "Néon Breach — casse-tête de déduction solo dans un labo de hacker néon. Trouve le code, interroge les pare-feu.",
+            "url": "https://passcool17.github.io/neon-breach/"
+         },
+         {
+            "nom": "Vallée des Maths",
+            "hote": "passcool17.github.io",
+            "description": "Une petite île douillette où les maths du secondaire 1 améliorent tes outils.",
+            "url": "https://passcool17.github.io/vallee-des-maths/"
+         },
+         {
+            "nom": "Virtual Matrix · Lockdown",
+            "hote": "passcool17.github.io",
+            "description": "Vole dans la grille, crochète six verrous, ouvre la Source. Chaque erreur : ACCESS DENIED.",
+            "url": "https://passcool17.github.io/virtual-matrix/"
+         },
+         {
+            "nom": "Pilier",
+            "hote": "passcool17.github.io",
+            "description": "Haltères pour deux gabarits. Homme 5'10&quot; 160 lb, ou fille 5'3&quot; 100 lb. Trois séances, dos protégé.",
+            "url": "https://passcool17.github.io/pilier/"
+         },
+         {
+            "nom": "Pat Cognefoudre — automate solo Everdell : Silverfrost",
+            "hote": "passcool17.github.io",
+            "description": "Le Roi des Bandits virtuel : joue Pat Cognefoudre, l",
+            "url": "https://passcool17.github.io/pat-cognefoudre/"
+         },
+         {
+            "nom": "Planche Pompes",
+            "hote": "passcool17.github.io",
+            "description": "Ton coach pour la planche à pompes 21 en 1.",
+            "url": "https://passcool17.github.io/planche-pompes/"
+         },
+         {
+            "nom": "Combat le rhume",
+            "hote": "passcool17.github.io",
+            "description": "Guide pratique pour le rhume et la grippe : protocole, plantes, préparations et suivi des symptômes.",
+            "url": "https://passcool17.github.io/combat-le-rhume/"
+         },
+         {
+            "nom": "Voxelle-Québec",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/voxelle-quebec/"
+         },
+         {
+            "nom": "Remparts Néon",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/remparts-neon/"
+         },
+         {
+            "nom": "LA TRIBU : contre le tramway du maire",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/la-tribu/"
+         },
+         {
+            "nom": "L'Huile Sacrée",
+            "hote": "cinder-fair-amber-kind.grok.me",
+            "description": "Fenêtres mensuelles où la Lune transite votre signe solaire sidéral natal, ayanamsa Lahiri, à la minute.",
+            "url": "https://cinder-fair-amber-kind.grok.me/"
+         },
+         {
+            "nom": "FastKey 84",
+            "hote": "apex-cosmic-moss-tiger.grok.me",
+            "description": "Suivi d’un jeûne de 84 heures, de l’eau et des scoops KeyNutrients.",
+            "url": "https://apex-cosmic-moss-tiger.grok.me/"
+         },
+         {
+            "nom": "Observateur L’Étape",
+            "hote": "mint-orchid-oasis-kite.grok.me",
+            "description": "Caméra de circulation et météo en direct sur la route 175 à L’Étape, dans la Réserve faunique des Laurentides.",
+            "url": "https://mint-orchid-oasis-kite.grok.me/"
+         },
+         {
+            "nom": "Yellow Brick Road",
+            "hote": "dove-yellow-iris-flame.grok.me",
+            "description": "Runner météo live. La route de briques jaunes change avec le vrai ciel.",
+            "url": "https://dove-yellow-iris-flame.grok.me/"
+         },
+         {
+            "nom": "Séisme Nord",
+            "hote": "acre-vivid-spring-storm.grok.me",
+            "description": "Veille sismique en direct pour le Québec, le Canada et l'Amérique du Nord.",
+            "url": "https://acre-vivid-spring-storm.grok.me/"
+         },
+         {
+            "nom": "TRUE NORTH DRAGONS",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/true-north-dragons/"
+         },
+         {
+            "nom": "Suno 432 Lab",
+            "hote": "brush-ember-tundra-cloud.grok.me",
+            "description": "Master Suno exports locally — 432 Hz, clarity, glue, loudness. The file never leaves the device.",
+            "url": "https://brush-ember-tundra-cloud.grok.me/"
+         },
+         {
+            "nom": "Tartarian Frequencies",
+            "hote": "wolf-hill-yellow-gold.grok.me",
+            "description": "A cinematic chamber for lost classical music — gold palaces under a starfield.",
+            "url": "https://wolf-hill-yellow-gold.grok.me/"
+         },
+         {
+            "nom": "Fuite proche-IR",
+            "hote": "umbra-otter-scarlet-gem.grok.me",
+            "description": "Le téléphone capte un peu de lumière invisible. L’app la repeint en couleurs qu’on peut voir.",
+            "url": "https://umbra-otter-scarlet-gem.grok.me/"
+         },
+         {
+            "nom": "Désamorce!",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/desamorce/"
+         },
+         {
+            "nom": "Abîme de l'Apocalypse",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/abime-apocalypse/"
+         },
+         {
+            "nom": "Babel — Chapitre 1 : Le village de départ",
+            "hote": "passcool17.github.io",
+            "description": "Babel, chapitre 1 : un RPG 2.5D inspiré de Genèse 10-11.",
+            "url": "https://passcool17.github.io/babel-rpg/"
+         },
+         {
+            "nom": "Merlin : Les Brumes de Bretagne",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/pendragon-aventure/"
+         },
+         {
+            "nom": "Diagnostic — machine fictive",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/desamorcage-diagnostic/"
+         },
+         {
+            "nom": "Pat Escape",
+            "hote": "pascalcoulombe-tech.github.io",
+            "description": "",
+            "url": "https://pascalcoulombe-tech.github.io/pat-escape/"
+         },
+         {
+            "nom": "Foreuse Boréale",
+            "hote": "passcool17.github.io",
+            "description": "",
+            "url": "https://passcool17.github.io/foreuse-boreale/"
+         },
+         {
+            "nom": "Scythe Automa — compagnon en français",
+            "hote": "passcool17.github.io",
+            "description": "Compagnon pour jouer contre l’Automate de Scythe : pioche des cartes, programme, piste Étoiles, combats. Base, Invaders from Afar, The Wind Gambit, The Rise of Fenris.",
+            "url": "https://passcool17.github.io/scythe-automa/"
+         },
+         {
+            "nom": "Plume",
+            "hote": "bird-nova-star-delta.grok.me",
+            "description": "Atelier d'agent dans le navigateur : sessions, recettes, extensions et fichiers.",
+            "url": "https://bird-nova-star-delta.grok.me/"
+         },
+         {
+            "nom": "Mag Seed",
+            "hote": "king-light-drift-onyx.grok.me",
+            "description": "Lire la graine Mag : l'ADN public d'un agent souverain, ses reçus, et un cahier dont les pages sont collées.",
+            "url": "https://king-light-drift-onyx.grok.me/"
+         },
+         {
+            "nom": "Tablettes d'Enki",
+            "hote": "fire-mist-juniper-sail.grok.me",
+            "description": "La saga du film Anunnaki, en dix actes.",
+            "url": "https://fire-mist-juniper-sail.grok.me/"
+         },
+         {
+            "nom": "Saturne Live",
+            "hote": "stone-tiger-cobalt-sand.grok.me",
+            "description": "Saturne en 3D : anneaux, lunes et éphémérides mis à jour en temps réel pour le Québec.",
+            "url": "https://stone-tiger-cobalt-sand.grok.me/"
+         },
+         {
+            "nom": "Le Premier Clone",
+            "hote": "light-wood-valley-lilac.grok.me",
+            "description": "Et si le premier clone était Adam ? Une lecture de la Genèse et des récits sumériens.",
+            "url": "https://light-wood-valley-lilac.grok.me/"
+         },
+         {
+            "nom": "Mesure",
+            "hote": "jolly-crisp-ocean-swift.grok.me",
+            "description": "Les flux géophysiques en direct, et ce qu'ils ne prouvent pas.",
+            "url": "https://jolly-crisp-ocean-swift.grok.me/"
+         },
+         {
+            "nom": "Rue Close",
+            "hote": "onyx-lark-wave-pearl.grok.me",
+            "description": "Jeu d'évasion photographique. La rue s'est arrêtée à 15 h 17.",
+            "url": "https://onyx-lark-wave-pearl.grok.me/"
+         },
+         {
+            "nom": "NOVA LYNX",
+            "hote": "wood-eagle-blend-quiet.grok.me",
+            "description": "Nova Lynx — shooter spatial. Pilote le chasseur Lynx à travers les nébuleuses.",
+            "url": "https://wood-eagle-blend-quiet.grok.me/"
+         },
+         {
+            "nom": "Sentinelle",
+            "hote": "yonder-leaf-acorn-leaf.grok.me",
+            "description": "Défends ta rue. Pose tes tours, tiens les vagues, protège la maison.",
+            "url": "https://yonder-leaf-acorn-leaf.grok.me/"
+         },
+         {
+            "nom": "Bosquet",
+            "hote": "brook-bird-granite-moon.grok.me",
+            "description": "Trouve la porte au bout du jardin — labyrinthe de haies en 3D.",
+            "url": "https://brook-bird-granite-moon.grok.me/"
+         },
+         {
+            "nom": "Coureuse sans fin",
+            "hote": "clover-pixel-bold-wolf.grok.me",
+            "description": "Course sans fin dans le quartier — saute, glisse, collectionne les melons d’eau.",
+            "url": "https://clover-pixel-bold-wolf.grok.me/"
+         },
+         {
+            "nom": "Camille au parc",
+            "hote": "fleet-cliff-rapid-glow.grok.me",
+            "description": "Platformer : Camille cueille des melons d'eau au parc.",
+            "url": "https://fleet-cliff-rapid-glow.grok.me/"
+         },
+         {
+            "nom": "Irréguliers",
+            "hote": "bloom-palm-maple-mint.grok.me",
+            "description": "Apprends les verbes irréguliers anglais : liste, cartes, quiz audio, dictée et paires.",
+            "url": "https://bloom-palm-maple-mint.grok.me/"
+         },
+         {
+            "nom": "Oh My Goods! Coach",
+            "hote": "fair-cosmic-honey-tundra.grok.me",
+            "description": "Bilingual coach for Oh My Goods! — lessons, a guided round, building codex and quiz.",
+            "url": "https://fair-cosmic-honey-tundra.grok.me/"
+         },
+         {
+            "nom": "The Feudum Primer",
+            "hote": "sky-plum-zest-falcon.grok.me",
+            "description": "Learn to play Feudum — the map, the six guilds, the four-card round, and the fight math — in a short unofficial primer.",
+            "url": "https://sky-plum-zest-falcon.grok.me/"
+         },
+         {
+            "nom": "LIMEN",
+            "hote": "swift-granite-sand-lion.grok.me",
+            "description": "Don't go toward the light. Threshold training — Saturn, the Moon, the false tunnel.",
+            "url": "https://swift-granite-sand-lion.grok.me/"
+         },
+         {
+            "nom": "One Geometry",
+            "hote": "granite-bold-brave-clover.grok.me",
+            "description": "A visual proof that the Flower of Life, the star tetrahedron, and the Star of David are three readings of the same hexagonal lattice.",
+            "url": "https://granite-bold-brave-clover.grok.me/"
+         },
+         {
+            "nom": "369",
+            "hote": "reef-shadow-zenith-prism.grok.me",
+            "description": "Énergie · Fréquence · Vibration",
+            "url": "https://reef-shadow-zenith-prism.grok.me/"
+         },
+         {
+            "nom": "L'Hexagone de Saturne",
+            "hote": "berry-scarlet-moon-turbo.grok.me",
+            "description": "Moteur topologique IT³ : l'hexagone de Saturne comme projection d'un cristal cuboctaédrique.",
+            "url": "https://berry-scarlet-moon-turbo.grok.me/"
+         },
+         {
+            "nom": "Dédale 45",
+            "hote": "rocket-solar-valley-reef.grok.me",
+            "description": "Dédale 45 — une maison de quarante-cinq chambres à énigmes. Camille cherche le fil le plus court.",
+            "url": "https://rocket-solar-valley-reef.grok.me/"
+         },
+         {
+            "nom": "Esprit Vif",
+            "hote": "timber-lake-bay-yarrow.grok.me",
+            "description": "Gymnastique du cerveau : mémoire, calcul, langage et attention, à un rythme calme.",
+            "url": "https://timber-lake-bay-yarrow.grok.me/"
+         },
+         {
+            "nom": "Résona",
+            "hote": "crystal-fleet-sapphire-lotus.grok.me",
+            "description": "Générateur de battements binauraux calés sur le corps : ondes cérébrales, Schumann, cohérence cardiaque et solfège.",
+            "url": "https://crystal-fleet-sapphire-lotus.grok.me/"
+         },
+         {
+            "nom": "Toutou",
+            "hote": "tango-sapphire-zephyr-spruce.grok.me",
+            "description": "Un compagnon virtuel tout doux, à câliner, nourrir et faire dormir.",
+            "url": "https://tango-sapphire-zephyr-spruce.grok.me/"
+         },
+         {
+            "nom": "Puppet Master",
+            "hote": "cedar-drift-aurora-coral.grok.me",
+            "description": "Vous n'êtes sur aucun organigramme. Tenez le fauteuil pendant huit nuits.",
+            "url": "https://cedar-drift-aurora-coral.grok.me/"
+         },
+         {
+            "nom": "Plasma",
+            "hote": "king-yarrow-pearl-ember.grok.me",
+            "description": "Simulateur de confinement magnétique — pilotez un tokamak, un stellarator ou un réacteur compact jusqu'à l'allumage.",
+            "url": "https://king-yarrow-pearl-ember.grok.me/"
+         },
+         {
+            "nom": "Vita",
+            "hote": "glow-flora-light-fern.grok.me",
+            "description": "Jeu de la vie de Conway : dessinez, lancez le pistolet de Gosper, zoomez et observez les générations.",
+            "url": "https://glow-flora-light-fern.grok.me/"
+         }
+      ]
+   },
+   "suno": {
+      "comptes": [
+         {
+            "pseudo": "@passcool17",
+            "nom": "PassCool",
+            "profil": "https://suno.com/@passcool17?page=songs",
+            "ecoutes": "26 k",
+            "chansons": 715,
+            "date": "2026-11-16",
+            "source": "26 k écoutes : ancien site https://bold-birch-kind-tulip.grok.me/. 715 chansons et top 10 : vrai classement par écoutes des 715 chansons, lu sur l’API publique de Suno le 16 nov. 2026.",
+            "avatar": "img/suno-avatar.webp",
+            "top": [
+               {
+                  "rang": 1,
+                  "titre": "The Real Code Was Never a Bloodline",
+                  "ecoutes": "6,2 k",
+                  "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
+                  "pochette": "img/suno-139daaf6.webp"
+               },
+               {
+                  "rang": 2,
+                  "titre": "Still Yours",
+                  "ecoutes": "1,7 k",
+                  "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
+                  "pochette": "img/suno-641d0a77.webp"
+               },
+               {
+                  "rang": 3,
+                  "titre": "Nested Heaven",
+                  "ecoutes": "1,1 k",
+                  "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
+                  "pochette": "img/suno-90736340.webp"
+               },
+               {
+                  "rang": 4,
+                  "titre": "Black Triangle (Men in Black Style 4)",
+                  "ecoutes": "688",
+                  "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
+                  "pochette": "img/suno-dd6e697e.webp"
+               },
+               {
+                  "rang": 5,
+                  "titre": "Placebo Mon Ami",
+                  "ecoutes": "628",
+                  "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
+                  "pochette": "img/suno-23047490.webp"
+               },
+               {
+                  "rang": 6,
+                  "titre": "Globalism Must Fall",
+                  "ecoutes": "527",
+                  "url": "https://suno.com/song/048abdb3-e920-483c-bcfe-b6ba45158e19",
+                  "pochette": "img/suno-048abdb3.webp"
+               },
+               {
+                  "rang": 7,
+                  "titre": "Broken Collectors of the Outer Seal",
+                  "ecoutes": "487",
+                  "url": "https://suno.com/song/f163c867-bfe1-4230-abf8-66788d90bed5",
+                  "pochette": "img/suno-f163c867.webp"
+               },
+               {
+                  "rang": 8,
+                  "titre": "Quantum Fracture",
+                  "ecoutes": "401",
+                  "url": "https://suno.com/song/5097853e-9177-443c-b52c-b8e9b54eb6ba",
+                  "pochette": "img/suno-5097853e.webp"
+               },
+               {
+                  "rang": 9,
+                  "titre": "Through the Veil of Planes",
+                  "ecoutes": "282",
+                  "url": "https://suno.com/song/5668c515-8035-41b5-a2cc-b7b344061aa9",
+                  "pochette": "img/suno-5668c515.webp"
+               },
+               {
+                  "rang": 10,
+                  "titre": "Harvard’s Secret Terminal V2",
+                  "ecoutes": "266",
+                  "url": "https://suno.com/song/2a11415a-b24c-4937-815a-8aef917aee35",
+                  "pochette": "img/suno-2a11415a.webp"
+               }
+            ]
+         },
+         {
+            "pseudo": "@coolcamille7",
+            "nom": "Č̣@m & P@§ĉãł",
+            "profil": "https://suno.com/@coolcamille7",
+            "ecoutes": "4,8 k",
+            "chansons": 73,
+            "date": "2026-11-16",
+            "source": "Profil public Suno https://suno.com/@coolcamille7 (somme des écoutes des 73 chansons : 4768)",
+            "avatar": "img/camille-avatar.webp",
+            "top": [
+               {
+                  "rang": 1,
+                  "titre": "Petite mais puissante (432 Hz Mix)",
+                  "ecoutes": "1,3 k",
+                  "url": "https://suno.com/song/7f2563f7-c0ff-4076-8a2d-592b29963e95",
+                  "pochette": "img/camille-1.webp"
+               },
+               {
+                  "rang": 2,
+                  "titre": "Boldly We Go",
+                  "ecoutes": "627",
+                  "url": "https://suno.com/song/fb67311b-ca56-4863-8f4c-1f58b5a86b45",
+                  "pochette": "img/camille-2.webp"
+               },
+               {
+                  "rang": 3,
+                  "titre": "Enemy at the Gate V2",
+                  "ecoutes": "298",
+                  "url": "https://suno.com/song/8b5fec3d-8c44-4539-ad95-1032aa9db061",
+                  "pochette": "img/camille-3.webp"
+               },
+               {
+                  "rang": 4,
+                  "titre": "Clarity Can’t Wait",
+                  "ecoutes": "153",
+                  "url": "https://suno.com/song/5ac81745-308d-4d72-abfd-6be33db96e80",
+                  "pochette": "img/camille-4.webp"
+               },
+               {
+                  "rang": 5,
+                  "titre": "Les Ref",
+                  "ecoutes": "142",
+                  "url": "https://suno.com/song/100b4f9f-bb6f-45f0-ba78-02b3f5d66bac",
+                  "pochette": "img/camille-5.webp"
+               },
+               {
+                  "rang": 6,
+                  "titre": "Clarity Coming Down the Line",
+                  "ecoutes": "131",
+                  "url": "https://suno.com/song/94c26d7e-1ab0-47f9-aa8a-d8c1a35bd8ef",
+                  "pochette": "img/camille-6.webp"
+               },
+               {
+                  "rang": 7,
+                  "titre": "Dragon Prince",
+                  "ecoutes": "113",
+                  "url": "https://suno.com/song/518c2dfb-fc36-48f6-9859-73ed85fe8558",
+                  "pochette": "img/camille-7.webp"
+               },
+               {
+                  "rang": 8,
+                  "titre": "Rolling Through the Senate",
+                  "ecoutes": "87",
+                  "url": "https://suno.com/song/351816f7-38aa-4df8-9c7d-f69483c15382",
+                  "pochette": "img/camille-8.webp"
+               }
+            ]
+         }
+      ],
+      "lecteur": {
+         "compte": "@passcool17",
+         "date": "2026-11-16",
+         "source": "Fichiers publics de Suno (cdn1.suno.ai/<id>.mp4, ceux que joue le partage Suno ; CORS *). audio_url est « forbidden » et les m4a de media_urls sont brouillés. Placebo Mon Ami n’a pas de fichier public (HTTP 403 le 16 nov. 2026) : lien vers Suno.",
+         "pistes": [
+            {
+               "titre": "The Real Code Was Never a Bloodline",
+               "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
+               "pochette": "img/suno-139daaf6.webp",
+               "audio": "https://cdn1.suno.ai/139daaf6-10a0-4a86-8062-1422aea9e7c8.mp4",
+               "duree": 373.36
+            },
+            {
+               "titre": "Still Yours",
+               "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
+               "pochette": "img/suno-641d0a77.webp",
+               "audio": "https://cdn1.suno.ai/641d0a77-d3f9-4fa0-a64e-cf995cc5e548.mp4",
+               "duree": 193.32
+            },
+            {
+               "titre": "Nested Heaven",
+               "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
+               "pochette": "img/suno-90736340.webp",
+               "audio": "https://cdn1.suno.ai/90736340-2a4b-47cc-9201-9c15dae6102a.mp4",
+               "duree": 322.6
+            },
+            {
+               "titre": "Black Triangle (Men in Black Style 4)",
+               "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
+               "pochette": "img/suno-dd6e697e.webp",
+               "audio": "https://cdn1.suno.ai/dd6e697e-94a9-4b47-b4e8-870827e831fc.mp4",
+               "duree": 214.56
+            },
+            {
+               "titre": "Placebo Mon Ami",
+               "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
+               "pochette": "img/suno-23047490.webp",
+               "audio": null,
+               "duree": 237.72
+            }
+         ]
+      }
+   },
+   "esp32": {
+      "materiel": {
+         "carte": [
+            "ESP32 classique (CP2102)",
+            "Écran OLED 0,96 po 128×64",
+            "Buzzer",
+            "Détecteur de mouvement PIR"
+         ],
+         "kit": [
+            "Servo SG90",
+            "Clavier 16 touches",
+            "Lecteur RFID RC522",
+            "Joystick",
+            "Capteur à ultrasons",
+            "Télécommande infrarouge",
+            "Afficheur 4 chiffres",
+            "GY-6500 (accéléromètre et gyroscope)"
+         ]
+      }
    }
-  ]
- },
- "suno": {
-  "comptes": [
-   {
-    "pseudo": "@passcool17",
-    "nom": "PassCool",
-    "profil": "https://suno.com/@passcool17?page=songs",
-    "ecoutes": "26 k",
-    "chansons": 715,
-    "date": "2026-11-16",
-    "source": "26 k écoutes : ancien site https://bold-birch-kind-tulip.grok.me/. 715 chansons et top 10 : vrai classement par écoutes des 715 chansons, lu sur l’API publique de Suno le 16 nov. 2026.",
-    "avatar": "img/suno-avatar.webp",
-    "top": [
-     {
-      "rang": 1,
-      "titre": "The Real Code Was Never a Bloodline",
-      "ecoutes": "6,2 k",
-      "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
-      "pochette": "img/suno-139daaf6.webp"
-     },
-     {
-      "rang": 2,
-      "titre": "Still Yours",
-      "ecoutes": "1,7 k",
-      "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
-      "pochette": "img/suno-641d0a77.webp"
-     },
-     {
-      "rang": 3,
-      "titre": "Nested Heaven",
-      "ecoutes": "1,1 k",
-      "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
-      "pochette": "img/suno-90736340.webp"
-     },
-     {
-      "rang": 4,
-      "titre": "Black Triangle (Men in Black Style 4)",
-      "ecoutes": "688",
-      "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
-      "pochette": "img/suno-dd6e697e.webp"
-     },
-     {
-      "rang": 5,
-      "titre": "Placebo Mon Ami",
-      "ecoutes": "628",
-      "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
-      "pochette": "img/suno-23047490.webp"
-     },
-     {
-      "rang": 6,
-      "titre": "Globalism Must Fall",
-      "ecoutes": "527",
-      "url": "https://suno.com/song/048abdb3-e920-483c-bcfe-b6ba45158e19",
-      "pochette": "img/suno-048abdb3.webp"
-     },
-     {
-      "rang": 7,
-      "titre": "Broken Collectors of the Outer Seal",
-      "ecoutes": "487",
-      "url": "https://suno.com/song/f163c867-bfe1-4230-abf8-66788d90bed5",
-      "pochette": "img/suno-f163c867.webp"
-     },
-     {
-      "rang": 8,
-      "titre": "Quantum Fracture",
-      "ecoutes": "401",
-      "url": "https://suno.com/song/5097853e-9177-443c-b52c-b8e9b54eb6ba",
-      "pochette": "img/suno-5097853e.webp"
-     },
-     {
-      "rang": 9,
-      "titre": "Through the Veil of Planes",
-      "ecoutes": "282",
-      "url": "https://suno.com/song/5668c515-8035-41b5-a2cc-b7b344061aa9",
-      "pochette": "img/suno-5668c515.webp"
-     },
-     {
-      "rang": 10,
-      "titre": "Harvard’s Secret Terminal V2",
-      "ecoutes": "266",
-      "url": "https://suno.com/song/2a11415a-b24c-4937-815a-8aef917aee35",
-      "pochette": "img/suno-2a11415a.webp"
-     }
-    ]
-   },
-   {
-    "pseudo": "@coolcamille7",
-    "nom": "Č̣@m & P@§ĉãł",
-    "profil": "https://suno.com/@coolcamille7",
-    "ecoutes": "4,8 k",
-    "chansons": 73,
-    "date": "2026-11-16",
-    "source": "Profil public Suno https://suno.com/@coolcamille7 (somme des écoutes des 73 chansons : 4768)",
-    "avatar": "img/camille-avatar.webp",
-    "top": [
-     {
-      "rang": 1,
-      "titre": "Petite mais puissante (432 Hz Mix)",
-      "ecoutes": "1,3 k",
-      "url": "https://suno.com/song/7f2563f7-c0ff-4076-8a2d-592b29963e95",
-      "pochette": "img/camille-1.webp"
-     },
-     {
-      "rang": 2,
-      "titre": "Boldly We Go",
-      "ecoutes": "627",
-      "url": "https://suno.com/song/fb67311b-ca56-4863-8f4c-1f58b5a86b45",
-      "pochette": "img/camille-2.webp"
-     },
-     {
-      "rang": 3,
-      "titre": "Enemy at the Gate V2",
-      "ecoutes": "298",
-      "url": "https://suno.com/song/8b5fec3d-8c44-4539-ad95-1032aa9db061",
-      "pochette": "img/camille-3.webp"
-     },
-     {
-      "rang": 4,
-      "titre": "Clarity Can’t Wait",
-      "ecoutes": "153",
-      "url": "https://suno.com/song/5ac81745-308d-4d72-abfd-6be33db96e80",
-      "pochette": "img/camille-4.webp"
-     },
-     {
-      "rang": 5,
-      "titre": "Les Ref",
-      "ecoutes": "142",
-      "url": "https://suno.com/song/100b4f9f-bb6f-45f0-ba78-02b3f5d66bac",
-      "pochette": "img/camille-5.webp"
-     },
-     {
-      "rang": 6,
-      "titre": "Clarity Coming Down the Line",
-      "ecoutes": "131",
-      "url": "https://suno.com/song/94c26d7e-1ab0-47f9-aa8a-d8c1a35bd8ef",
-      "pochette": "img/camille-6.webp"
-     },
-     {
-      "rang": 7,
-      "titre": "Dragon Prince",
-      "ecoutes": "113",
-      "url": "https://suno.com/song/518c2dfb-fc36-48f6-9859-73ed85fe8558",
-      "pochette": "img/camille-7.webp"
-     },
-     {
-      "rang": 8,
-      "titre": "Rolling Through the Senate",
-      "ecoutes": "87",
-      "url": "https://suno.com/song/351816f7-38aa-4df8-9c7d-f69483c15382",
-      "pochette": "img/camille-8.webp"
-     }
-    ]
-   }
-  ],
-  "lecteur": {
-   "compte": "@passcool17",
-   "date": "2026-11-16",
-   "source": "Fichiers publics de Suno (cdn1.suno.ai/<id>.mp4, ceux que joue le partage Suno ; CORS *). audio_url est « forbidden » et les m4a de media_urls sont brouillés. Placebo Mon Ami n’a pas de fichier public (HTTP 403 le 16 nov. 2026) : lien vers Suno.",
-   "pistes": [
-    {
-     "titre": "The Real Code Was Never a Bloodline",
-     "url": "https://suno.com/song/139daaf6-10a0-4a86-8062-1422aea9e7c8",
-     "pochette": "img/suno-139daaf6.webp",
-     "audio": "https://cdn1.suno.ai/139daaf6-10a0-4a86-8062-1422aea9e7c8.mp4",
-     "duree": 373.36
-    },
-    {
-     "titre": "Still Yours",
-     "url": "https://suno.com/song/641d0a77-d3f9-4fa0-a64e-cf995cc5e548",
-     "pochette": "img/suno-641d0a77.webp",
-     "audio": "https://cdn1.suno.ai/641d0a77-d3f9-4fa0-a64e-cf995cc5e548.mp4",
-     "duree": 193.32
-    },
-    {
-     "titre": "Nested Heaven",
-     "url": "https://suno.com/song/90736340-2a4b-47cc-9201-9c15dae6102a",
-     "pochette": "img/suno-90736340.webp",
-     "audio": "https://cdn1.suno.ai/90736340-2a4b-47cc-9201-9c15dae6102a.mp4",
-     "duree": 322.6
-    },
-    {
-     "titre": "Black Triangle (Men in Black Style 4)",
-     "url": "https://suno.com/song/dd6e697e-94a9-4b47-b4e8-870827e831fc",
-     "pochette": "img/suno-dd6e697e.webp",
-     "audio": "https://cdn1.suno.ai/dd6e697e-94a9-4b47-b4e8-870827e831fc.mp4",
-     "duree": 214.56
-    },
-    {
-     "titre": "Placebo Mon Ami",
-     "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
-     "pochette": "img/suno-23047490.webp",
-     "audio": null,
-     "duree": 237.72
-    }
-   ]
-  }
- },
- "esp32": {
-  "materiel": {
-   "carte": [
-    "ESP32 classique (CP2102)",
-    "Écran OLED 0,96 po 128×64",
-    "Buzzer",
-    "Détecteur de mouvement PIR"
-   ],
-   "kit": [
-    "Servo SG90",
-    "Clavier 16 touches",
-    "Lecteur RFID RC522",
-    "Joystick",
-    "Capteur à ultrasons",
-    "Télécommande infrarouge",
-    "Afficheur 4 chiffres",
-    "GY-6500 (accéléromètre et gyroscope)"
-   ]
-  }
- }
 }
