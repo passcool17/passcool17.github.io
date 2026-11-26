@@ -132,11 +132,12 @@
             "éducatif"
          ],
          "prototype": false,
-         "description": "Neuf fiches claires en français pour les familles et les proches : causes génétiques, symptômes, prise en charge, vivre avec, FAQ. Recherche, lexique, quiz et tableau de toutes les sources. Hors ligne, sans conseil médical personnalisé.",
+         "description": "Neuf fiches claires en français pour les familles et les proches, avec illustrations : causes génétiques, symptômes, prise en charge, vivre avec, FAQ. Recherche, lexique, quiz et tableau de toutes les sources. Hors ligne, sans conseil médical personnalisé.",
          "capture": "shots/analgesie-congenitale.webp",
          "format": "portrait",
          "ajoute": "2026-11-26",
-         "categorie": "jeux-apps"
+         "categorie": "jeux-apps",
+         "version": "1.1.0"
       },
       {
          "id": "test-qi",
