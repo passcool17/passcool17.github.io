@@ -1,5 +1,5 @@
 // Portail PassCool — rendu des cartes depuis apps.json (aucune étape de build)
-export const VERSION = '1.3.11';
+export const VERSION = '1.3.12';
 
 const FILTRES = [
   { id: 'tout', label: 'Tout' },

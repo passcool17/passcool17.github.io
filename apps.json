@@ -12,12 +12,12 @@
     "2D"
    ],
    "prototype": false,
-   "description": "Douze étapes pour désamorcer la mallette, au plan de la vraie valise imprimée en 3D : deux trappes (A, B), deux serrures (I, II), cinq molettes KY-040 (mots de 5 lettres) et un Simon sur cinq barrettes LED, sous la pression de l’Entité et d’une minuterie.",
+   "description": "Douze étapes pour désamorcer la mallette, au plan de la vraie valise imprimée en 3D : deux trappes (A, B), deux serrures (I, II), un Simon sur cinq barrettes LED, et un « mot mêlé » à remettre en ordre sur cinq molettes KY-040, sous la pression de l’Entité et d’une minuterie.",
    "capture": "shots/entite-mallette.webp",
    "format": "portrait",
    "ajoute": "2026-11-20",
    "categorie": "jeux-apps",
-   "version": "0.4.0"
+   "version": "0.5.0"
   },
   {
    "id": "entite-mallette-v040",
