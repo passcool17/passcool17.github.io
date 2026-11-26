@@ -167,7 +167,7 @@
   },
   {
    "id": "tamagotchi-elon-man",
-   "nom": "Tamagotchi Elon Man",
+   "nom": "Tamagotchi Elon Man 2.0",
    "url": "https://passcool17.github.io/tamagotchi-elon-man/",
    "depot": "https://github.com/passcool17/tamagotchi-elon-man",
    "type": "jeu",
@@ -175,12 +175,30 @@
     "2D"
    ],
    "prototype": false,
-   "description": "Prends soin d’Elon Man, le petit robot de bureau. Version web seulement, aucun matériel requis.",
+   "description": "Réplique 2D du vrai robot : 3 écrans OLED 128x64 pour les yeux et la bouche, tête qui bouge comme les servos (pan ±90°, hochement, roulis, tiges visibles). Il réagit aux soins et te répond en mode démo, ou via la passerelle du PC.",
    "capture": "shots/tamagotchi-elon-man.webp",
    "format": "portrait",
    "ajoute": "2026-11-25",
    "categorie": "esp32",
-   "statut": "live"
+   "statut": "live",
+   "version": "2.0"
+  },
+  {
+   "id": "tamagotchi-elon-man-v1",
+   "nom": "Tamagotchi Elon Man — Prototype v1",
+   "url": "https://passcool17.github.io/tamagotchi-elon-man-v1/",
+   "depot": "https://github.com/passcool17/tamagotchi-elon-man-v1",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "La première version figée : prends soin d’Elon Man (nourrir, jouer, dormir, nettoyer), visage pixel sur écran rond, musique et 14 répliques vocales.",
+   "capture": "shots/tamagotchi-elon-man-v1.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-25",
+   "categorie": "prototypes",
+   "version": "1"
   },
   {
    "id": "dossier-baass-3d",
