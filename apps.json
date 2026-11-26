@@ -184,7 +184,7 @@
   },
   {
    "id": "tamagotchi-elon-man",
-   "nom": "Tamagotchi Elon Man 2.0",
+   "nom": "Tamagotchi Elon Man",
    "url": "https://passcool17.github.io/tamagotchi-elon-man/",
    "depot": "https://github.com/passcool17/tamagotchi-elon-man",
    "type": "jeu",
@@ -192,12 +192,29 @@
     "2D"
    ],
    "prototype": false,
-   "description": "Réplique 2D du vrai robot : 3 écrans OLED 128x64 pour les yeux et la bouche, tête qui bouge comme les servos (pan ±90°, hochement, roulis, tiges visibles). Il réagit aux soins et te répond en mode démo, ou via la passerelle du PC.",
+   "description": "Prends soin d’Elon Man, le robot de bureau du projet elon-man. v2.1 : formes exactes du robot d’origine, plaque de visage avec yeux et sourire découpés, 3 écrans OLED derrière, tête qui tourne, hoche et penche comme les servos. Musique, voix, mode démo ou passerelle PC.",
    "capture": "shots/tamagotchi-elon-man.webp",
    "format": "portrait",
    "ajoute": "2026-11-25",
    "categorie": "esp32",
    "statut": "live",
+   "version": "2.1"
+  },
+  {
+   "id": "tamagotchi-elon-man-v2",
+   "nom": "Tamagotchi Elon Man — Prototype v2.0.1",
+   "url": "https://passcool17.github.io/tamagotchi-elon-man-v2/",
+   "depot": "https://github.com/passcool17/tamagotchi-elon-man-v2",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Version figée de la v2.0.1 : réplique 2D du robot print-v1, tête en dôme, 3 écrans OLED 128x64 horizontaux, servos pan/hochement/roulis, cerveau démo + passerelle PC.",
+   "capture": "shots/tamagotchi-elon-man-v2.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-26",
+   "categorie": "prototypes",
    "version": "2.0.1"
   },
   {

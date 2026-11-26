@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.3.15** (26 nov. 2026 : mallette de l’Entité 0.5.2.1, correctifs QA). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.16** (26 nov. 2026 : Tamagotchi Elon Man 2.1, archive v2.0.1 dans Prototypes). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,11 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.16
+
+- Archive figée **Tamagotchi Elon Man — Prototype v2.0.1** ajoutée dans **Prototypes** : https://passcool17.github.io/tamagotchi-elon-man-v2/. La section Prototypes passe de 15 à 16 cartes. La fiche **Prototype v1** est conservée.
+- Carte ESP32 Tamagotchi Elon Man : version 2.1, nouvelle capture (`shots/tamagotchi-elon-man.webp`, visage v2.1). Description mise à jour (formes exactes, plaque de visage découpée).
 
 ## Changements 1.3.15
 
