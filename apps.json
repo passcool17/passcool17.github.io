@@ -150,12 +150,12 @@
             "éducatif"
          ],
          "prototype": false,
-         "description": "Huit sections en français pour comprendre ce que l’effet placebo peut faire et ne peut pas faire : mécanismes dans le cerveau, preuves par domaine, placebos ouverts, limites et éthique. Lexique, quiz, favoris, progression et 34 sources vérifiées. Hors ligne, sans conseil médical.",
+         "description": "Huit sections en français pour comprendre ce que l’effet placebo peut faire et ne peut pas faire : mécanismes dans le cerveau, preuves par domaine, placebos ouverts, limites et éthique. Lexique, quiz, favoris, progression et 42 sources vérifiées. Hors ligne, sans conseil médical.",
          "capture": "shots/effet-placebo.webp",
          "format": "portrait",
          "ajoute": "2026-11-26",
          "categorie": "jeux-apps",
-         "version": "1.0.0"
+         "version": "1.0.1"
       },
       {
          "id": "test-qi",
