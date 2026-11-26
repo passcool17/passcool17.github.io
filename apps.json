@@ -20,6 +20,23 @@
    "version": "0.4.0"
   },
   {
+   "id": "entite-mallette-v040",
+   "nom": "La mallette de l’Entité (v0.4.0)",
+   "url": "https://passcool17.github.io/entite-mallette-v040/",
+   "depot": "https://github.com/passcool17/entite-mallette-v040",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Archive figée de la v0.4.0, au plan d’impression v0.8, juste avant la refonte des jeux v0.5 : deux trappes A B, deux serrures I II, cinq molettes KY-040 en ligne, n° de série à lettres sur les molettes.",
+   "capture": "shots/entite-mallette-v040.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-25",
+   "categorie": "prototypes",
+   "version": "0.4.0"
+  },
+  {
    "id": "entite-mallette-v032",
    "nom": "La mallette de l’Entité (v0.3.2)",
    "url": "https://passcool17.github.io/entite-mallette-v032/",
