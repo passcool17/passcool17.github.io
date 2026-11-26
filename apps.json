@@ -20,6 +20,23 @@
    "version": "0.3.2"
   },
   {
+   "id": "entite-mallette-v032",
+   "nom": "La mallette de l’Entité (v0.3.2)",
+   "url": "https://passcool17.github.io/entite-mallette-v032/",
+   "depot": "https://github.com/passcool17/entite-mallette-v032",
+   "type": "jeu",
+   "tags": [
+    "2D"
+   ],
+   "prototype": true,
+   "description": "Archive figée de la v0.3.2, juste avant la refonte v0.4 : trois trappes, trois serrures, cinq molettes KY-040, Simon sur cinq barrettes LED, 25 voix v0.3.",
+   "capture": "shots/entite-mallette-v032.webp",
+   "format": "portrait",
+   "ajoute": "2026-11-25",
+   "categorie": "prototypes",
+   "version": "0.3.2"
+  },
+  {
    "id": "entite-mallette-v026a",
    "nom": "La mallette de l’Entité (v0.2.6a)",
    "url": "https://passcool17.github.io/entite-mallette-v026a/",
