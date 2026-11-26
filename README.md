@@ -6,7 +6,7 @@ Le portail de PassCool : tous ses jeux et apps publiés sur GitHub Pages, ses mo
 
 ## État
 
-Version **1.3.24** (26 nov. 2026 : carte Effet Placebo 1.0.1). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
+Version **1.3.25** (26 nov. 2026 : carte Effet Placebo 1.1.0, chanson Placebo Power). HTML, CSS et JavaScript simples, aucune étape de build. Le CSS est **dans `index.html`** (balise `<style>`) : il n’y a plus de `styles.css`. PWA installable ; fonctionne hors ligne après la première visite.
 
 ## Ce qu’il y a
 
@@ -84,6 +84,11 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 5. Accessibilité : nom du logo « PassCool – retour en haut », étiquettes à 6 px de marge.
 6. Héros : « Salut, c’est PassCool. », phrase personnelle, plus de numéros de section, les 3 captures ouvrent leur jeu.
 7. PWA : raccourcis, captures du manifeste, bouton « Installer l’app ».
+
+## Changements 1.3.25
+
+- Carte **Effet Placebo** : version 1.1.0 (chanson *Placebo Power* sur l’accueil).
+- Lecteur Suno : l’entrée « Placebo Mon Ami » est remplacée par **Placebo Power** (chanson distincte, lien [Suno](https://suno.com/s/Nbjpkoz0MqpQQM98), fichier public en `.mp4`).
 
 ## Changements 1.3.24
 
@@ -208,7 +213,7 @@ Le portail est à la racine de `passcool17.github.io`, donc son service worker a
 
 - **Lecteur du top 5 Suno** (@passcool17) en haut, sous la phrase d’accueil : pochette, titre, précédente / lecture-pause / suivante, barre de progression (on peut la glisser) et temps. Cibles ≥ 44×44, titres annoncés (`aria-live`), commandes de l’écran verrouillé (Media Session).
 - Données : `suno.lecteur.pistes` dans `apps.json` (`titre`, `url`, `pochette`, `audio`, `duree` en secondes). `audio: null` = pas de fichier public : le lecteur affiche un lien « L’écouter sur Suno ».
-- Source audio : `https://cdn1.suno.ai/<id>.mp4`, le fichier public que joue le partage Suno (CORS `*`, lecture par plages). `audio_url` de Suno renvoie « forbidden », les `.m4a` de `media_urls` sont brouillés, et l’intégration `suno.com/embed/<id>` ne joue pas non plus. **Placebo Mon Ami** n’a pas de fichier public (HTTP 403 le 16 nov. 2026).
+- Source audio : `https://cdn1.suno.ai/<id>.mp4`, le fichier public que joue le partage Suno (CORS `*`, lecture par plages). `audio_url` de Suno renvoie « forbidden », les `.m4a` de `media_urls` sont brouillés, et l’intégration `suno.com/embed/<id>` ne joue pas non plus. **Placebo Power** a un fichier public (`cdn1.suno.ai/6110c310-4c9e-464a-9a6c-af4a01d70547.mp4`, vérifié le 26 nov. 2026). L’ancienne entrée **Placebo Mon Ami** (id `23047490-…`, HTTP 403) était une autre chanson ; elle a été remplacée à la demande de Pascal.
 - Aucun octet audio avant le premier toucher (l’élément `<audio>` est créé au premier « Lire », `preload="none"`), pas de lecture automatique. Le service worker ignore toute autre origine : les fichiers audio ne sont jamais mis en cache.
 - Poids : un mp4 Suno fait 7 à 15 Mo (piste vidéo comprise) ; il se charge seulement pendant l’écoute.
 

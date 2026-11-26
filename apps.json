@@ -155,7 +155,7 @@
          "format": "portrait",
          "ajoute": "2026-11-26",
          "categorie": "jeux-apps",
-         "version": "1.0.1"
+         "version": "1.1.0"
       },
       {
          "id": "test-qi",
@@ -1283,10 +1283,10 @@
                },
                {
                   "rang": 5,
-                  "titre": "Placebo Mon Ami",
-                  "ecoutes": "628",
-                  "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
-                  "pochette": "img/suno-23047490.webp"
+                  "titre": "Placebo Power",
+                  "ecoutes": "1",
+                  "url": "https://suno.com/s/Nbjpkoz0MqpQQM98",
+                  "pochette": "img/suno-6110c310.webp"
                },
                {
                   "rang": 6,
@@ -1397,7 +1397,7 @@
       "lecteur": {
          "compte": "@passcool17",
          "date": "2026-11-16",
-         "source": "Fichiers publics de Suno (cdn1.suno.ai/<id>.mp4, ceux que joue le partage Suno ; CORS *). audio_url est « forbidden » et les m4a de media_urls sont brouillés. Placebo Mon Ami n’a pas de fichier public (HTTP 403 le 16 nov. 2026) : lien vers Suno.",
+         "source": "Fichiers publics de Suno (cdn1.suno.ai/<id>.mp4, ceux que joue le partage Suno ; CORS *). audio_url est « forbidden » et les m4a de media_urls sont brouillés. Placebo Power (chanson distincte de l’ancienne entrée Placebo Mon Ami) a un fichier public depuis le 26 nov. 2026 : cdn1.suno.ai/6110c310-4c9e-464a-9a6c-af4a01d70547.mp4.",
          "pistes": [
             {
                "titre": "The Real Code Was Never a Bloodline",
@@ -1428,11 +1428,11 @@
                "duree": 214.56
             },
             {
-               "titre": "Placebo Mon Ami",
-               "url": "https://suno.com/song/23047490-8ae6-4abf-afe7-106e580e3d64",
-               "pochette": "img/suno-23047490.webp",
-               "audio": null,
-               "duree": 237.72
+               "titre": "Placebo Power",
+               "url": "https://suno.com/s/Nbjpkoz0MqpQQM98",
+               "pochette": "img/suno-6110c310.webp",
+               "audio": "https://cdn1.suno.ai/6110c310-4c9e-464a-9a6c-af4a01d70547.mp4",
+               "duree": 184.92
             }
          ]
       }

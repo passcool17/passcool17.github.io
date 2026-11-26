@@ -82,7 +82,7 @@ assert.equal(heros.length, 3); for (const [h, l, ht] of heros) { assert.ok(urlsP
 // 1.2.0 — lecteur du top 5 Suno en haut
 const L = data.suno.lecteur;
 assert.equal(L.pistes.length, 5);
-assert.deepEqual(L.pistes.map((x) => x.titre), ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami']);
+assert.deepEqual(L.pistes.map((x) => x.titre), ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Power']);
 const lect = await p.$eval('#lecteur', (e) => { const r = e.getBoundingClientRect(); return [r.top, r.bottom]; });
 assert.ok(lect[1] <= 915, 'lecteur visible sans défiler'); ok(`lecteur visible en haut (bas à ${Math.round(lect[1])}px)`);
 assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre);
@@ -101,8 +101,8 @@ assert.equal(await p.textContent('#pl-titre'), L.pistes[1].titre); assert.equal(
 await p.click('#pl-prev'); assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre); ok('suivante / précédente changent le titre (annoncé en aria-live)');
 await p.click('#pl-play'); await p.waitForTimeout(300); assert.ok(!(await p.$eval('#lecteur', (e) => e.classList.contains('joue')))); ok('pause');
 for (let k = 0; k < 4; k++) await p.click('#pl-next');
-assert.equal(await p.textContent('#pl-titre'), 'Placebo Mon Ami');
-if (!L.pistes[4].audio) { assert.equal(await p.getAttribute('#pl-play', 'aria-disabled'), 'true'); assert.equal(await p.isVisible('#pl-err a'), true); assert.equal(await p.getAttribute('#pl-err a', 'href'), L.pistes[4].url); ok('Placebo Mon Ami : pas d’audio public, lien vers Suno'); }
+assert.equal(await p.textContent('#pl-titre'), 'Placebo Power');
+if (!L.pistes[4].audio) { assert.equal(await p.getAttribute('#pl-play', 'aria-disabled'), 'true'); assert.equal(await p.isVisible('#pl-err a'), true); assert.equal(await p.getAttribute('#pl-err a', 'href'), L.pistes[4].url); ok('Placebo Power : pas d’audio public, lien vers Suno'); }
 await p.click('#pl-next'); assert.equal(await p.textContent('#pl-titre'), L.pistes[0].titre); ok('boucle 5 → 1');
 // 1.2.1 — hors ligne : « Lire » échoue proprement (bouton revient à Lire + message), puis en ligne ça rejoue
 await p.click('#pl-next'); await p.click('#pl-next'); assert.equal(await p.textContent('#pl-titre'), L.pistes[2].titre);
@@ -186,7 +186,7 @@ await p.fill('#qg', 'baass'); assert.equal(await p.$eval('#doublons', (d) => d.o
 await p.fill('#qg', ''); await p.$eval('#doublons', (d) => { d.open = false; });
 
 const attendu = { '@passcool17': 10, '@coolcamille7': 8 };
-const vraiTop = ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Mon Ami', 'Globalism Must Fall', 'Broken Collectors of the Outer Seal', 'Quantum Fracture', 'Through the Veil of Planes', 'Harvard’s Secret Terminal V2'];
+const vraiTop = ['The Real Code Was Never a Bloodline', 'Still Yours', 'Nested Heaven', 'Black Triangle (Men in Black Style 4)', 'Placebo Power', 'Globalism Must Fall', 'Broken Collectors of the Outer Seal', 'Quantum Fracture', 'Through the Veil of Planes', 'Harvard’s Secret Terminal V2'];
 // Suno se dessine quand on approche de #musique (le rendu de Grok peut l’éloigner pendant le défilement précédent)
 await p.evaluate(() => document.querySelector('#musique').scrollIntoView({ behavior: 'instant' })); await p.waitForSelector('.seg .chip');
 for (const [i, c] of data.suno.comptes.entries()) {
