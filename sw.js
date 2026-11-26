@@ -1,6 +1,6 @@
 // Service worker du portail. Il ne touche QUE les fichiers du portail (liste exacte).
 // Tout le reste (ex. /test-qi/, /wifi-radar/) passe au réseau sans être intercepté.
-const VERSION = '1.3.20';
+const VERSION = '1.3.21';
 const CACHE = `portail-${VERSION}`;
 const SHELL = ['/', '/index.html', '/app.js', '/apps.json', '/manifest.webmanifest',
   '/fonts/young-serif-latin.woff2', '/icons/icon-192.png', '/icons/icon-512.png'];
