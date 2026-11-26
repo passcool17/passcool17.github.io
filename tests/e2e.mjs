@@ -13,7 +13,7 @@ const live = base.startsWith('https://');
 const data = JSON.parse(fs.readFileSync(`${root}/apps.json`, 'utf8'));
 const jeuxApps = data.projets.filter((p) => p.categorie === 'jeux-apps');
 const protosData = data.projets.filter((p) => p.categorie === 'prototypes');
-const PROTOS = ['desamorce', 'babel-rpg', 'desamorcage-diagnostic', 'foreuse-boreale', 'abime-apocalypse', 'cite-stellaire', 'vita', 'pendragon-aventure', 'pat-escape', 'entite-mallette-v040', 'entite-mallette-v032', 'entite-mallette-v026a', 'entite-mallette-v016', 'entite-mallette-v015', 'tamagotchi-elon-man-v2', 'tamagotchi-elon-man-v1'];
+const PROTOS = ['desamorce', 'babel-rpg', 'desamorcage-diagnostic', 'foreuse-boreale', 'abime-apocalypse', 'cite-stellaire', 'vita', 'pendragon-aventure', 'pat-escape', 'entite-mallette-v040', 'entite-mallette-v032', 'entite-mallette-v026a', 'entite-mallette-v016', 'entite-mallette-v015', 'tamagotchi-elon-man-v2-1', 'tamagotchi-elon-man-v2', 'tamagotchi-elon-man-v1'];
 const esp = data.projets.filter((p) => p.categorie === 'esp32');
 const ok = (m) => console.log('OK  ' + m);
 const shot = async (p, sel, name) => { await p.evaluate((s) => document.querySelector(s).scrollIntoView(), sel); await p.waitForTimeout(900); await p.screenshot({ path: `${SHOTS}/${name}` }); };
@@ -41,14 +41,14 @@ await p.screenshot({ path: `${SHOTS}/1-accueil.png` });
 // 1.1.0 — rendu différé : Grok et Suno vides au chargement
 assert.equal(await p.$$eval('#liste-grok li, #top li', (l) => l.length), 0); ok('Grok et Suno pas encore dessinés au chargement');
 
-// 1.3.0 — section Prototypes juste après Jeux (liste mise à jour en 1.3.16 : + tamagotchi-elon-man-v2)
+// 1.3.0 — section Prototypes juste après Jeux (liste mise à jour en 1.3.17 : + tamagotchi-elon-man-v2-1)
 assert.deepEqual(protosData.map((x) => x.id).sort(), [...PROTOS].sort()); assert.ok(protosData.every((x) => x.prototype === true));
 assert.equal(await p.$eval('#jeux', (s) => s.nextElementSibling.id), 'prototypes'); ok('section Prototypes juste après Jeux');
 assert.match(await p.textContent('#prototypes .sub'), /pas encore finis/);
-assert.deepEqual((await p.$$eval('#grille-protos .card', (c) => c.map((x) => x.dataset.id))).sort(), [...PROTOS].sort()); ok('16 cartes dans Prototypes');
+assert.deepEqual((await p.$$eval('#grille-protos .card', (c) => c.map((x) => x.dataset.id))).sort(), [...PROTOS].sort()); ok('17 cartes dans Prototypes');
 const idsPrincipaux = await p.$$eval('#grille .card', (c) => c.map((x) => x.dataset.id));
-assert.ok(PROTOS.every((id) => !idsPrincipaux.includes(id))); ok('aucun des 16 dans la grille Jeux et apps');
-assert.equal(await p.textContent('#count-protos'), '16 prototypes');
+assert.ok(PROTOS.every((id) => !idsPrincipaux.includes(id))); ok('aucun des 17 dans la grille Jeux et apps');
+assert.equal(await p.textContent('#count-protos'), '17 prototypes');
 const emv = await p.$eval('#grille-protos .card[data-id="entite-mallette-v016"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !!c.querySelector('.tag.proto')]);
 assert.deepEqual(emv, ['https://passcool17.github.io/entite-mallette-v016/', 'shots/entite-mallette-v016.webp', true]); ok('La mallette de l’Entité (v0.1.6) dans Prototypes, lien et capture');
 const emv015 = await p.$eval('#grille-protos .card[data-id="entite-mallette-v015"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !!c.querySelector('.tag.proto')]);
@@ -59,6 +59,8 @@ const emv032 = await p.$eval('#grille-protos .card[data-id="entite-mallette-v032
 assert.deepEqual(emv032, ['https://passcool17.github.io/entite-mallette-v032/', 'shots/entite-mallette-v032.webp', true]); ok('La mallette de l’Entité (v0.3.2) dans Prototypes, lien et capture');
 const emv040 = await p.$eval('#grille-protos .card[data-id="entite-mallette-v040"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src')]);
 assert.deepEqual(emv040, ['https://passcool17.github.io/entite-mallette-v040/', 'shots/entite-mallette-v040.webp']); ok('La mallette de l’Entité (v0.4.0) dans Prototypes, lien et capture');
+const tamaV21 = await p.$eval('#grille-protos .card[data-id="tamagotchi-elon-man-v2-1"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !!c.querySelector('.tag.proto'), c.querySelector('h3')?.textContent]);
+assert.deepEqual(tamaV21, ['https://passcool17.github.io/tamagotchi-elon-man-v2-1/', 'shots/tamagotchi-elon-man-v2-1.webp', true, 'Tamagotchi Elon Man — Prototype v2.1']); ok('Tamagotchi Elon Man — Prototype v2.1 dans Prototypes, lien et capture');
 const tamaV2 = await p.$eval('#grille-protos .card[data-id="tamagotchi-elon-man-v2"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !!c.querySelector('.tag.proto'), c.querySelector('h3')?.textContent]);
 assert.deepEqual(tamaV2, ['https://passcool17.github.io/tamagotchi-elon-man-v2/', 'shots/tamagotchi-elon-man-v2.webp', true, 'Tamagotchi Elon Man — Prototype v2.0.1']); ok('Tamagotchi Elon Man — Prototype v2.0.1 dans Prototypes, lien et capture');
 const tamaV1 = await p.$eval('#grille-protos .card[data-id="tamagotchi-elon-man-v1"]', (c) => [c.querySelector('a[href]')?.href, c.querySelector('img')?.getAttribute('src'), !!c.querySelector('.tag.proto'), c.querySelector('h3')?.textContent]);
